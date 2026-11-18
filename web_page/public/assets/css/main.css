@@ -527,9 +527,9 @@ html.no-scroll { overflow: hidden; }
 }
 .sub-toggle:hover { color: var(--ink); }
 .sub-toggle svg { transition: transform 0.2s; }
-.sub-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.has-sub.sub-open .sub-toggle svg { transform: rotate(180deg); }
 /* dropdown with no page of its own (Our Projects): the label is the toggle */
-.sub-label { display: flex; align-items: center; gap: 4px; font: inherit; font-weight: 500; color: var(--ink-soft); border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.sub-label { cursor: default; display: flex; align-items: center; gap: 4px; font: inherit; font-weight: 500; color: var(--ink-soft); border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
 .sub {
   display: none;
   position: absolute; top: 100%; left: -18px; z-index: 5;
@@ -541,8 +541,11 @@ html.no-scroll { overflow: hidden; }
 .sub li + li { border-top: 1px solid var(--line); }
 .sub a { display: block; padding: 10px 0; border: 0; }
 .has-sub.sub-open .sub { display: block; }
+/* desktop: a dropdown opens only while the pointer is over it (or keyboard focus is inside it) */
 @media (hover: hover) and (min-width: 961px) {
-  .has-sub:hover .sub { display: block; }
+  .has-sub:hover .sub, .has-sub:has(:focus-visible) .sub { display: block; }
+  .has-sub:hover .sub-label, .has-sub:has(:focus-visible) .sub-label { color: var(--ink); }
+  .has-sub:hover .sub-toggle svg, .has-sub:has(:focus-visible) .sub-toggle svg { transform: rotate(180deg); }
 }
 
 .burger {
@@ -724,12 +727,24 @@ main { overflow-x: clip; } /* no sideways scroll from full-width pieces */
 .page-head-beside-nav > picture,
 .page-head-beside-nav > .head-art { grid-column: 2; grid-row: 3; align-self: start; margin-top: clamp(24px, 4vh, 40px); }
 .page-head-beside-nav > picture .head-art { margin: 0; }
+/* site rule for a picture beside an article's contents list:
+   - picture taller than the list: it sets the row height, so it has no room to move and stays as is
+   - picture shorter than the list: it stays in view (below the sticky header) while the list scrolls by,
+     and stops where the list ends (sticky never leaves its grid row's section) */
+.page-head-beside-nav > picture,
+.page-head-beside-nav > .head-art { position: sticky; top: calc(var(--header-h, 84px) + 24px); }
+/* head-art-fit: the picture is cropped to the height of the list beside it instead of setting the row height
+   (height 0 keeps it out of the row sizing; min-height then fills the row, less the shared top margin) */
+.page-head-beside-nav > picture:has(.head-art-fit) { align-self: stretch; height: 0; min-height: calc(100% - clamp(24px, 4vh, 40px)); }
+.page-head-beside-nav .head-art-fit { height: 100%; object-fit: cover; object-position: 50% 68%; } /* keeps the sun in view */
 @media (max-width: 860px) {
   .page-head-art { grid-template-columns: 1fr; }
   .head-art { grid-row: 1; width: min(60%, 260px); margin-bottom: 8px; }
   .page-head-beside-nav > picture,
-  .page-head-beside-nav > .head-art { grid-column: 1; grid-row: 3; width: 100%; max-width: 520px; margin-bottom: 0; }
+  .page-head-beside-nav > .head-art { grid-column: 1; grid-row: 3; width: 100%; max-width: 520px; margin-bottom: 0; position: static; } /* stacked above the list: nothing to stick beside */
   .page-head-beside-nav > picture .head-art { width: 100%; grid-row: auto; }
+  .page-head-beside-nav > picture:has(.head-art-fit) { height: auto; min-height: 0; }
+  .page-head-beside-nav .head-art-fit { aspect-ratio: 4 / 3; }
   .page-head-beside-nav .page-nav { grid-row: 4; }
 }
 

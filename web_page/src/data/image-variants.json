@@ -235,6 +235,46 @@
    ]
   ]
  },
+ "assets/images/plants/fig-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/fig-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/fig-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/fig-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/fig-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/fig-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/fig-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/fig-wide.jpg",
+    1050
+   ]
+  ]
+ },
  "assets/images/plants/ginkgo-autumn.jpg": {
   "w": 1200,
   "h": 1600,

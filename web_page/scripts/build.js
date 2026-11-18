@@ -228,9 +228,10 @@ page({
     "A quiet garden to walk in, sit in and look around. Herbs, fruit trees, water, and corners to stop in for a while."
   ), {
     after: partial('fruits-de-la-tardor-nav.html'),
-    // the ginkgo in autumn, looking up into the sun; sits beside the contents list, like the Museu's photo
+    // the ginkgo in autumn, looking up into the sun; sits beside the contents list, like the Museu's photo,
+    // cropped to the list's height (head-art-fit)
     variant: 'beside-nav',
-    art: `<img class="head-art" src="assets/images/plants/ginkgo-autumn.jpg" width="1200" height="1600" decoding="async"${altT(t(
+    art: `<img class="head-art head-art-fit" src="assets/images/plants/ginkgo-autumn.jpg" width="1200" height="1600" decoding="async"${altT(t(
       "Branques d'un ginkgo amb les fulles grogues de la tardor i el sol que passa entre elles",
       "Ramas de un ginkgo con las hojas amarillas del otoño y el sol que pasa entre ellas",
       "Ginkgo branches in yellow autumn leaf, with the sun shining through"

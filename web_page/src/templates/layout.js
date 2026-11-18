@@ -67,7 +67,7 @@ const CHEVRON = '<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="
 function labelMenu(key, children, rel, active) {
   const on = children.includes(active);
   return `<li class="has-sub${on ? ' is-active' : ''}">
-            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-${key}">${tx('span', PAGES[key].title)}${CHEVRON}</button>
+            <button type="button" class="sub-toggle sub-label" aria-haspopup="true" aria-controls="sub-${key}">${tx('span', PAGES[key].title)}${CHEVRON}</button>
             <ul class="sub" id="sub-${key}">
 ${children.map((c) => `              <li>${link(c, rel, active)}</li>`).join('\n')}
             </ul>

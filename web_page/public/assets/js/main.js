@@ -130,11 +130,16 @@
   if (burger) burger.addEventListener("click", function () {
     setMenu(burger.getAttribute("aria-expanded") !== "true");
   });
+  // dropdowns open on hover (CSS); a click on the label does nothing. Only touch screens
+  // with no hover and no burger (e.g. a tablet held sideways) open them with a tap.
+  var noHover = window.matchMedia("(hover: none)");
   subs.forEach(function (li) {
     var btn = li.querySelector(".sub-toggle");
     if (btn) btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!noHover.matches) return;
       e.stopPropagation();
-      setSub(li, btn.getAttribute("aria-expanded") !== "true");
+      setSub(li, !li.classList.contains("sub-open"));
     });
   });
   document.addEventListener("click", function (e) {

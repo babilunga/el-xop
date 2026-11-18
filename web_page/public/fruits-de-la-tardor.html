@@ -34,14 +34,14 @@
       <nav class="main-nav" aria-label="Main" data-ca-aria="Principal" data-es-aria="Principal">
         <ul>
           <li class="has-sub">
-            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-projectes"><span data-ca="Els nostres projectes" data-es="Nuestros proyectos">Our Projects</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <button type="button" class="sub-toggle sub-label" aria-haspopup="true" aria-controls="sub-projectes"><span data-ca="Els nostres projectes" data-es="Nuestros proyectos">Our Projects</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
             <ul class="sub" id="sub-projectes">
               <li><a href="residencia.html" data-ca="Residència d'artistes" data-es="Residencia de artistas">Artist residency</a></li>
               <li><a href="les-vaqueres.html" data-ca="Les Vaqueres" data-es="Les Vaqueres">Les Vaqueres</a></li>
             </ul>
           </li>
           <li class="has-sub is-active">
-            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-entorn"><span data-ca="L'entorn" data-es="El entorno">Surroundings</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <button type="button" class="sub-toggle sub-label" aria-haspopup="true" aria-controls="sub-entorn"><span data-ca="L'entorn" data-es="El entorno">Surroundings</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
             <ul class="sub" id="sub-entorn">
               <li><a href="fruits-de-la-tardor.html" aria-current="page" data-ca="Fruits de la tardor" data-es="Frutos del otoño">Autumn fruits</a></li>
               <li><a href="raco-dherbes.html" data-ca="Racó d’herbes" data-es="Rincón de hierbas">Herb corner</a></li>
@@ -49,7 +49,7 @@
           </li>
           <li><a href="museu.html" data-ca="Museu" data-es="Museo">Museum</a></li>
           <li class="has-sub">
-            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-arxiu"><span data-ca="Arxiu" data-es="Archivo">Archive</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <button type="button" class="sub-toggle sub-label" aria-haspopup="true" aria-controls="sub-arxiu"><span data-ca="Arxiu" data-es="Archivo">Archive</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
             <ul class="sub" id="sub-arxiu">
               <li><a href="bibliografia.html" data-ca="Bibliografia" data-es="Bibliografía">Bibliography</a></li>
               <li><a href="el-xop-dahir.html" data-ca="El Xop d'ahir" data-es="El Xop de ayer">El Xop in the past</a></li>
@@ -92,7 +92,7 @@
     </nav>
 
     </div>
-    <picture><source type="image/avif" srcset="assets/images/plants/ginkgo-autumn-sm.avif 720w, assets/images/plants/ginkgo-autumn.avif 1200w" sizes="(max-width: 760px) 100vw, 50vw"><img srcset="assets/images/plants/ginkgo-autumn-sm.jpg 720w, assets/images/plants/ginkgo-autumn.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" class="head-art" src="assets/images/plants/ginkgo-autumn.jpg" width="1200" height="1600" decoding="async" alt="Ginkgo branches in yellow autumn leaf, with the sun shining through" data-ca-alt="Branques d'un ginkgo amb les fulles grogues de la tardor i el sol que passa entre elles" data-es-alt="Ramas de un ginkgo con las hojas amarillas del otoño y el sol que pasa entre ellas"></picture>
+    <picture><source type="image/avif" srcset="assets/images/plants/ginkgo-autumn-sm.avif 720w, assets/images/plants/ginkgo-autumn.avif 1200w" sizes="(max-width: 760px) 100vw, 50vw"><img srcset="assets/images/plants/ginkgo-autumn-sm.jpg 720w, assets/images/plants/ginkgo-autumn.jpg 1200w" sizes="(max-width: 760px) 100vw, 50vw" class="head-art head-art-fit" src="assets/images/plants/ginkgo-autumn.jpg" width="1200" height="1600" decoding="async" alt="Ginkgo branches in yellow autumn leaf, with the sun shining through" data-ca-alt="Branques d'un ginkgo amb les fulles grogues de la tardor i el sol que passa entre elles" data-es-alt="Ramas de un ginkgo con las hojas amarillas del otoño y el sol que pasa entre ellas"></picture>
   </section>
 
   <section class="plants wrap" id="trees">
@@ -122,6 +122,19 @@
           <span class="zoom-focus" aria-hidden="true"></span>
           <svg class="zoom-lines" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><line x1="46" y1="22" x2="58" y2="15"/><line x1="46" y1="35.3" x2="58" y2="71"/></svg>
           <picture><source type="image/avif" srcset="assets/images/plants/ginkgo-close.avif 600w" sizes="(max-width: 760px) 40vw, 300px"><img width="600" height="800" class="zoom-close" src="assets/images/plants/ginkgo-close.jpg" alt="Close-up of ginkgo" data-ca-alt="Detall: ginkgo" data-es-alt="Detalle: ginkgo" loading="lazy" decoding="async"></picture>
+        </figure>
+      </article>
+      <article class="plant" id="plant-fig">
+        <div class="plant-text">
+          <h3 data-ca="Figuera" data-es="Higuera">Fig</h3>
+          <p class="latin">Ficus carica</p>
+          <p data-ca="Diversos troncs llisos i grisos que s&#x27;obren com una mà i unes branques que s&#x27;estenen per sobre la pèrgola. A sota hi fa una ombra fresca, i a finals d&#x27;estiu les figues maduren morades entre les fulles grans." data-es="Varios troncos lisos y grises que se abren como una mano y unas ramas que se extienden por encima de la pérgola. Debajo da una sombra fresca, y a finales de verano los higos maduran morados entre las hojas grandes.">Several smooth grey trunks that open out like a hand, and branches that spread over the pergola. Underneath it the shade is cool, and at the end of summer the figs ripen purple among the big leaves.</p>
+        </div>
+        <figure class="zoom">
+          <picture><source type="image/avif" srcset="assets/images/plants/fig-wide-sm.avif 720w, assets/images/plants/fig-wide.avif 1050w" sizes="(max-width: 760px) 62vw, 460px"><img srcset="assets/images/plants/fig-wide-sm.jpg 720w, assets/images/plants/fig-wide.jpg 1050w" sizes="(max-width: 760px) 62vw, 460px" width="1050" height="1400" class="zoom-wide" src="assets/images/plants/fig-wide.jpg" alt="A mature fig tree with a thick trunk and a dense crown" data-ca-alt="Una figuera gran, de tronc gruixut i capçada densa" data-es-alt="Una higuera grande, de tronco grueso y copa densa" loading="lazy" decoding="async"></picture>
+          <span class="zoom-focus" aria-hidden="true"></span>
+          <svg class="zoom-lines" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><line x1="46" y1="22" x2="58" y2="15"/><line x1="46" y1="35.3" x2="58" y2="71"/></svg>
+          <picture><source type="image/avif" srcset="assets/images/plants/fig-close.avif 600w" sizes="(max-width: 760px) 40vw, 300px"><img width="600" height="800" class="zoom-close" src="assets/images/plants/fig-close.jpg" alt="Close-up of a ripe fig among the leaves" data-ca-alt="Detall: una figa madura entre les fulles" data-es-alt="Detalle: un higo maduro entre las hojas" loading="lazy" decoding="async"></picture>
         </figure>
       </article>
       <article class="plant" id="plant-hawthorn">
@@ -242,6 +255,8 @@
         </figure>
       </article>
     </div>
+    <p class="nut-credits"><span data-ca="Foto de la figuera sencera, de Wikimedia Commons:" data-es="Foto de la higuera entera, de Wikimedia Commons:">Whole fig tree photo from Wikimedia Commons:</span>
+      <a href="https://commons.wikimedia.org/wiki/File:Higuera_patrimonial_de_Huamanga_01.jpg" target="_blank" rel="noopener">Guillermo Carlos Gómez</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>), <span data-ca="retallada" data-es="recortada">cropped</span></p>
   </section>
 
   <section class="plants wrap" id="herbs">
