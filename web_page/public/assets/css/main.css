@@ -718,7 +718,7 @@ main { overflow-x: clip; } /* no sideways scroll from full-width pieces */
 .page-head-beside-nav { row-gap: 0; }
 .page-head-beside-nav .page-head-text { display: contents; }
 .page-head-beside-nav .page-head-text > * { grid-column: 1; }
-.page-head-beside-nav .page-nav { grid-row: 3; }
+.page-head-beside-nav .page-nav { grid-row: 3; align-self: start; } /* top of the list = top of the picture, even when the picture is taller */
 /* the picture is placed whether or not the image build has wrapped it in <picture> for AVIF */
 .page-head-beside-nav > picture { display: block; }
 .page-head-beside-nav > picture,
