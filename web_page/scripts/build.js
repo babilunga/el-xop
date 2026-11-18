@@ -1,0 +1,305 @@
+// Builds the whole El Xop site: the landing page, one page per menu item,
+// and the book readers in /library.
+// Run from web_page/:  npm run build   (or: node scripts/build.js)
+// No dependencies.
+
+const fs = require('fs');
+const path = require('path');
+const C = require('../src/templates/layout.js');
+const { t, tx, aria, PAGES } = C;
+
+const ROOT = path.resolve(__dirname, '..', 'public'); // built site goes here
+const partial = (name) => fs.readFileSync(path.join(__dirname, '..', 'src', 'partials', name), 'utf8');
+const lib = require('../src/templates/library.js'); // also writes public/library/*.html
+const { enhance } = require('../src/templates/images.js'); // <picture> + srcset for photos
+
+// keep the local design-tool script if it is present in the current index.html
+let live = '';
+try {
+  const m = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').match(/<!-- impeccable-live-start -->[\s\S]*?<!-- impeccable-live-end -->/);
+  if (m) live = '\n' + m[0];
+} catch (e) {}
+
+function page({ file, key, title, desc, body, bodyClass = '' }) {
+  const html = `${C.head(title, desc, '')}
+<body${bodyClass ? ` class="${bodyClass}"` : ''}>
+
+${C.header('', key)}
+
+<main id="top">
+${body}
+</main>
+
+${C.footer('')}
+
+<script src="assets/js/main.js"></script>${file === 'index.html' ? live : ''}
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(ROOT, file), enhance(html, ''));
+  console.log('wrote ' + file);
+}
+
+// a page title block; `empty` pages have nothing else yet
+// title + lead; optional `after` (more HTML under the lead) and `art` (an image beside it all)
+const altT = (v) => ` alt="${v.en}" data-ca-alt="${v.ca}" data-es-alt="${v.es}"`;
+
+// `variant` adds page-head-<variant> to the section, for pages that place the picture differently
+function pageHead(key, lead, { after = '', art = '', variant = '' } = {}) {
+  const p = PAGES[key];
+  const text = `${tx('h1', p.title)}
+    ${lead ? tx('p', lead, ' class="lead"') : ''}${after ? '\n' + after : ''}`;
+  if (!art) return `  <section class="page-head wrap">
+    ${text}
+  </section>`;
+  return `  <section class="page-head page-head-art${variant ? ' page-head-' + variant : ''} wrap">
+    <div class="page-head-text">
+    ${text}
+    </div>
+    ${art}
+  </section>`;
+}
+
+// home, section 1 (map): welcome title and text
+const welcomeTitle = `${tx('span', t(
+        'L’Associació Amics de la Natura -el Xop- us dóna la benvinguda a la Residència d’artistes Les Vaqueres.',
+        'La Asociación Amigos de la Naturaleza -el Xop- os da la bienvenida a la Residencia de artistas Les Vaqueres.',
+        'The Amics de la Natura association -el Xop- welcomes you to Les Vaqueres artist residency.'
+      ), ' class="welcome-title-main"')}
+      ${tx('span', t(
+        'Un refugi a l’Horta per escoltar, crear i ser.',
+        'Un refugio en la Huerta para escuchar, crear y ser.',
+        'A refuge in the Horta to listen, create and be.'
+      ))}`;
+const welcomeText = `${tx('p', t(
+          'Vivim en un món que va massa de pressa. A vegades, l’únic que necessitem per acabar aquell llibre, preparar un gran projecte, estudiar sense interrupcions o simplement retrobar-nos amb nosaltres mateixos és temps i silenci.',
+          'Vivimos en un mundo que va demasiado deprisa. A veces, lo único que necesitamos para terminar ese libro, preparar un gran proyecto, estudiar sin interrupciones o simplemente reencontrarnos con nosotros mismos es tiempo y silencio.',
+          'We live in a world that moves too fast. Sometimes all we need to finish that book, prepare a big project, study without interruptions or simply find ourselves again is time and silence.'
+        ))}
+        ${tx('p', t(
+          'Des de l’Associació d’Amics de la Natura, obrim les portes d’un espai pensat per a la concentració i el benestar en plena natura. Cinc apartaments independents acollidors (un d’ells totalment accessible) enmig del paisatge tranquil de l’Horta de Lleida, on la llum de ponent i el ritme de la terra marquen el compàs.',
+          'Desde la Asociación de Amigos de la Naturaleza, abrimos las puertas de un espacio pensado para la concentración y el bienestar en plena naturaleza. Cinco apartamentos independientes y acogedores (uno de ellos totalmente accesible) en medio del paisaje tranquilo de la Huerta de Lleida, donde la luz del poniente y el ritmo de la tierra marcan el compás.',
+          'The Amics de la Natura association opens the doors of a place made for focus and wellbeing in the middle of nature. Five cosy, self-contained apartments (one of them fully accessible) in the quiet landscape of the Horta de Lleida, where the western light and the rhythm of the land keep time.'
+        ))}
+        ${tx('p', t(
+          'Tant se val si ets artista buscant inspiració, si prepares oposicions, si escrius les primeres pàgines d’una història o si només necessites uns dies de calma i desconnexió. Aquest és el teu lloc.',
+          'Da igual si eres artista en busca de inspiración, si preparas oposiciones, si escribes las primeras páginas de una historia o si solo necesitas unos días de calma y desconexión. Este es tu lugar.',
+          'Whether you are an artist looking for inspiration, studying for exams, writing the first pages of a story or simply need a few days of calm and disconnection, this is your place.'
+        ))}
+        ${tx('p', t(
+          'Un espai de repòs. Un respir per a la teva ment. Un espai on la natura t’acompanya.',
+          'Un espacio de reposo. Un respiro para tu mente. Un espacio donde la naturaleza te acompaña.',
+          'A place to rest. A breather for your mind. A place where nature keeps you company.'
+        ))}`;
+
+// home, section 2 (garden): title on the photo, two text panels, two tree cards
+const gardenTitle = `${tx('span', t(
+        'Benvinguts al nostre refugi de reflexió i creació.',
+        'Bienvenidos a nuestro refugio de reflexión y creación.',
+        'Welcome to our refuge for reflection and creation.'
+      ), ' class="welcome-title-main"')}
+      <span class="welcome-title-trio">${tx('span', t('Els xiprers donen la benvinguda.', 'Los cipreses dan la bienvenida.', 'The cypresses welcome you.'))} ${tx('span', t('El Xop mira.', 'El Xop mira.', 'The Poplar watches.'))} ${tx('span', t('La Figuera acull.', 'La Higuera acoge.', 'The Fig Tree shelters.'))}</span>`;
+
+const gardenPanel1 = `${tx('p', t(
+          'Com en les velles vies medievals, la benvinguda a <strong>Les Vaqueres</strong> la marquen els xiprers. Tres de junts a l’arribada i un quart una mica més enllà, igual d’alt, que reforcen el símbol ancestral de benvinguda i d’hospitalitat: la promesa d’un sostre de pau, un plat a taula i un recer segur per al viatge.',
+          'Como en las viejas vías medievales, la bienvenida a <strong>Les Vaqueres</strong> la marcan los cipreses. Tres juntos a la llegada y un cuarto un poco más allá, igual de alto, que refuerzan el símbolo ancestral de bienvenida y de hospitalidad: la promesa de un techo de paz, un plato en la mesa y un refugio seguro para el viaje.',
+          'As on the old medieval roads, the cypresses mark the welcome to <strong>Les Vaqueres</strong>. Three together on arrival and a fourth a little further on, just as tall, reinforcing the ancient symbol of welcome and hospitality: the promise of a peaceful roof, a plate at the table and a safe shelter for the journey.'
+        ))}
+        ${tx('p', t(
+          'Amunt s’alça el nostre <strong>Xop Savi</strong>: no pas el més alt, sinó el més gran i vell de Catalunya, mesurat al seu tronc a metro trenta-cinc del terra, com va constatar el propi Martí Boada. És el patriarca de l’Horta, el guaita silenciós i savi que custodia la pau d’aquest espai.',
+          'Arriba se alza nuestro <strong>Chopo Sabio</strong>: no el más alto, sino el más grande y viejo de Cataluña, medido en su tronco a metro treinta y cinco del suelo, como constató el propio Martí Boada. Es el patriarca de la Huerta, el vigía silencioso y sabio que custodia la paz de este espacio.',
+          'Further up rises our <strong>Wise Poplar</strong>: not the tallest, but the largest and oldest in Catalonia, measured at its trunk one metre thirty-five above the ground, as Martí Boada himself confirmed. It is the patriarch of the Horta, the silent, wise lookout that guards the peace of this place.'
+        ))}`;
+
+// one tree card: bold lead, short line, picture, closing line
+function gardenCard({ lead, line, foot, img }) {
+  return `<article class="garden-card">
+            <p class="garden-card-head">${tx('strong', lead)} ${tx('span', line)}</p>
+            <img src="${img.src}" width="${img.w}" height="${img.h}" alt="" loading="lazy" decoding="async">
+            ${tx('p', foot, ' class="garden-card-foot"')}
+          </article>`;
+}
+
+const gardenPanel2 = `${tx('p', t(
+          'A redós de la casa, ens espera la <strong>figuera centenària</strong>. Si el xop protegeix amb la seva grandària i memòria, la figuera acull des de la proximitat: amb el seu banc llarg i la porta oberta a la cuina compartida, ofereix l’ombra íntima on les converses flueixen i el temps es deté.',
+          'Al abrigo de la casa nos espera la <strong>higuera centenaria</strong>. Si el chopo protege con su grandeza y su memoria, la higuera acoge desde la cercanía: con su banco largo y la puerta abierta a la cocina compartida, ofrece la sombra íntima donde las conversaciones fluyen y el tiempo se detiene.',
+          'In the shelter of the house, the <strong>hundred-year-old fig tree</strong> awaits us. If the poplar protects with its size and memory, the fig tree welcomes from up close: with its long bench and the door open to the shared kitchen, it offers the intimate shade where conversations flow and time stands still.'
+        ))}
+        ${tx('p', t(
+          'El xop i la figuera són dues actituds que es complementen davant del món.',
+          'El chopo y la higuera son dos actitudes que se complementan ante el mundo.',
+          'The poplar and the fig tree are two attitudes towards the world that complement each other.'
+        ), ' class="garden-accent"')}
+        <div class="garden-cards">
+          ${gardenCard({
+            lead: t('El xop és vertical,', 'El chopo es vertical,', 'The poplar is vertical:'),
+            line: t('s’alça, vigila, connecta amb el cel.', 'se alza, vigila, conecta con el cielo.', 'it rises, keeps watch, connects with the sky.'),
+            foot: t('Indicador d’aigua, de vida.', 'Indicador de agua, de vida.', 'A sign of water, of life.'),
+            img: { src: 'assets/images/welcome/cypress.png', w: 110, h: 420 },
+          })}
+          ${gardenCard({
+            lead: t('La figuera és horitzontal,', 'La higuera es horizontal,', 'The fig tree is horizontal:'),
+            line: t('obre els braços, fa ombra, convida a seure.', 'abre los brazos, da sombra, invita a sentarse.', 'it opens its arms, gives shade, invites you to sit.'),
+            foot: t('Símbol de fertilitat, abundància i saviesa.', 'Símbolo de fertilidad, abundancia y sabiduría.', 'A symbol of fertility, abundance and wisdom.'),
+            img: { src: 'assets/images/welcome/fig-tree-round.webp', w: 1197, h: 887 },
+          })}
+        </div>
+        ${tx('p', t(
+          'Hi ha continuïtat.<br>Es complementen. És gairebé un relat.',
+          'Hay continuidad.<br>Se complementan. Es casi un relato.',
+          'There is continuity.<br>They complement each other. It is almost a story.'
+        ), ' class="garden-accent garden-close"')}`;
+
+page({
+  file: 'index.html',
+  key: null,
+  bodyClass: 'home',
+  title: 'El Xop · Les Vaqueres',
+  desc: "El Xop, Les Vaqueres: residència d'artistes, l'entorn, museu i arxiu a l'Horta de Lleida.",
+  body: `  <h1 class="visually-hidden">El Xop · Les Vaqueres</h1>
+  <section class="hero hero-home wrap">
+    <div class="hero-grid">
+      <img class="hero-logo hero-logo-vaqueres" src="assets/images/hero/les-vaqueres-logo.png" width="469" height="469" alt="Les Vaqueres">
+      <img class="hero-logo hero-logo-xop" src="assets/images/hero/el-xop-logo.png" width="553" height="425" alt="El Xop · Associació Amics de la Natura">
+      <img class="hero-map" src="assets/images/hero/horta-de-lleida-map.jpg" width="958" height="603" alt="Horta de Lleida" fetchpriority="high" decoding="async">
+    </div>
+    <a class="scroll-cue" href="#more">
+      ${tx('span', t("Desplaça't per saber-ne més", 'Desplázate para saber más', 'Scroll to learn more'))}
+      <svg aria-hidden="true" viewBox="0 0 16 16" width="36" height="36"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <section class="welcome" id="more" aria-labelledby="welcome-title">
+    <h2 class="welcome-title wrap" id="welcome-title">
+      ${welcomeTitle}
+    </h2>
+    <div class="welcome-map wrap">
+      <img src="assets/images/welcome/les-vaqueres-map.webp" width="505" height="710" alt="Illustrated map of Les Vaqueres, with the cypresses, the poplar and the fig tree" loading="lazy" decoding="async"${aria(t(
+        'Plànol il·lustrat de Les Vaqueres, amb els xiprers, el xop i la figuera',
+        'Plano ilustrado de Les Vaqueres, con los cipreses, el chopo y la higuera',
+        'Illustrated map of Les Vaqueres, with the cypresses, the poplar and the fig tree'
+      ))}>
+      <div class="welcome-text">
+        ${welcomeText}
+      </div>
+    </div>
+  </section>
+
+  <section class="welcome welcome-garden" aria-labelledby="garden-title">
+    <div class="garden-scene">
+      <img class="garden-bg" src="assets/images/welcome/garden-bench.webp" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      <div class="wrap">
+        <h2 class="welcome-title garden-title" id="garden-title">
+          ${gardenTitle}
+        </h2>
+        <div class="garden-grid">
+          <div class="garden-panel">
+            ${gardenPanel1}
+          </div>
+          <div class="garden-panel">
+            ${gardenPanel2}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+`,
+});
+
+page({
+  file: PAGES.residencia.href, key: 'residencia',
+  title: "Residència d'artistes · El Xop", desc: "Residència d'artistes a El Xop, Les Vaqueres.",
+  body: pageHead('residencia'), bodyClass: 'is-empty',
+});
+
+page({
+  file: PAGES.vaqueres.href, key: 'vaqueres',
+  title: 'Les Vaqueres · El Xop', desc: 'Les Vaqueres, El Xop.',
+  body: pageHead('vaqueres'), bodyClass: 'is-empty',
+});
+
+
+page({
+  file: PAGES.fruits.href, key: 'fruits',
+  title: 'Fruits de la tardor · El Xop', desc: "Els fruits de la tardor a El Xop: els seus racons, arbres i herbes.",
+  body: pageHead('fruits', t(
+    "Un jardí tranquil per passejar, seure i mirar. Herbes, arbres fruiters, aigua i racons on aturar-se una estona.",
+    "Un jardín tranquilo para pasear, sentarse y mirar. Hierbas, árboles frutales, agua y rincones donde detenerse un rato.",
+    "A quiet garden to walk in, sit in and look around. Herbs, fruit trees, water, and corners to stop in for a while."
+  ), {
+    after: partial('fruits-de-la-tardor-nav.html'),
+    // drawn by scripts/make-carving.js
+    art: '<img class="head-art" src="assets/images/jardi/garden-carving.svg" width="600" height="720" alt="" decoding="async">',
+  }) + '\n\n' + partial('fruits-de-la-tardor.html'),
+});
+
+// article page laid out like the Museu (contents list + sections)
+page({
+  file: PAGES.herbes.href, key: 'herbes',
+  title: 'Racó d’herbes · El Xop', desc: "El Racó d'herbes de El Xop: un passeig pel jardí en quatre racons, les arcades aromàtiques i altres llocs on aturar-se.",
+  body: pageHead('herbes', t(
+    "Un passeig cap endins: quatre racons, unes arcades aromàtiques i molts llocs on aturar-se, respirar i estar present.",
+    "Un paseo hacia dentro: cuatro rincones, unos arcos aromáticos y muchos lugares donde detenerse, respirar y estar presente.",
+    "A walk inwards: four corners, scented archways and many places to stop, breathe and be present."
+  ), {
+    after: partial('raco-dherbes-nav.html'),
+    // illustrated map of El Xop's grounds; sits beside the contents list, like the Museu's framed photo
+    // (the garden sign photo is in the first section, "Un passeig cap endins")
+    variant: 'beside-nav',
+    art: `<img class="head-art" src="assets/images/herbes/el-xop-garden-map.jpg" width="860" height="1013" decoding="async"${altT(t(
+      "Plànol il·lustrat de El Xop: el Racó d'herbes, el Passeig dels Plataners, l'Hort dels Sentits, el Passeig de roses i el Camp de pruneres",
+      "Plano ilustrado de El Xop: el Racó d'herbes, el Passeig dels Plataners, el Hort dels Sentits, el Passeig de roses y el Camp de pruneres",
+      "Illustrated map of El Xop: the Racó d'herbes, the plane-tree walk, the garden of the senses, the rose walk and the plum orchard"
+    ))}>`,
+  }) + '\n\n' + partial('raco-dherbes.html'),
+});
+
+// the old Jardí terapèutic address now forwards to Fruits de la tardor
+fs.writeFileSync(path.join(ROOT, 'jardi-terapeutic.html'), `<!doctype html>
+<meta charset="utf-8">
+<title>Fruits de la tardor · El Xop</title>
+<meta http-equiv="refresh" content="0; url=${PAGES.fruits.href}">
+<link rel="canonical" href="${PAGES.fruits.href}">
+<a href="${PAGES.fruits.href}">Fruits de la tardor</a>
+`);
+console.log('wrote jardi-terapeutic.html (redirect)');
+
+page({
+  file: PAGES.museu.href, key: 'museu',
+  title: 'Museu · El Xop', desc: "El museu de les Vaqueres: eines, fotografies i records d'una família de l'Horta de Lleida.",
+  body: pageHead('museu', t(
+    "Eines, fotografies i records d'una família de l'Horta: la vida a les Vaqueres, de l'autosuficiència a l'agricultura per vendre.",
+    "Herramientas, fotografías y recuerdos de una familia de la Huerta: la vida en Les Vaqueres, de la autosuficiencia a la agricultura para vender.",
+    "Tools, photographs and keepsakes from a family of the Horta: life at Les Vaqueres, from self-sufficiency to farming for the market."
+  ), {
+    after: partial('museu-nav.html'),
+    // the framed photo from the museum, straightened; sits beside the contents list
+    variant: 'beside-nav',
+    art: `<img class="head-art" src="assets/images/museum/framed-family-photo.jpg" width="1400" height="997" decoding="async"${altT(t(
+      "Fotografia antiga emmarcada: dos homes amb un cavall davant de la casa",
+      "Fotografía antigua enmarcada: dos hombres con un caballo delante de la casa",
+      "Old framed photograph: two men with a horse in front of the farmhouse"
+    ))}>`,
+  }) + '\n\n' + partial('museu.html'),
+});
+
+
+page({
+  file: PAGES.bibliografia.href, key: 'bibliografia',
+  title: 'Bibliografia · El Xop', desc: 'Els llibres fets a mà de El Xop, transcrits sencers.',
+  body: `${pageHead('bibliografia', t(
+    "A El Xop hi ha uns llibres fets a mà que expliquen els seus racons: el cel del mirador, els símbols del laberint, la història dels laberints i el Camí de Sant Jaume. Aquí els pots llegir sencers.",
+    "En El Xop hay unos libros hechos a mano que explican sus rincones: el cielo del mirador, los símbolos del laberinto, la historia de los laberintos y el Camino de Santiago. Aquí puedes leerlos enteros.",
+    "At El Xop there are hand-made books that explain its corners: the sky from the viewpoint, the symbols in the labyrinth, the story of labyrinths, and the Way of St James. You can read them here in full."
+  ))}
+  <section class="books wrap">
+    <div class="book-grid">${lib.cards()}
+    </div>
+  </section>`,
+});
+
+page({
+  file: PAGES.ahir.href, key: 'ahir',
+  title: "El Xop d'ahir · El Xop", desc: "La memòria de El Xop, Les Vaqueres.",
+  body: pageHead('ahir'), bodyClass: 'is-empty',
+});

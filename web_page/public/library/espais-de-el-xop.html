@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espais de El Xop · El Xop</title>
+<meta name="description" content="A hand-drawn plan of the whole estate and a photographic walk through its corners, ending at the great black poplar that gives it its name.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- fonts load without blocking the first paint; system fonts show until they arrive -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/library.css">
+</head>
+<body class="reader" style="--book: var(--olive)">
+
+<header class="site-header">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-name">El Xop</span>
+      <span class="brand-sub">Les Vaqueres</span>
+    </a>
+
+    <p class="nav-welcome"><span data-ca="Benvinguts!" data-es="¡Bienvenidos!">Welcome!</span></p>
+
+    <button type="button" class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" data-ca-aria="Menú" data-es-aria="Menú">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-panel" id="site-nav">
+      <nav class="main-nav" aria-label="Main" data-ca-aria="Principal" data-es-aria="Principal">
+        <ul>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-projectes"><span data-ca="Els nostres projectes" data-es="Nuestros proyectos">Our Projects</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-projectes">
+              <li><a href="../residencia.html" data-ca="Residència d'artistes" data-es="Residencia de artistas">Artist residency</a></li>
+              <li><a href="../les-vaqueres.html" data-ca="Les Vaqueres" data-es="Les Vaqueres">Les Vaqueres</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-entorn"><span data-ca="L'entorn" data-es="El entorno">Surroundings</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-entorn">
+              <li><a href="../fruits-de-la-tardor.html" data-ca="Fruits de la tardor" data-es="Frutos del otoño">Autumn fruits</a></li>
+              <li><a href="../raco-dherbes.html" data-ca="Racó d’herbes" data-es="Rincón de hierbas">Herb corner</a></li>
+            </ul>
+          </li>
+          <li><a href="../museu.html" data-ca="Museu" data-es="Museo">Museum</a></li>
+          <li class="has-sub is-active">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-arxiu"><span data-ca="Arxiu" data-es="Archivo">Archive</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-arxiu">
+              <li><a href="../bibliografia.html" aria-current="page" data-ca="Bibliografia" data-es="Bibliografía">Bibliography</a></li>
+              <li><a href="../el-xop-dahir.html" data-ca="El Xop d'ahir" data-es="El Xop de ayer">El Xop in the past</a></li>
+            </ul>
+          </li>
+          <li><a href="#contacte" class="nav-contact" data-ca="Contacte" data-es="Contacto">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="lang">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-ca-aria="Idioma" data-es-aria="Idioma">
+          <span class="lang-current" aria-hidden="true"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></span>
+          <svg class="lang-chevron" aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu">
+          <li><button type="button" data-lang-set="ca" data-code="CA" aria-pressed="false" lang="ca"><svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18"><rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/></svg><span>Català</span></button></li>
+          <li><button type="button" data-lang-set="en" data-code="EN" aria-pressed="true" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button></li>
+          <li><button type="button" data-lang-set="es" data-code="ES" aria-pressed="false" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span><span>Español</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="book-hero wrap">
+    <p class="kicker" data-ca="Àlbum de fotografies" data-es="Álbum de fotografías">Photo album</p>
+    <h1 data-ca="Espais de El Xop" data-es="Espacios de El Xop">The spaces of El Xop</h1>
+    <p class="lead" data-ca="Un plànol dibuixat a mà de tota la finca i un recorregut fotogràfic pels seus racons, fins arribar al gran xop que li dóna nom." data-es="Un plano dibujado a mano de toda la finca y un recorrido fotográfico por sus rincones, hasta llegar al gran chopo que le da nombre.">A hand-drawn plan of the whole estate and a photographic walk through its corners, ending at the great black poplar that gives it its name.</p>
+    <figure class="book-cover"><img src="../assets/images/library/photos/espais-mapa.webp" width="1692" height="855" fetchpriority="high" alt="The spaces of El Xop" data-ca-alt="Espais de El Xop" data-es-alt="Espacios de El Xop"></figure>
+  </section>
+
+  <div class="book wrap">
+    <nav class="toc" aria-label="Contents" data-ca-aria="Índex" data-es-aria="Índice">
+      <details open>
+        <summary data-ca="Índex" data-es="Índice">Contents</summary>
+        <ol><li><a href="#plano"><span class="toc-n">01</span><span data-ca="El plànol" data-es="El plano">The plan</span></a></li><li><a href="#mirador"><span class="toc-n">02</span><span data-ca="Mirador del cel" data-es="Mirador del cielo">Sky viewpoint</span></a></li><li><a href="#mare-terra"><span class="toc-n">03</span><span data-ca="Laberint «Mare Terra»" data-es="Laberinto «Madre Tierra»">“Mother Earth” labyrinth</span></a></li><li><a href="#cortina"><span class="toc-n">04</span><span data-ca="Cortina d'aigua «Arc de Sant Martí»" data-es="Cortina de agua «Arco iris»">Water curtain “Rainbow”</span></a></li><li><a href="#eines"><span class="toc-n">05</span><span data-ca="Eines de les Vaqueres" data-es="Herramientas de Les Vaqueres">Tools of Les Vaqueres</span></a></li><li><a href="#raco"><span class="toc-n">06</span><span data-ca="Racó d'herbes" data-es="Racó d'herbes">Racó d'herbes</span></a></li><li><a href="#cami-vida"><span class="toc-n">07</span><span data-ca="Laberint «El camí de la vida»" data-es="Laberinto «El camino de la vida»">Labyrinth “The path of life”</span></a></li><li><a href="#aromes"><span class="toc-n">08</span><span data-ca="Punt d'aromes" data-es="Punto de aromas">Scent point</span></a></li><li><a href="#xop"><span class="toc-n">09</span><span data-ca="El xop" data-es="El chopo">The black poplar</span></a></li></ol>
+      </details>
+    </nav>
+    <article class="book-text">
+
+      <section class="chapter" id="plano">
+        <p class="chapter-n" aria-hidden="true">01</p>
+        <h2 class="chapter-title" data-ca="El plànol" data-es="El plano">The plan</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-mapa.webp" width="1692" height="855" loading="lazy" decoding="async" alt="Hand-drawn plan of the spaces of El Xop." data-ca-alt="Plànol dibuixat a mà dels espais de El Xop." data-es-alt="Plano dibujado a mano de los espacios de El Xop."><figcaption data-ca="Plànol dibuixat a mà dels espais de El Xop." data-es="Plano dibujado a mano de los espacios de El Xop.">Hand-drawn plan of the spaces of El Xop.</figcaption></figure>
+            <p data-ca="La portada de l'àlbum és un plànol acolorit de tota la finca, entre el Camí de les Vaqueres i el Camí de Grenyana, a 3 km de Lleida i a 5 km d'Alcoletge. Hi apareixen aquests espais:" data-es="La portada del álbum es un plano coloreado de toda la finca, entre el Camí de les Vaqueres y el Camí de Grenyana, a 3 km de Lleida y a 5 km de Alcoletge. Aparecen estos espacios:">The album's cover is a coloured plan of the whole estate, between the Camí de les Vaqueres and the Camí de Grenyana roads, 3 km from Lleida and 5 km from Alcoletge. These spaces are marked on it:</p>
+            <ul class="list"><li data-ca="Mirador «Mosaic del cel»" data-es="Mirador «Mosaico del cielo»">Viewpoint “Mosaic of the sky”</li><li data-ca="Museu «Eines de les Vaqueres»" data-es="Museo «Herramientas de Les Vaqueres»">Museum “Tools of Les Vaqueres”</li><li data-ca="Laberint «Mare Terra»" data-es="Laberinto «Madre Tierra»">“Mother Earth” labyrinth</li><li data-ca="Passeig dels plataners" data-es="Paseo de los plátanos">Plane-tree walk</li><li data-ca="Jardí «Racó d'herbes»" data-es="Jardín «Racó d'herbes» (rincón de hierbas)">“Racó d'herbes” herb garden</li><li data-ca="Punt d'aromes" data-es="Punto de aromas">Scent point</li><li data-ca="Hort dels sentits i hort tradicional" data-es="Huerto de los sentidos y huerto tradicional">Garden of the senses and traditional vegetable garden</li><li data-ca="Aula de natura" data-es="Aula de naturaleza">Nature classroom</li><li data-ca="El xop" data-es="El chopo">The black poplar</li><li data-ca="Galliner, porxo i camp de trèvol" data-es="Gallinero, porche y campo de trébol">Hen house, porch and clover field</li><li data-ca="Camp de caragols, camp de les pruneres i passeig dels noguers" data-es="Campo de caracoles, campo de los ciruelos y paseo de los nogales">Snail field, plum orchard and walnut walk</li><li data-ca="Parc infantil, la Torre, la casa i l'aparcament" data-es="Parque infantil, la Torre, la casa y el aparcamiento">Playground, the Torre, the house and the car park</li></ul>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="0" aria-label="Open the original page 1" data-ca-aria="Obre la pàgina original 1" data-es-aria="Abre la página original 1"><img src="../assets/images/library/pages/img-1158-sm.webp" width="760" height="516" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="mirador">
+        <p class="chapter-n" aria-hidden="true">02</p>
+        <h2 class="chapter-title" data-ca="Mirador del cel" data-es="Mirador del cielo">Sky viewpoint</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-mirador.webp" width="1521" height="1098" loading="lazy" decoding="async" alt="The sky viewpoint and its mosaic floor." data-ca-alt="El mirador del cel, amb el seu terra de mosaic." data-es-alt="El mirador del cielo, con su suelo de mosaico."><figcaption data-ca="El mirador del cel, amb el seu terra de mosaic." data-es="El mirador del cielo, con su suelo de mosaico.">The sky viewpoint and its mosaic floor.</figcaption></figure>
+            <p class="more"><a href="el-mirador-del-cel.html"><span data-ca="Llegeix el llibre del mirador" data-es="Lee el libro del mirador">Read the viewpoint book</span> <span aria-hidden="true">→</span></a></p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="1" aria-label="Open the original page 2" data-ca-aria="Obre la pàgina original 2" data-es-aria="Abre la página original 2"><img src="../assets/images/library/pages/img-1159-sm.webp" width="760" height="499" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="mare-terra">
+        <p class="chapter-n" aria-hidden="true">03</p>
+        <h2 class="chapter-title" data-ca="Laberint «Mare Terra»" data-es="Laberinto «Madre Tierra»">“Mother Earth” labyrinth</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-mare-terra.webp" width="1512" height="1098" loading="lazy" decoding="async" alt="The seven-circuit labyrinth, laid out in river stones." data-ca-alt="El laberint de set cercles, fet amb còdols." data-es-alt="El laberinto de siete círculos, hecho con cantos rodados."><figcaption data-ca="El laberint de set cercles, fet amb còdols." data-es="El laberinto de siete círculos, hecho con cantos rodados.">The seven-circuit labyrinth, laid out in river stones.</figcaption></figure>
+            <p class="more"><a href="la-mare-terra.html"><span data-ca="Llegeix el llibre dels laberints" data-es="Lee el libro de los laberintos">Read the labyrinth book</span> <span aria-hidden="true">→</span></a></p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="2" aria-label="Open the original page 3" data-ca-aria="Obre la pàgina original 3" data-es-aria="Abre la página original 3"><img src="../assets/images/library/pages/img-1160-sm.webp" width="760" height="499" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="cortina">
+        <p class="chapter-n" aria-hidden="true">04</p>
+        <h2 class="chapter-title" data-ca="Cortina d'aigua «Arc de Sant Martí»" data-es="Cortina de agua «Arco iris»">Water curtain “Rainbow”</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-cortina.webp" width="1575" height="1134" loading="lazy" decoding="async" alt="The water curtain among the willows." data-ca-alt="La cortina d'aigua entre els salzes." data-es-alt="La cortina de agua entre los sauces."><figcaption data-ca="La cortina d'aigua entre els salzes." data-es="La cortina de agua entre los sauces.">The water curtain among the willows.</figcaption></figure>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="3" aria-label="Open the original page 4" data-ca-aria="Obre la pàgina original 4" data-es-aria="Abre la página original 4"><img src="../assets/images/library/pages/img-1161-sm.webp" width="760" height="509" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="eines">
+        <p class="chapter-n" aria-hidden="true">05</p>
+        <h2 class="chapter-title" data-ca="Eines de les Vaqueres" data-es="Herramientas de Les Vaqueres">Tools of Les Vaqueres</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-eines.webp" width="1512" height="1103" loading="lazy" decoding="async" alt="The museum of old farm tools." data-ca-alt="El museu d'eines antigues del camp." data-es-alt="El museo de herramientas antiguas del campo."><figcaption data-ca="El museu d'eines antigues del camp." data-es="El museo de herramientas antiguas del campo.">The museum of old farm tools.</figcaption></figure>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="4" aria-label="Open the original page 5" data-ca-aria="Obre la pàgina original 5" data-es-aria="Abre la página original 5"><img src="../assets/images/library/pages/img-1162-sm.webp" width="760" height="501" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="raco">
+        <p class="chapter-n" aria-hidden="true">06</p>
+        <h2 class="chapter-title" data-ca="Racó d'herbes" data-es="Racó d'herbes">Racó d'herbes</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-raco.webp" width="1512" height="1121" loading="lazy" decoding="async" alt="The wrought-iron gate into the herb garden." data-ca-alt="La porta de ferro forjat del jardí d'herbes." data-es-alt="La puerta de hierro forjado del jardín de hierbas."><figcaption data-ca="La porta de ferro forjat del jardí d'herbes." data-es="La puerta de hierro forjado del jardín de hierbas.">The wrought-iron gate into the herb garden.</figcaption></figure>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="5" aria-label="Open the original page 6" data-ca-aria="Obre la pàgina original 6" data-es-aria="Abre la página original 6"><img src="../assets/images/library/pages/img-1163-sm.webp" width="760" height="509" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="cami-vida">
+        <p class="chapter-n" aria-hidden="true">07</p>
+        <h2 class="chapter-title" data-ca="Laberint «El camí de la vida»" data-es="Laberinto «El camino de la vida»">Labyrinth “The path of life”</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-cami-vida.webp" width="1557" height="1127" loading="lazy" decoding="async" alt="Stone-edged paths beneath the plane trees." data-ca-alt="Els camins de còdols sota els plataners." data-es-alt="Los caminos de cantos rodados bajo los plátanos."><figcaption data-ca="Els camins de còdols sota els plataners." data-es="Los caminos de cantos rodados bajo los plátanos.">Stone-edged paths beneath the plane trees.</figcaption></figure>
+            <p class="more"><a href="el-passeig-dels-plataners.html"><span data-ca="Llegeix el llibre del passeig" data-es="Lee el libro del paseo">Read the plane-tree walk book</span> <span aria-hidden="true">→</span></a></p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="6" aria-label="Open the original page 7" data-ca-aria="Obre la pàgina original 7" data-es-aria="Abre la página original 7"><img src="../assets/images/library/pages/img-1164-sm.webp" width="760" height="512" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="aromes">
+        <p class="chapter-n" aria-hidden="true">08</p>
+        <h2 class="chapter-title" data-ca="Punt d'aromes" data-es="Punto de aromas">Scent point</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/espais-aromes.webp" width="1512" height="1096" loading="lazy" decoding="async" alt="The scent point." data-ca-alt="El punt d'aromes." data-es-alt="El punto de aromas."><figcaption data-ca="El punt d'aromes." data-es="El punto de aromas.">The scent point.</figcaption></figure>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="7" aria-label="Open the original page 8" data-ca-aria="Obre la pàgina original 8" data-es-aria="Abre la página original 8"><img src="../assets/images/library/pages/img-1165-sm.webp" width="760" height="497" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="xop">
+        <p class="chapter-n" aria-hidden="true">09</p>
+        <h2 class="chapter-title" data-ca="El xop" data-es="El chopo">The black poplar</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig fig-tall"><img src="../assets/images/library/photos/espais-xop.webp" width="657" height="1158" loading="lazy" decoding="async" alt="The black poplar, a monumental tree." data-ca-alt="El xop, un arbre monumental." data-es-alt="El chopo, un árbol monumental."><figcaption data-ca="El xop, un arbre monumental." data-es="El chopo, un árbol monumental.">The black poplar, a monumental tree.</figcaption></figure>
+            <p data-ca="El xop (&lt;i&gt;Populus nigra&lt;/i&gt;) és un arbre indicador de l'existència d'aigua i la seva altura ens l'anuncia des de lluny." data-es="El chopo negro (&lt;i&gt;Populus nigra&lt;/i&gt;) es un árbol que indica la existencia de agua, y su altura nos la anuncia desde lejos.">The black poplar (<i>Populus nigra</i>) is a tree that signals water nearby, and its height announces it from far away.</p>
+            <p data-ca="El nostre xop està situat a la vora d'un braçal, en un indret on conflueixen les finques de quatre propietaris; aquest fet propicia que sigui un lloc de trobada entre aquests propietaris a l'hora de regar. Per altra banda, els braçals i les sèquies són la base de l'existència de l'Horta, aquesta Horta on nosaltres ens trobem i que tant reivindiquem." data-es="Nuestro chopo está a la orilla de una acequia secundaria, en un punto donde confluyen las fincas de cuatro propietarios; por eso es un lugar de encuentro entre ellos a la hora de regar. Además, las acequias son la base de la existencia de la Huerta, esta Huerta en la que nos encontramos y que tanto reivindicamos.">Our poplar stands beside an irrigation channel, at the point where four owners' fields meet, which makes it a meeting place for them when it is time to water. Channels and ditches are, after all, what the Horta exists on: the irrigated farmland where we are, and which we stand up for.</p>
+            <p data-ca="A més, aquest xop no és un xop més: és un arbre monumental, el segon xop més gran de Catalunya, que té al seu voltant un ecosistema propi, amb una flora i una fauna concretes i diferents." data-es="Además, este chopo no es uno más: es un árbol monumental, el segundo chopo más grande de Cataluña, y tiene a su alrededor un ecosistema propio, con una flora y una fauna concretas y diferentes.">And this is no ordinary poplar: it is a monumental tree, the second-largest black poplar in Catalonia, with its own ecosystem around it, a particular flora and fauna of its own.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="8" aria-label="Open the original page 9" data-ca-aria="Obre la pàgina original 9" data-es-aria="Abre la página original 9"><img src="../assets/images/library/pages/img-1166-sm.webp" width="760" height="520" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <footer class="book-end">
+        <p class="note" data-ca="Transcrit del llibre original que es conserva a El Xop (9 pàgines). El text original és en català; les versions en castellà i anglès són traduccions." data-es="Transcrito del libro original que se conserva en El Xop (9 páginas). El texto original está en catalán; las versiones en castellano e inglés son traducciones.">Transcribed from the original printed book kept at El Xop (9 pages). The original text is in Catalan; the Spanish and English versions are translations.</p>
+        <a class="next-book" href="el-mirador-del-cel.html">
+          <span class="next-label" data-ca="Llibre següent" data-es="Libro siguiente">Next book</span>
+          <span class="next-title" data-ca="El Mirador del Cel" data-es="El Mirador del Cielo">The Sky Viewpoint</span>
+        </a>
+      </footer>
+    </article>
+  </div>
+</main>
+
+<dialog class="viewer" aria-label="Original page" data-ca-aria="Pàgina original" data-es-aria="Página original">
+  <div class="viewer-bar">
+    <span class="viewer-count" aria-live="polite"></span>
+    <button type="button" class="viewer-prev" aria-label="Previous" data-ca-aria="Anterior" data-es-aria="Anterior">←</button>
+    <button type="button" class="viewer-next" aria-label="Next" data-ca-aria="Següent" data-es-aria="Siguiente">→</button>
+    <button type="button" class="viewer-close" aria-label="Close" data-ca-aria="Tanca" data-es-aria="Cerrar">✕</button>
+  </div>
+  <img class="viewer-img" alt="">
+</dialog>
+
+<footer class="site-footer" id="contacte">
+  <div class="wrap footer-grid">
+    <div class="footer-contact">
+      <h2 class="footer-title" data-ca="Contacte" data-es="Contacto">Contacts</h2>
+      <ul class="contact-list">
+        <li><strong>El Xop · Les Vaqueres</strong></li>
+        <li><a class="ci" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Horta de Lleida, El Xop</span></a></li>
+        <li><a class="ci" href="tel:+34695551385"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/></svg><span>+34 695 551 385</span></a></li>
+        <li><a class="ci" href="mailto:elxop@yahoo.es"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>elxop@yahoo.es</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-ig"><a class="ig-device" href="https://www.instagram.com/elxop.lesvaqueres/" target="_blank" rel="noopener" aria-label="El Xop on Instagram" data-ca-aria="El Xop a Instagram" data-es-aria="El Xop en Instagram">
+        <span class="ig-screen">
+          <span class="ig-bar"><span>elxop.lesvaqueres</span><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></span>
+          <span class="ig-profile">
+            <img class="ig-avatar" src="../assets/images/instagram/avatar.jpg" width="150" height="150" alt="" loading="lazy" decoding="async">
+            <span class="ig-names"><span class="ig-name">El Xop · Les Vaqueres</span><span class="ig-user">@elxop.lesvaqueres</span></span>
+          </span>
+          <span class="ig-follow" data-ca="Segueix-nos" data-es="Síguenos">Follow</span>
+          <span class="ig-grid"><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-1.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-1.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-2.avif 467w" sizes="120px"><img width="467" height="467" src="../assets/images/instagram/post-2.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-3.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-3.jpg" alt="" loading="lazy" decoding="async"></picture></span></span>
+          <span class="ig-more" data-ca="Veure més a Instagram →" data-es="Ver más en Instagram →">See more on Instagram →</span>
+        </span>
+      </a></div>
+    <div class="map footer-map">
+        <iframe src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing where El Xop is" data-ca-aria="Mapa de situació de El Xop" data-es-aria="Mapa de situación de El Xop" title="Map showing where El Xop is"></iframe>
+        <a class="map-link" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener" data-ca="Obre a Google Maps" data-es="Abrir en Google Maps">Open in Google Maps</a>
+      </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 El Xop · Les Vaqueres. <span data-ca="Tots els drets reservats." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+    <a href="#top" data-ca="Torna a dalt" data-es="Volver arriba">Back to top</a>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to top" data-ca-aria="Torna a dalt" data-es-aria="Volver arriba"><svg aria-hidden="true" viewBox="0 0 16 16" width="18" height="18"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script>window.BOOK_PAGES = ["img-1158","img-1159","img-1160","img-1161","img-1162","img-1163","img-1164","img-1165","img-1166"];</script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/reader.js"></script>
+</body>
+</html>

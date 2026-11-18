@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Mirador del Cel · El Xop</title>
+<meta name="description" content="A mosaic floor for reading the sky: constellations, sunrise at the solstices, the rainbow, the Milky Way, the winds and the phases of the moon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- fonts load without blocking the first paint; system fonts show until they arrive -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/library.css">
+</head>
+<body class="reader" style="--book: var(--sky)">
+
+<header class="site-header">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-name">El Xop</span>
+      <span class="brand-sub">Les Vaqueres</span>
+    </a>
+
+    <p class="nav-welcome"><span data-ca="Benvinguts!" data-es="¡Bienvenidos!">Welcome!</span></p>
+
+    <button type="button" class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" data-ca-aria="Menú" data-es-aria="Menú">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-panel" id="site-nav">
+      <nav class="main-nav" aria-label="Main" data-ca-aria="Principal" data-es-aria="Principal">
+        <ul>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-projectes"><span data-ca="Els nostres projectes" data-es="Nuestros proyectos">Our Projects</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-projectes">
+              <li><a href="../residencia.html" data-ca="Residència d'artistes" data-es="Residencia de artistas">Artist residency</a></li>
+              <li><a href="../les-vaqueres.html" data-ca="Les Vaqueres" data-es="Les Vaqueres">Les Vaqueres</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-entorn"><span data-ca="L'entorn" data-es="El entorno">Surroundings</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-entorn">
+              <li><a href="../fruits-de-la-tardor.html" data-ca="Fruits de la tardor" data-es="Frutos del otoño">Autumn fruits</a></li>
+              <li><a href="../raco-dherbes.html" data-ca="Racó d’herbes" data-es="Rincón de hierbas">Herb corner</a></li>
+            </ul>
+          </li>
+          <li><a href="../museu.html" data-ca="Museu" data-es="Museo">Museum</a></li>
+          <li class="has-sub is-active">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-arxiu"><span data-ca="Arxiu" data-es="Archivo">Archive</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-arxiu">
+              <li><a href="../bibliografia.html" aria-current="page" data-ca="Bibliografia" data-es="Bibliografía">Bibliography</a></li>
+              <li><a href="../el-xop-dahir.html" data-ca="El Xop d'ahir" data-es="El Xop de ayer">El Xop in the past</a></li>
+            </ul>
+          </li>
+          <li><a href="#contacte" class="nav-contact" data-ca="Contacte" data-es="Contacto">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="lang">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-ca-aria="Idioma" data-es-aria="Idioma">
+          <span class="lang-current" aria-hidden="true"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></span>
+          <svg class="lang-chevron" aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu">
+          <li><button type="button" data-lang-set="ca" data-code="CA" aria-pressed="false" lang="ca"><svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18"><rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/></svg><span>Català</span></button></li>
+          <li><button type="button" data-lang-set="en" data-code="EN" aria-pressed="true" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button></li>
+          <li><button type="button" data-lang-set="es" data-code="ES" aria-pressed="false" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span><span>Español</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="book-hero wrap">
+    <p class="kicker" data-ca="Astronomia als peus" data-es="Astronomía a los pies">Astronomy underfoot</p>
+    <h1 data-ca="El Mirador del Cel" data-es="El Mirador del Cielo">The Sky Viewpoint</h1>
+    <p class="lead" data-ca="Un terra de mosaic per llegir el cel: constel·lacions, la sortida del sol als solsticis, l'arc de Sant Martí, la Via Làctia, els vents i les fases de la lluna." data-es="Un suelo de mosaico para leer el cielo: constelaciones, la salida del sol en los solsticios, el arco iris, la Vía Láctea, los vientos y las fases de la luna.">A mosaic floor for reading the sky: constellations, sunrise at the solstices, the rainbow, the Milky Way, the winds and the phases of the moon.</p>
+    <figure class="book-cover"><img src="../assets/images/library/photos/mirador-cover.webp" width="1512" height="1684" fetchpriority="high" alt="The Sky Viewpoint" data-ca-alt="El Mirador del Cel" data-es-alt="El Mirador del Cielo"></figure>
+  </section>
+
+  <div class="book wrap">
+    <nav class="toc" aria-label="Contents" data-ca-aria="Índex" data-es-aria="Índice">
+      <details open>
+        <summary data-ca="Índex" data-es="Índice">Contents</summary>
+        <ol><li><a href="#mirador"><span class="toc-n">01</span><span data-ca="El mirador" data-es="El mirador">The viewpoint</span></a></li><li><a href="#constellacions"><span class="toc-n">02</span><span data-ca="Constel·lacions de tot l'any" data-es="Constelaciones de todo el año">Constellations all year round</span></a></li><li><a href="#punt-de-mira"><span class="toc-n">03</span><span data-ca="Punt de mira" data-es="Punto de mira">Sighting point</span></a></li><li><a href="#arc"><span class="toc-n">04</span><span data-ca="L'arc de Sant Martí" data-es="El arco iris">The rainbow</span></a></li><li><a href="#cortina"><span class="toc-n">05</span><span data-ca="Cortina d'aigua" data-es="Cortina de agua">The water curtain</span></a></li><li><a href="#via-lactia"><span class="toc-n">06</span><span data-ca="La Via Làctia" data-es="La Vía Láctea">The Milky Way</span></a></li><li><a href="#rosa-dels-vents"><span class="toc-n">07</span><span data-ca="La rosa dels vents" data-es="La rosa de los vientos">The compass rose</span></a></li><li><a href="#vent"><span class="toc-n">08</span><span data-ca="Els moviments del vent" data-es="Los movimientos del viento">How the wind moves</span></a></li><li><a href="#lluna"><span class="toc-n">09</span><span data-ca="Fases de la lluna" data-es="Fases de la luna">Phases of the moon</span></a></li></ol>
+      </details>
+    </nav>
+    <article class="book-text">
+
+      <section class="chapter" id="mirador">
+        <p class="chapter-n" aria-hidden="true">01</p>
+        <h2 class="chapter-title" data-ca="El mirador" data-es="El mirador">The viewpoint</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/mirador-cover.webp" width="1512" height="1684" loading="lazy" decoding="async" alt="The viewpoint: a mosaic floor of coloured circles and star points." data-ca-alt="El mirador: un terra de mosaic amb cercles de colors i punts d'estrelles." data-es-alt="El mirador: un suelo de mosaico con círculos de colores y puntos de estrellas."><figcaption data-ca="El mirador: un terra de mosaic amb cercles de colors i punts d'estrelles." data-es="El mirador: un suelo de mosaico con círculos de colores y puntos de estrellas.">The viewpoint: a mosaic floor of coloured circles and star points.</figcaption></figure>
+            <p data-ca="El mirador és una terrassa amb el terra fet de mosaic. Cada dibuix del terra explica alguna cosa del cel que tenim al damunt. Aquest llibre recorre els dibuixos un per un." data-es="El mirador es una terraza con el suelo de mosaico. Cada dibujo del suelo explica algo del cielo que tenemos encima. Este libro recorre los dibujos uno a uno.">The viewpoint is a terrace with a mosaic floor. Each picture set into the floor explains something about the sky above it. This book walks through them one by one.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="0" aria-label="Open the original page 1" data-ca-aria="Obre la pàgina original 1" data-es-aria="Abre la página original 1"><img src="../assets/images/library/pages/img-1110-sm.webp" width="760" height="1062" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="constellacions">
+        <p class="chapter-n" aria-hidden="true">02</p>
+        <h2 class="chapter-title" data-ca="Constel·lacions de tot l'any" data-es="Constelaciones de todo el año">Constellations all year round</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Al mosaic hi ha les constel·lacions que es veuen tot l'any des d'aquí, les que giren al voltant del pol nord del cel i no es ponen mai:" data-es="En el mosaico están las constelaciones que se ven todo el año desde aquí, las que giran alrededor del polo norte celeste y nunca se ponen:">The mosaic shows the constellations visible from here all year round, the ones that circle the north celestial pole and never set:</p>
+            <ul class="list"><li data-ca="Cefeu" data-es="Cefeo">Cepheus</li><li data-ca="Cassiopea" data-es="Casiopea">Cassiopeia</li><li data-ca="El Drac" data-es="El Dragón">Draco, the Dragon</li><li data-ca="Óssa Menor" data-es="Osa Menor">Ursa Minor, the Little Bear</li><li data-ca="Óssa Major" data-es="Osa Mayor">Ursa Major, the Great Bear</li></ul>
+            <p data-ca="Una fletxa assenyala l'estrella Polar, a la punta de l'Óssa Menor: indica el nord." data-es="Una flecha señala la estrella Polar, en la punta de la Osa Menor: indica el norte.">An arrow points to the Pole Star at the tip of the Little Bear: it shows you where north is.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="1" aria-label="Open the original page 2" data-ca-aria="Obre la pàgina original 2" data-es-aria="Abre la página original 2"><img src="../assets/images/library/pages/img-1111-sm.webp" width="760" height="974" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="punt-de-mira">
+        <p class="chapter-n" aria-hidden="true">03</p>
+        <h2 class="chapter-title" data-ca="Punt de mira" data-es="Punto de mira">Sighting point</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/mirador-punt.webp" width="1512" height="1417" loading="lazy" decoding="async" alt="Hélène watches the sun rise." data-ca-alt="Hélène mira la sortida del sol." data-es-alt="Hélène mira la salida del sol."><figcaption data-ca="Hélène mira la sortida del sol." data-es="Hélène mira la salida del sol.">Hélène watches the sun rise.</figcaption></figure>
+            <p data-ca="Des del punt de mira, uns tubs fixos a la barana assenyalen tres direccions de l'horitzó: per on surt el sol el dia del solstici d'estiu, el dia de l'equinocci i el dia del solstici d'hivern. Si hi mires el dia just, veuràs el sol al fons del tub." data-es="Desde el punto de mira, unos tubos fijos en la barandilla señalan tres direcciones del horizonte: por dónde sale el sol el día del solsticio de verano, el del equinoccio y el del solsticio de invierno. Si miras el día exacto, verás el sol al fondo del tubo.">From the sighting point, tubes fixed to the railing aim at three places on the horizon: where the sun rises on the summer solstice, on the equinox and on the winter solstice. Look through on the right day and the sun sits at the end of the tube.</p>
+            <dl class="terms"><div><dt data-ca="Solstici d'estiu" data-es="Solsticio de verano">Summer solstice</dt><dd data-ca="el sol surt més al nord-est" data-es="el sol sale más al nordeste">the sun rises furthest north-east</dd></div><div><dt data-ca="Equinocci" data-es="Equinoccio">Equinox</dt><dd data-ca="el sol surt just per l'est" data-es="el sol sale justo por el este">the sun rises due east</dd></div><div><dt data-ca="Solstici d'hivern" data-es="Solsticio de invierno">Winter solstice</dt><dd data-ca="el sol surt més al sud-est" data-es="el sol sale más al sudeste">the sun rises furthest south-east</dd></div></dl>
+            <p class="note" data-ca="Les tres direccions surten a les fotografies del llibre; l'explicació és un resum del que mostren." data-es="Las tres direcciones aparecen en las fotografías del libro; la explicación es un resumen de lo que muestran.">The three directions are labelled in the book's photographs; the explanation above summarises what they show.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="2" aria-label="Open the original page 3" data-ca-aria="Obre la pàgina original 3" data-es-aria="Abre la página original 3"><img src="../assets/images/library/pages/img-1112-sm.webp" width="760" height="997" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="arc">
+        <p class="chapter-n" aria-hidden="true">04</p>
+        <h2 class="chapter-title" data-ca="L'arc de Sant Martí" data-es="El arco iris">The rainbow</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="L'arc de Sant Martí és la reflexió de la llum del sol sobre gotes d'aigua. El sol ha de ser a l'esquena i la pluja al davant." data-es="El arco iris es la reflexión de la luz del sol sobre gotas de agua. El sol debe estar a la espalda y la lluvia delante.">A rainbow is sunlight reflected by drops of water. The sun has to be behind you and the rain in front.</p>
+            <p data-ca="Al mosaic hi ha un cercle de colors on et pots posar dret: tu pots marcar l'hora." data-es="En el mosaico hay un círculo de colores donde te puedes poner de pie: tú puedes marcar la hora.">There is a coloured circle in the mosaic you can stand in: you can tell the time.</p>
+            <p data-ca="El llibre també mostra arcs de colors que es veuen des de l'avió o des de la muntanya, quan l'ombra cau sobre els núvols: allà l'arc es tanca i es fa un cercle sencer." data-es="El libro también muestra arcos de colores que se ven desde el avión o desde la montaña, cuando la sombra cae sobre las nubes: allí el arco se cierra y forma un círculo entero.">The book also shows rings of colour seen from a plane or a mountain top, when your shadow falls on the clouds: there the arc closes into a full circle.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="3" aria-label="Open the original page 4" data-ca-aria="Obre la pàgina original 4" data-es-aria="Abre la página original 4"><img src="../assets/images/library/pages/img-1113-sm.webp" width="760" height="998" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="cortina">
+        <p class="chapter-n" aria-hidden="true">05</p>
+        <h2 class="chapter-title" data-ca="Cortina d'aigua" data-es="Cortina de agua">The water curtain</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/mirador-cortina.webp" width="1368" height="1352" loading="lazy" decoding="async" alt="The water curtain with its rainbow." data-ca-alt="La cortina d'aigua amb l'arc de Sant Martí." data-es-alt="La cortina de agua con el arco iris."><figcaption data-ca="La cortina d'aigua amb l'arc de Sant Martí." data-es="La cortina de agua con el arco iris.">The water curtain with its rainbow.</figcaption></figure>
+            <p data-ca="La cortina d'aigua està situada a la zona de les tirolines, al final de la baixada." data-es="La cortina de agua está en la zona de las tirolinas, al final de la bajada.">The water curtain is in the zip-line area, at the bottom of the slope.</p>
+            <p data-ca="Aquesta cortina d'aigua complementa el mirador i et demostra que l'arc de Sant Martí no és un arc sinó un cercle. Tu mateix ho pots comprovar." data-es="Esta cortina de agua complementa el mirador y te demuestra que el arco iris no es un arco sino un círculo. Tú mismo lo puedes comprobar.">It completes the viewpoint and proves that a rainbow is not an arc but a circle. You can check it for yourself.</p>
+            <p data-ca="Sempre s'ha de triar un dia assolellat." data-es="Siempre hay que escoger un día soleado.">Always choose a sunny day.</p>
+            <ul class="list"><li data-ca="Si et poses davant de la cortina d'aigua al matí, tindràs davant teu un arc de Sant Martí." data-es="Si te pones delante de la cortina de agua por la mañana, tendrás un arco iris delante.">Stand in front of the water curtain in the morning and you will have a rainbow in front of you.</li><li data-ca="Si durant la tarda baixes per les tirolines, davant teu hi tindràs un arc de Sant Martí." data-es="Si por la tarde bajas por las tirolinas, tendrás un arco iris delante.">Come down the zip line in the afternoon and there will be a rainbow ahead of you.</li><li data-ca="Però si et poses sota la cortina d'aigua al migdia, quan el sol està damunt teu, tindràs un arc de Sant Martí que, en forma de cercle, es dibuixarà als teus peus i es mourà i ballarà amb tu, i només amb tu." data-es="Pero si te pones bajo la cortina de agua a mediodía, cuando el sol está encima de ti, tendrás un arco iris que, en forma de círculo, se dibujará a tus pies y se moverá y bailará contigo, y solo contigo.">But stand under the curtain at midday, with the sun right above you, and the rainbow becomes a circle drawn at your feet that moves and dances with you, and only with you.</li></ul>
+            <p data-ca="És molt interessant de veure que cada persona té el seu." data-es="Es muy interesante ver que cada persona tiene el suyo.">It is fascinating to see that every person has their own.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="4" aria-label="Open the original page 5" data-ca-aria="Obre la pàgina original 5" data-es-aria="Abre la página original 5"><img src="../assets/images/library/pages/img-1114-sm.webp" width="760" height="1077" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="via-lactia">
+        <p class="chapter-n" aria-hidden="true">06</p>
+        <h2 class="chapter-title" data-ca="La Via Làctia" data-es="La Vía Láctea">The Milky Way</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Un mosaic en espiral representa la nostra galàxia. El llibre ens situa pas a pas, de més a prop a més lluny:" data-es="Un mosaico en espiral representa nuestra galaxia. El libro nos sitúa paso a paso, de más cerca a más lejos:">A spiral mosaic shows our galaxy. The book places us step by step, from near to far:</p>
+            <ul class="list"><li data-ca="La Terra" data-es="La Tierra">The Earth</li><li data-ca="El nostre sistema solar" data-es="Nuestro sistema solar">Our solar system</li><li data-ca="El braç d'Orió, on es troba el sistema solar" data-es="El brazo de Orión, donde está el sistema solar">The Orion Arm, where the solar system sits</li><li data-ca="La Via Làctia, la nostra galàxia" data-es="La Vía Láctea, nuestra galaxia">The Milky Way, our galaxy</li><li data-ca="Milers de galàxies" data-es="Miles de galaxias">Thousands of galaxies</li><li data-ca="L'Univers" data-es="El Universo">The Universe</li></ul>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="5" aria-label="Open the original page 6" data-ca-aria="Obre la pàgina original 6" data-es-aria="Abre la página original 6"><img src="../assets/images/library/pages/img-1115-sm.webp" width="760" height="1015" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="rosa-dels-vents">
+        <p class="chapter-n" aria-hidden="true">07</p>
+        <h2 class="chapter-title" data-ca="La rosa dels vents" data-es="La rosa de los vientos">The compass rose</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Una estrella de vuit puntes al terra dóna nom als vuit vents tradicionals:" data-es="Una estrella de ocho puntas en el suelo da nombre a los ocho vientos tradicionales:">An eight-pointed star in the floor names the eight traditional winds:</p>
+            <dl class="terms"><div><dt data-ca="Tramuntana" data-es="Tramontana">Tramuntana</dt><dd data-ca="nord" data-es="norte">north</dd></div><div><dt data-ca="Gregal" data-es="Gregal">Gregal</dt><dd data-ca="nord-est" data-es="nordeste">north-east</dd></div><div><dt data-ca="Llevant" data-es="Levante">Llevant</dt><dd data-ca="est" data-es="este">east</dd></div><div><dt data-ca="Xaloc" data-es="Siroco">Xaloc</dt><dd data-ca="sud-est" data-es="sudeste">south-east</dd></div><div><dt data-ca="Migjorn" data-es="Mediodía">Migjorn</dt><dd data-ca="sud" data-es="sur">south</dd></div><div><dt data-ca="Garbí" data-es="Lebeche">Garbí</dt><dd data-ca="sud-oest" data-es="sudoeste">south-west</dd></div><div><dt data-ca="Ponent" data-es="Poniente">Ponent</dt><dd data-ca="oest" data-es="oeste">west</dd></div><div><dt data-ca="Mestral" data-es="Mistral">Mestral</dt><dd data-ca="nord-oest" data-es="noroeste">north-west</dd></div></dl>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="6" aria-label="Open the original page 7" data-ca-aria="Obre la pàgina original 7" data-es-aria="Abre la página original 7"><img src="../assets/images/library/pages/img-1116-sm.webp" width="760" height="947" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="vent">
+        <p class="chapter-n" aria-hidden="true">08</p>
+        <h2 class="chapter-title" data-ca="Els moviments del vent" data-es="Los movimientos del viento">How the wind moves</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Una espiral de pedres recorda que el vent gira. El llibre ho il·lustra amb quatre exemples:" data-es="Una espiral de piedras recuerda que el viento gira. El libro lo ilustra con cuatro ejemplos:">A spiral of stones reminds us that wind turns. The book illustrates it with four examples:</p>
+            <ul class="list"><li data-ca="Cicló i anticicló" data-es="Ciclón y anticiclón">Cyclone and anticyclone</li><li data-ca="Cap de fibló (remolí d'aigua)" data-es="Tromba marina">Waterspout</li><li data-ca="Huracà" data-es="Huracán">Hurricane</li><li data-ca="Migracions dels moixons, que pugen en espiral aprofitant l'aire calent" data-es="Migraciones de los pájaros, que suben en espiral aprovechando el aire caliente">Bird migrations, rising in spirals on warm air</li></ul>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="7" aria-label="Open the original page 8" data-ca-aria="Obre la pàgina original 8" data-es-aria="Abre la página original 8"><img src="../assets/images/library/pages/img-1117-sm.webp" width="760" height="962" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="lluna">
+        <p class="chapter-n" aria-hidden="true">09</p>
+        <h2 class="chapter-title" data-ca="Fases de la lluna" data-es="Fases de la luna">Phases of the moon</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Una filera de llunes de mosaic va de la Terra al Sol i mostra com canvia la part il·luminada de la lluna." data-es="Una fila de lunas de mosaico va de la Tierra al Sol y muestra cómo cambia la parte iluminada de la luna.">A row of mosaic moons runs from the Earth to the Sun, showing how the lit part of the moon changes.</p>
+            <blockquote class="verse"><p data-ca="Quart creixent, corns a l'orient.&lt;br&gt;Quart minvant, corns endavant." data-es="Cuarto creciente, cuernos a oriente.&lt;br&gt;Cuarto menguante, cuernos hacia delante.">Waxing quarter, horns to the east.<br>Waning quarter, horns ahead.</p><cite data-ca="Dita popular" data-es="Dicho popular">Catalan saying</cite></blockquote>
+            <dl class="terms"><div><dt data-ca="Quart creixent" data-es="Cuarto creciente">First quarter</dt><dd data-ca="La lluna creix quan la veiem a la tarda." data-es="La luna crece cuando la vemos por la tarde.">The moon is growing when we see it in the afternoon.</dd></div><div><dt data-ca="Quart minvant" data-es="Cuarto menguante">Last quarter</dt><dd data-ca="La lluna minva quan la veiem al matí." data-es="La luna mengua cuando la vemos por la mañana.">The moon is shrinking when we see it in the morning.</dd></div><div><dt data-ca="Lluna plena" data-es="Luna llena">Full moon</dt><dd data-ca="Surt per l'est. Quan fa el ple, surt abans que el sol es pongui." data-es="Sale por el este. Cuando es llena, sale antes de que se ponga el sol.">It rises in the east. When it is full, it rises before the sun has set.</dd></div></dl>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgines originals" data-es="Páginas originales">Original pages</h3><ul><li><button type="button" class="scan" data-page="8" aria-label="Open the original page 9" data-ca-aria="Obre la pàgina original 9" data-es-aria="Abre la página original 9"><img src="../assets/images/library/pages/img-1118-sm.webp" width="760" height="991" loading="lazy" decoding="async" alt=""></button></li><li><button type="button" class="scan" data-page="9" aria-label="Open the original page 10" data-ca-aria="Obre la pàgina original 10" data-es-aria="Abre la página original 10"><img src="../assets/images/library/pages/img-1119-sm.webp" width="760" height="993" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <footer class="book-end">
+        <p class="note" data-ca="Transcrit del llibre original que es conserva a El Xop (10 pàgines). El text original és en català; les versions en castellà i anglès són traduccions." data-es="Transcrito del libro original que se conserva en El Xop (10 páginas). El texto original está en catalán; las versiones en castellano e inglés son traducciones.">Transcribed from the original printed book kept at El Xop (10 pages). The original text is in Catalan; the Spanish and English versions are translations.</p>
+        <a class="next-book" href="el-passeig-dels-plataners.html">
+          <span class="next-label" data-ca="Llibre següent" data-es="Libro siguiente">Next book</span>
+          <span class="next-title" data-ca="El Passeig dels Plataners" data-es="El Paseo de los Plátanos">The Plane-Tree Walk</span>
+        </a>
+      </footer>
+    </article>
+  </div>
+</main>
+
+<dialog class="viewer" aria-label="Original page" data-ca-aria="Pàgina original" data-es-aria="Página original">
+  <div class="viewer-bar">
+    <span class="viewer-count" aria-live="polite"></span>
+    <button type="button" class="viewer-prev" aria-label="Previous" data-ca-aria="Anterior" data-es-aria="Anterior">←</button>
+    <button type="button" class="viewer-next" aria-label="Next" data-ca-aria="Següent" data-es-aria="Siguiente">→</button>
+    <button type="button" class="viewer-close" aria-label="Close" data-ca-aria="Tanca" data-es-aria="Cerrar">✕</button>
+  </div>
+  <img class="viewer-img" alt="">
+</dialog>
+
+<footer class="site-footer" id="contacte">
+  <div class="wrap footer-grid">
+    <div class="footer-contact">
+      <h2 class="footer-title" data-ca="Contacte" data-es="Contacto">Contacts</h2>
+      <ul class="contact-list">
+        <li><strong>El Xop · Les Vaqueres</strong></li>
+        <li><a class="ci" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Horta de Lleida, El Xop</span></a></li>
+        <li><a class="ci" href="tel:+34695551385"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/></svg><span>+34 695 551 385</span></a></li>
+        <li><a class="ci" href="mailto:elxop@yahoo.es"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>elxop@yahoo.es</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-ig"><a class="ig-device" href="https://www.instagram.com/elxop.lesvaqueres/" target="_blank" rel="noopener" aria-label="El Xop on Instagram" data-ca-aria="El Xop a Instagram" data-es-aria="El Xop en Instagram">
+        <span class="ig-screen">
+          <span class="ig-bar"><span>elxop.lesvaqueres</span><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></span>
+          <span class="ig-profile">
+            <img class="ig-avatar" src="../assets/images/instagram/avatar.jpg" width="150" height="150" alt="" loading="lazy" decoding="async">
+            <span class="ig-names"><span class="ig-name">El Xop · Les Vaqueres</span><span class="ig-user">@elxop.lesvaqueres</span></span>
+          </span>
+          <span class="ig-follow" data-ca="Segueix-nos" data-es="Síguenos">Follow</span>
+          <span class="ig-grid"><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-1.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-1.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-2.avif 467w" sizes="120px"><img width="467" height="467" src="../assets/images/instagram/post-2.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-3.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-3.jpg" alt="" loading="lazy" decoding="async"></picture></span></span>
+          <span class="ig-more" data-ca="Veure més a Instagram →" data-es="Ver más en Instagram →">See more on Instagram →</span>
+        </span>
+      </a></div>
+    <div class="map footer-map">
+        <iframe src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing where El Xop is" data-ca-aria="Mapa de situació de El Xop" data-es-aria="Mapa de situación de El Xop" title="Map showing where El Xop is"></iframe>
+        <a class="map-link" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener" data-ca="Obre a Google Maps" data-es="Abrir en Google Maps">Open in Google Maps</a>
+      </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 El Xop · Les Vaqueres. <span data-ca="Tots els drets reservats." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+    <a href="#top" data-ca="Torna a dalt" data-es="Volver arriba">Back to top</a>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to top" data-ca-aria="Torna a dalt" data-es-aria="Volver arriba"><svg aria-hidden="true" viewBox="0 0 16 16" width="18" height="18"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script>window.BOOK_PAGES = ["img-1110","img-1111","img-1112","img-1113","img-1114","img-1115","img-1116","img-1117","img-1118","img-1119"];</script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/reader.js"></script>
+</body>
+</html>

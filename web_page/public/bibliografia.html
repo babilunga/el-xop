@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bibliografia · El Xop</title>
+<meta name="description" content="Els llibres fets a mà de El Xop, transcrits sencers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- fonts load without blocking the first paint; system fonts show until they arrive -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/library.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-name">El Xop</span>
+      <span class="brand-sub">Les Vaqueres</span>
+    </a>
+
+    <p class="nav-welcome"><span data-ca="Benvinguts!" data-es="¡Bienvenidos!">Welcome!</span></p>
+
+    <button type="button" class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" data-ca-aria="Menú" data-es-aria="Menú">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-panel" id="site-nav">
+      <nav class="main-nav" aria-label="Main" data-ca-aria="Principal" data-es-aria="Principal">
+        <ul>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-projectes"><span data-ca="Els nostres projectes" data-es="Nuestros proyectos">Our Projects</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-projectes">
+              <li><a href="residencia.html" data-ca="Residència d'artistes" data-es="Residencia de artistas">Artist residency</a></li>
+              <li><a href="les-vaqueres.html" data-ca="Les Vaqueres" data-es="Les Vaqueres">Les Vaqueres</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-entorn"><span data-ca="L'entorn" data-es="El entorno">Surroundings</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-entorn">
+              <li><a href="fruits-de-la-tardor.html" data-ca="Fruits de la tardor" data-es="Frutos del otoño">Autumn fruits</a></li>
+              <li><a href="raco-dherbes.html" data-ca="Racó d’herbes" data-es="Rincón de hierbas">Herb corner</a></li>
+            </ul>
+          </li>
+          <li><a href="museu.html" data-ca="Museu" data-es="Museo">Museum</a></li>
+          <li class="has-sub is-active">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-arxiu"><span data-ca="Arxiu" data-es="Archivo">Archive</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-arxiu">
+              <li><a href="bibliografia.html" aria-current="page" data-ca="Bibliografia" data-es="Bibliografía">Bibliography</a></li>
+              <li><a href="el-xop-dahir.html" data-ca="El Xop d'ahir" data-es="El Xop de ayer">El Xop in the past</a></li>
+            </ul>
+          </li>
+          <li><a href="#contacte" class="nav-contact" data-ca="Contacte" data-es="Contacto">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="lang">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-ca-aria="Idioma" data-es-aria="Idioma">
+          <span class="lang-current" aria-hidden="true"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></span>
+          <svg class="lang-chevron" aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu">
+          <li><button type="button" data-lang-set="ca" data-code="CA" aria-pressed="false" lang="ca"><svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18"><rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/></svg><span>Català</span></button></li>
+          <li><button type="button" data-lang-set="en" data-code="EN" aria-pressed="true" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button></li>
+          <li><button type="button" data-lang-set="es" data-code="ES" aria-pressed="false" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span><span>Español</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-head wrap">
+    <h1 data-ca="Bibliografia" data-es="Bibliografía">Bibliography</h1>
+    <p class="lead" data-ca="A El Xop hi ha uns llibres fets a mà que expliquen els seus racons: el cel del mirador, els símbols del laberint, la història dels laberints i el Camí de Sant Jaume. Aquí els pots llegir sencers." data-es="En El Xop hay unos libros hechos a mano que explican sus rincones: el cielo del mirador, los símbolos del laberinto, la historia de los laberintos y el Camino de Santiago. Aquí puedes leerlos enteros.">At El Xop there are hand-made books that explain its corners: the sky from the viewpoint, the symbols in the labyrinth, the story of labyrinths, and the Way of St James. You can read them here in full.</p>
+  </section>
+  <section class="books wrap">
+    <div class="book-grid">
+      <a class="book-card" href="library/espais-de-el-xop.html" style="--book: var(--olive)">
+        <img src="assets/images/library/photos/espais-mapa.webp" width="1692" height="855" loading="lazy" decoding="async" alt="">
+        <span class="kicker" data-ca="Àlbum de fotografies" data-es="Álbum de fotografías">Photo album</span>
+        <span class="book-card-title" data-ca="Espais de El Xop" data-es="Espacios de El Xop">The spaces of El Xop</span>
+        <span class="book-card-text" data-ca="Un plànol dibuixat a mà de tota la finca i un recorregut fotogràfic pels seus racons, fins arribar al gran xop que li dóna nom." data-es="Un plano dibujado a mano de toda la finca y un recorrido fotográfico por sus rincones, hasta llegar al gran chopo que le da nombre.">A hand-drawn plan of the whole estate and a photographic walk through its corners, ending at the great black poplar that gives it its name.</span>
+        <span class="book-card-meta" data-ca="9 capítols" data-es="9 capítulos">9 chapters</span>
+      </a>
+      <a class="book-card" href="library/el-mirador-del-cel.html" style="--book: var(--sky)">
+        <img src="assets/images/library/photos/mirador-cover.webp" width="1512" height="1684" loading="lazy" decoding="async" alt="">
+        <span class="kicker" data-ca="Astronomia als peus" data-es="Astronomía a los pies">Astronomy underfoot</span>
+        <span class="book-card-title" data-ca="El Mirador del Cel" data-es="El Mirador del Cielo">The Sky Viewpoint</span>
+        <span class="book-card-text" data-ca="Un terra de mosaic per llegir el cel: constel·lacions, la sortida del sol als solsticis, l'arc de Sant Martí, la Via Làctia, els vents i les fases de la lluna." data-es="Un suelo de mosaico para leer el cielo: constelaciones, la salida del sol en los solsticios, el arco iris, la Vía Láctea, los vientos y las fases de la luna.">A mosaic floor for reading the sky: constellations, sunrise at the solstices, the rainbow, the Milky Way, the winds and the phases of the moon.</span>
+        <span class="book-card-meta" data-ca="9 capítols" data-es="9 capítulos">9 chapters</span>
+      </a>
+      <a class="book-card" href="library/el-passeig-dels-plataners.html" style="--book: var(--arbor)">
+        <img src="assets/images/library/photos/passeig-plano.webp" width="1728" height="1211" loading="lazy" decoding="async" alt="">
+        <span class="kicker" data-ca="El laberint de la vida i els seus símbols" data-es="El laberinto de la vida y sus símbolos">The labyrinth of life and its symbols</span>
+        <span class="book-card-title" data-ca="El Passeig dels Plataners" data-es="El Paseo de los Plátanos">The Plane-Tree Walk</span>
+        <span class="book-card-text" data-ca="Un passeig a l'ombra dels plataners que amaga el «laberint de la vida»: un camí de cruïlles amb símbols antics i cercles de reflexologia per caminar descalç." data-es="Un paseo a la sombra de los plátanos que esconde el «laberinto de la vida»: un camino de cruces con símbolos antiguos y círculos de reflexología para caminar descalzo.">A walk in the shade of plane trees that hides “the labyrinth of life”: a path of crossroads with ancient symbols and reflexology circles to walk barefoot.</span>
+        <span class="book-card-meta" data-ca="8 capítols" data-es="8 capítulos">8 chapters</span>
+      </a>
+      <a class="book-card" href="library/la-mare-terra.html" style="--book: var(--ochre)">
+        <img src="assets/images/library/photos/mare-terra-cover.webp" width="828" height="953" loading="lazy" decoding="async" alt="">
+        <span class="kicker" data-ca="El laberint de set cercles" data-es="El laberinto de siete círculos">The seven-circuit labyrinth</span>
+        <span class="book-card-title" data-ca="La Mare Terra" data-es="La Madre Tierra">Mother Earth</span>
+        <span class="book-card-text" data-ca="Què és un laberint, com se'n dibuixa un de set cercles, per a què servien i on n'hi ha arreu del món: de Galícia a Nazca, de Creta a Arizona." data-es="Qué es un laberinto, cómo se dibuja uno de siete círculos, para qué servían y dónde los hay en todo el mundo: de Galicia a Nazca, de Creta a Arizona.">What a labyrinth is, how to draw a seven-circuit one, what they were for, and where they are found around the world: from Galicia to Nazca, Crete to Arizona.</span>
+        <span class="book-card-meta" data-ca="10 capítols" data-es="10 capítulos">10 chapters</span>
+      </a>
+      <a class="book-card" href="library/el-cami-de-sant-jaume.html" style="--book: var(--clay)">
+        <img src="assets/images/library/photos/horta-joc.webp" width="1224" height="1067" loading="lazy" decoding="async" alt="">
+        <span class="kicker" data-ca="De Grenyana a Butsènit, i el Joc de l'Oca" data-es="De Grenyana a Butsènit, y el Juego de la Oca">From Grenyana to Butsènit, and the Game of the Goose</span>
+        <span class="book-card-title" data-ca="El Camí de Sant Jaume" data-es="El Camino de Santiago">The Way of St James</span>
+        <span class="book-card-text" data-ca="El Xop és en ple Camí de Sant Jaume. Un itinerari a peu entre dues ermites, la llegenda dels fanalets de Lleida, el Joc de l'Horta i el misteri del Joc de l'Oca." data-es="El Xop está en pleno Camino de Santiago. Un itinerario a pie entre dos ermitas, la leyenda de los farolillos de Lleida, el Juego de la Huerta y el misterio del Juego de la Oca.">El Xop lies right on the Way of St James. A walk between two hermitages, the legend of Lleida's lanterns, the Horta board game and the mystery of the Game of the Goose.</span>
+        <span class="book-card-meta" data-ca="11 capítols" data-es="11 capítulos">11 chapters</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="contacte">
+  <div class="wrap footer-grid">
+    <div class="footer-contact">
+      <h2 class="footer-title" data-ca="Contacte" data-es="Contacto">Contacts</h2>
+      <ul class="contact-list">
+        <li><strong>El Xop · Les Vaqueres</strong></li>
+        <li><a class="ci" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Horta de Lleida, El Xop</span></a></li>
+        <li><a class="ci" href="tel:+34695551385"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/></svg><span>+34 695 551 385</span></a></li>
+        <li><a class="ci" href="mailto:elxop@yahoo.es"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>elxop@yahoo.es</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-ig"><a class="ig-device" href="https://www.instagram.com/elxop.lesvaqueres/" target="_blank" rel="noopener" aria-label="El Xop on Instagram" data-ca-aria="El Xop a Instagram" data-es-aria="El Xop en Instagram">
+        <span class="ig-screen">
+          <span class="ig-bar"><span>elxop.lesvaqueres</span><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></span>
+          <span class="ig-profile">
+            <img class="ig-avatar" src="assets/images/instagram/avatar.jpg" width="150" height="150" alt="" loading="lazy" decoding="async">
+            <span class="ig-names"><span class="ig-name">El Xop · Les Vaqueres</span><span class="ig-user">@elxop.lesvaqueres</span></span>
+          </span>
+          <span class="ig-follow" data-ca="Segueix-nos" data-es="Síguenos">Follow</span>
+          <span class="ig-grid"><span class="ig-post"><picture><source type="image/avif" srcset="assets/images/instagram/post-1.avif 640w" sizes="120px"><img width="640" height="640" src="assets/images/instagram/post-1.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="assets/images/instagram/post-2.avif 467w" sizes="120px"><img width="467" height="467" src="assets/images/instagram/post-2.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="assets/images/instagram/post-3.avif 640w" sizes="120px"><img width="640" height="640" src="assets/images/instagram/post-3.jpg" alt="" loading="lazy" decoding="async"></picture></span></span>
+          <span class="ig-more" data-ca="Veure més a Instagram →" data-es="Ver más en Instagram →">See more on Instagram →</span>
+        </span>
+      </a></div>
+    <div class="map footer-map">
+        <iframe src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing where El Xop is" data-ca-aria="Mapa de situació de El Xop" data-es-aria="Mapa de situación de El Xop" title="Map showing where El Xop is"></iframe>
+        <a class="map-link" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener" data-ca="Obre a Google Maps" data-es="Abrir en Google Maps">Open in Google Maps</a>
+      </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 El Xop · Les Vaqueres. <span data-ca="Tots els drets reservats." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+    <a href="#top" data-ca="Torna a dalt" data-es="Volver arriba">Back to top</a>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to top" data-ca-aria="Torna a dalt" data-es-aria="Volver arriba"><svg aria-hidden="true" viewBox="0 0 16 16" width="18" height="18"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

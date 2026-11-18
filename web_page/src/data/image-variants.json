@@ -1,0 +1,1594 @@
+{
+ "assets/images/hero/el-xop-logo.png": {
+  "w": 553,
+  "h": 425
+ },
+ "assets/images/hero/horta-de-lleida-map.jpg": {
+  "w": 958,
+  "h": 603,
+  "avif": [
+   [
+    "assets/images/hero/horta-de-lleida-map-sm.avif",
+    720
+   ],
+   [
+    "assets/images/hero/horta-de-lleida-map.avif",
+    958
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/hero/horta-de-lleida-map-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/hero/horta-de-lleida-map.jpg",
+    958
+   ]
+  ]
+ },
+ "assets/images/hero/les-vaqueres-logo.png": {
+  "w": 469,
+  "h": 469
+ },
+ "assets/images/welcome/cypress.png": {
+  "w": 110,
+  "h": 420
+ },
+ "assets/images/welcome/fig-tree-canopy.webp": {
+  "w": 768,
+  "h": 400,
+  "avif": [
+   [
+    "assets/images/welcome/fig-tree-canopy.avif",
+    768
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/welcome/fig-tree-canopy.webp",
+    768
+   ]
+  ]
+ },
+ "assets/images/welcome/fig-tree-round.webp": {
+  "w": 1197,
+  "h": 887
+ },
+ "assets/images/welcome/fig-tree-trunk.webp": {
+  "w": 768,
+  "h": 460
+ },
+ "assets/images/welcome/fig-tree-wide.webp": {
+  "w": 1152,
+  "h": 754,
+  "avif": [
+   [
+    "assets/images/welcome/fig-tree-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/welcome/fig-tree-wide.avif",
+    1152
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/welcome/fig-tree-wide.webp",
+    1152
+   ]
+  ]
+ },
+ "assets/images/welcome/garden-bench.webp": {
+  "w": 1672,
+  "h": 941,
+  "avif": [
+   [
+    "assets/images/welcome/garden-bench-sm.avif",
+    720
+   ],
+   [
+    "assets/images/welcome/garden-bench.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/welcome/garden-bench.webp",
+    1672
+   ]
+  ]
+ },
+ "assets/images/welcome/les-vaqueres-map.webp": {
+  "w": 505,
+  "h": 710,
+  "avif": [
+   [
+    "assets/images/welcome/les-vaqueres-map.avif",
+    505
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/welcome/les-vaqueres-map.webp",
+    505
+   ]
+  ]
+ },
+ "assets/images/plants/chayote-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/chayote-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/chayote-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/chayote-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/chayote-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/chayote-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/chayote-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/chayote-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/dog-rose-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/dog-rose-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/dog-rose-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/dog-rose-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/dog-rose-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/dog-rose-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/dog-rose-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/dog-rose-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/feijoa-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/feijoa-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/feijoa-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/feijoa-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/feijoa-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/feijoa-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/feijoa-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/feijoa-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/ginkgo-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/ginkgo-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/ginkgo-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/ginkgo-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/ginkgo-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/ginkgo-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/ginkgo-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/ginkgo-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/goji-berry-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/goji-berry-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/goji-berry-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/goji-berry-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/goji-berry-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/goji-berry-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/goji-berry-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/goji-berry-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/hawthorn-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/hawthorn-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/hawthorn-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/hawthorn-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/hawthorn-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/hawthorn-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/hawthorn-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/hawthorn-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/lemon-balm-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/lemon-balm-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/lemon-balm-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/lemon-balm-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/lemon-balm-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/lemon-balm-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/lemon-balm-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/lemon-balm-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/medlar-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/medlar-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/medlar-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/medlar-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/medlar-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/medlar-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/medlar-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/medlar-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/olive-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/olive-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/olive-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/olive-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/olive-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/olive-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/olive-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/olive-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/persimmon-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/persimmon-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/persimmon-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/persimmon-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/persimmon-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/persimmon-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/persimmon-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/persimmon-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/pomegranate-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/pomegranate-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/pomegranate-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/pomegranate-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/pomegranate-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/pomegranate-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/pomegranate-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/pomegranate-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/purple-shamrock-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/purple-shamrock-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/purple-shamrock-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/purple-shamrock-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/purple-shamrock-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/purple-shamrock-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/purple-shamrock-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/purple-shamrock-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/quince-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/quince-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/quince-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/quince-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/quince-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/quince-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/quince-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/quince-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/raspberry-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/raspberry-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/raspberry-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/raspberry-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/raspberry-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/raspberry-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/raspberry-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/raspberry-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/rosemary-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/rosemary-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/rosemary-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/rosemary-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/rosemary-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/rosemary-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/rosemary-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/rosemary-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/rue-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/rue-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/rue-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/rue-wide.jpg": {
+  "w": 1400,
+  "h": 1050,
+  "avif": [
+   [
+    "assets/images/plants/rue-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/rue-wide.avif",
+    1400
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/rue-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/rue-wide.jpg",
+    1400
+   ]
+  ]
+ },
+ "assets/images/plants/strawberry-tree-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/strawberry-tree-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/strawberry-tree-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/strawberry-tree-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/strawberry-tree-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/strawberry-tree-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/strawberry-tree-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/strawberry-tree-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/water-mint-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/water-mint-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/water-mint-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/water-mint-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/water-mint-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/water-mint-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/water-mint-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/water-mint-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/wood-sorrel-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/wood-sorrel-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/wood-sorrel-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/wood-sorrel-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/wood-sorrel-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/wood-sorrel-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/wood-sorrel-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/wood-sorrel-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/plants/yarrow-close.jpg": {
+  "w": 600,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/plants/yarrow-close.avif",
+    600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/yarrow-close.jpg",
+    600
+   ]
+  ]
+ },
+ "assets/images/plants/yarrow-wide.jpg": {
+  "w": 1050,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/plants/yarrow-wide-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/yarrow-wide.avif",
+    1050
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/yarrow-wide-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/yarrow-wide.jpg",
+    1050
+   ]
+  ]
+ },
+ "assets/images/nuts/almond-tree.jpg": {
+  "w": 1200,
+  "h": 2000,
+  "avif": [
+   [
+    "assets/images/nuts/almond-tree-sm.avif",
+    720
+   ],
+   [
+    "assets/images/nuts/almond-tree.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/nuts/almond-tree-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/nuts/almond-tree.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/nuts/hazel-tree.jpg": {
+  "w": 1400,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/nuts/hazel-tree-sm.avif",
+    720
+   ],
+   [
+    "assets/images/nuts/hazel-tree.avif",
+    1400
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/nuts/hazel-tree-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/nuts/hazel-tree.jpg",
+    1400
+   ]
+  ]
+ },
+ "assets/images/nuts/nut-bowl.jpg": {
+  "w": 2400,
+  "h": 1920,
+  "avif": [
+   [
+    "assets/images/nuts/nut-bowl-sm.avif",
+    720
+   ],
+   [
+    "assets/images/nuts/nut-bowl.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/nuts/nut-bowl-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/nuts/nut-bowl-lg.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/nuts/walnut-tree.jpg": {
+  "w": 1400,
+  "h": 1400,
+  "avif": [
+   [
+    "assets/images/nuts/walnut-tree-sm.avif",
+    720
+   ],
+   [
+    "assets/images/nuts/walnut-tree.avif",
+    1400
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/nuts/walnut-tree-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/nuts/walnut-tree.jpg",
+    1400
+   ]
+  ]
+ },
+ "assets/images/museum/dairy.jpg": {
+  "w": 450,
+  "h": 461,
+  "avif": [
+   [
+    "assets/images/museum/dairy.avif",
+    450
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/dairy.jpg",
+    450
+   ]
+  ]
+ },
+ "assets/images/museum/family-comic.jpg": {
+  "w": 1063,
+  "h": 800,
+  "avif": [
+   [
+    "assets/images/museum/family-comic-sm.avif",
+    720
+   ],
+   [
+    "assets/images/museum/family-comic.avif",
+    1063
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/family-comic-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/museum/family-comic.jpg",
+    1063
+   ]
+  ]
+ },
+ "assets/images/museum/farm-life.jpg": {
+  "w": 509,
+  "h": 381,
+  "avif": [
+   [
+    "assets/images/museum/farm-life.avif",
+    509
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/farm-life.jpg",
+    509
+   ]
+  ]
+ },
+ "assets/images/museum/framed-family-photo.jpg": {
+  "w": 1400,
+  "h": 997,
+  "avif": [
+   [
+    "assets/images/museum/framed-family-photo-sm.avif",
+    720
+   ],
+   [
+    "assets/images/museum/framed-family-photo.avif",
+    1400
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/framed-family-photo-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/museum/framed-family-photo.jpg",
+    1400
+   ]
+  ]
+ },
+ "assets/images/museum/leisure-corner.jpg": {
+  "w": 400,
+  "h": 300,
+  "avif": [
+   [
+    "assets/images/museum/leisure-corner.avif",
+    400
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/leisure-corner.jpg",
+    400
+   ]
+  ]
+ },
+ "assets/images/museum/mirror.jpg": {
+  "w": 658,
+  "h": 494,
+  "avif": [
+   [
+    "assets/images/museum/mirror.avif",
+    658
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/mirror.jpg",
+    658
+   ]
+  ]
+ },
+ "assets/images/museum/mvtat-banner.jpg": {
+  "w": 1081,
+  "h": 364,
+  "avif": [
+   [
+    "assets/images/museum/mvtat-banner-sm.avif",
+    720
+   ],
+   [
+    "assets/images/museum/mvtat-banner.avif",
+    1081
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/mvtat-banner-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/museum/mvtat-banner.jpg",
+    1081
+   ]
+  ]
+ },
+ "assets/images/museum/pig-slaughter.jpg": {
+  "w": 497,
+  "h": 697,
+  "avif": [
+   [
+    "assets/images/museum/pig-slaughter.avif",
+    497
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/pig-slaughter.jpg",
+    497
+   ]
+  ]
+ },
+ "assets/images/museum/school.jpg": {
+  "w": 503,
+  "h": 657,
+  "avif": [
+   [
+    "assets/images/museum/school.avif",
+    503
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/school.jpg",
+    503
+   ]
+  ]
+ },
+ "assets/images/museum/self-sufficiency-tools.jpg": {
+  "w": 420,
+  "h": 471,
+  "avif": [
+   [
+    "assets/images/museum/self-sufficiency-tools.avif",
+    420
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/self-sufficiency-tools.jpg",
+    420
+   ]
+  ]
+ },
+ "assets/images/museum/sewing-machine.jpg": {
+  "w": 300,
+  "h": 400,
+  "avif": [
+   [
+    "assets/images/museum/sewing-machine.avif",
+    300
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/sewing-machine.jpg",
+    300
+   ]
+  ]
+ },
+ "assets/images/museum/suitcases.jpg": {
+  "w": 331,
+  "h": 748,
+  "avif": [
+   [
+    "assets/images/museum/suitcases.avif",
+    331
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/suitcases.jpg",
+    331
+   ]
+  ]
+ },
+ "assets/images/museum/three-generations.jpg": {
+  "w": 892,
+  "h": 670,
+  "avif": [
+   [
+    "assets/images/museum/three-generations.avif",
+    892
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/three-generations.jpg",
+    892
+   ]
+  ]
+ },
+ "assets/images/museum/tools-sign.jpg": {
+  "w": 1200,
+  "h": 900,
+  "avif": [
+   [
+    "assets/images/museum/tools-sign-sm.avif",
+    720
+   ],
+   [
+    "assets/images/museum/tools-sign.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/tools-sign-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/museum/tools-sign.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/museum/weighing-scale.jpg": {
+  "w": 411,
+  "h": 862,
+  "avif": [
+   [
+    "assets/images/museum/weighing-scale.avif",
+    411
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/weighing-scale.jpg",
+    411
+   ]
+  ]
+ },
+ "assets/images/herbes/aroma-game.jpg": {
+  "w": 1024,
+  "h": 768,
+  "avif": [
+   [
+    "assets/images/herbes/aroma-game-sm.avif",
+    720
+   ],
+   [
+    "assets/images/herbes/aroma-game.avif",
+    1024
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/aroma-game-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/herbes/aroma-game.jpg",
+    1024
+   ]
+  ]
+ },
+ "assets/images/herbes/aromatic-arch.jpg": {
+  "w": 552,
+  "h": 414,
+  "avif": [
+   [
+    "assets/images/herbes/aromatic-arch.avif",
+    552
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/aromatic-arch.jpg",
+    552
+   ]
+  ]
+ },
+ "assets/images/herbes/birch-centre.jpg": {
+  "w": 827,
+  "h": 620,
+  "avif": [
+   [
+    "assets/images/herbes/birch-centre.avif",
+    827
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/birch-centre.jpg",
+    827
+   ]
+  ]
+ },
+ "assets/images/herbes/el-xop-garden-map.jpg": {
+  "w": 860,
+  "h": 1013,
+  "avif": [
+   [
+    "assets/images/herbes/el-xop-garden-map.avif",
+    860
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/el-xop-garden-map.jpg",
+    860
+   ]
+  ]
+ },
+ "assets/images/herbes/evening-primrose.jpg": {
+  "w": 480,
+  "h": 640,
+  "avif": [
+   [
+    "assets/images/herbes/evening-primrose.avif",
+    480
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/evening-primrose.jpg",
+    480
+   ]
+  ]
+ },
+ "assets/images/herbes/flowers-miracle-sign.jpg": {
+  "w": 900,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/herbes/flowers-miracle-sign.avif",
+    900
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/flowers-miracle-sign.jpg",
+    900
+   ]
+  ]
+ },
+ "assets/images/herbes/garden-plan.jpg": {
+  "w": 1024,
+  "h": 750,
+  "avif": [
+   [
+    "assets/images/herbes/garden-plan-sm.avif",
+    720
+   ],
+   [
+    "assets/images/herbes/garden-plan.avif",
+    1024
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/garden-plan-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/herbes/garden-plan.jpg",
+    1024
+   ]
+  ]
+ },
+ "assets/images/herbes/garden-world-sign.jpg": {
+  "w": 286,
+  "h": 381,
+  "avif": [
+   [
+    "assets/images/herbes/garden-world-sign.avif",
+    286
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/garden-world-sign.jpg",
+    286
+   ]
+  ]
+ },
+ "assets/images/herbes/raco-dherbes-sign.jpg": {
+  "w": 715,
+  "h": 535,
+  "avif": [
+   [
+    "assets/images/herbes/raco-dherbes-sign.avif",
+    715
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/raco-dherbes-sign.jpg",
+    715
+   ]
+  ]
+ },
+ "assets/images/herbes/reading-table.jpg": {
+  "w": 567,
+  "h": 426,
+  "avif": [
+   [
+    "assets/images/herbes/reading-table.avif",
+    567
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/reading-table.jpg",
+    567
+   ]
+  ]
+ },
+ "assets/images/herbes/song-hut.jpg": {
+  "w": 880,
+  "h": 1024,
+  "avif": [
+   [
+    "assets/images/herbes/song-hut.avif",
+    880
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/song-hut.jpg",
+    880
+   ]
+  ]
+ },
+ "assets/images/herbes/transformation-corner.jpg": {
+  "w": 1024,
+  "h": 768,
+  "avif": [
+   [
+    "assets/images/herbes/transformation-corner-sm.avif",
+    720
+   ],
+   [
+    "assets/images/herbes/transformation-corner.avif",
+    1024
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/transformation-corner-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/herbes/transformation-corner.jpg",
+    1024
+   ]
+  ]
+ },
+ "assets/images/herbes/water-path.jpg": {
+  "w": 975,
+  "h": 564,
+  "avif": [
+   [
+    "assets/images/herbes/water-path-sm.avif",
+    720
+   ],
+   [
+    "assets/images/herbes/water-path.avif",
+    975
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/water-path-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/herbes/water-path.jpg",
+    975
+   ]
+  ]
+ },
+ "assets/images/herbes/word-corner.jpg": {
+  "w": 658,
+  "h": 468,
+  "avif": [
+   [
+    "assets/images/herbes/word-corner.avif",
+    658
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/herbes/word-corner.jpg",
+    658
+   ]
+  ]
+ },
+ "assets/images/instagram/avatar.jpg": {
+  "w": 150,
+  "h": 150
+ },
+ "assets/images/instagram/post-1.jpg": {
+  "w": 640,
+  "h": 640,
+  "avif": [
+   [
+    "assets/images/instagram/post-1.avif",
+    640
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/instagram/post-1.jpg",
+    640
+   ]
+  ]
+ },
+ "assets/images/instagram/post-2.jpg": {
+  "w": 467,
+  "h": 467,
+  "avif": [
+   [
+    "assets/images/instagram/post-2.avif",
+    467
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/instagram/post-2.jpg",
+    467
+   ]
+  ]
+ },
+ "assets/images/instagram/post-3.jpg": {
+  "w": 640,
+  "h": 640,
+  "avif": [
+   [
+    "assets/images/instagram/post-3.avif",
+    640
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/instagram/post-3.jpg",
+    640
+   ]
+  ]
+ }
+}

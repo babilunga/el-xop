@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Mare Terra · El Xop</title>
+<meta name="description" content="What a labyrinth is, how to draw a seven-circuit one, what they were for, and where they are found around the world: from Galicia to Nazca, Crete to Arizona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- fonts load without blocking the first paint; system fonts show until they arrive -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap"></noscript>
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/library.css">
+</head>
+<body class="reader" style="--book: var(--ochre)">
+
+<header class="site-header">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-name">El Xop</span>
+      <span class="brand-sub">Les Vaqueres</span>
+    </a>
+
+    <p class="nav-welcome"><span data-ca="Benvinguts!" data-es="¡Bienvenidos!">Welcome!</span></p>
+
+    <button type="button" class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" data-ca-aria="Menú" data-es-aria="Menú">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-panel" id="site-nav">
+      <nav class="main-nav" aria-label="Main" data-ca-aria="Principal" data-es-aria="Principal">
+        <ul>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-projectes"><span data-ca="Els nostres projectes" data-es="Nuestros proyectos">Our Projects</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-projectes">
+              <li><a href="../residencia.html" data-ca="Residència d'artistes" data-es="Residencia de artistas">Artist residency</a></li>
+              <li><a href="../les-vaqueres.html" data-ca="Les Vaqueres" data-es="Les Vaqueres">Les Vaqueres</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-entorn"><span data-ca="L'entorn" data-es="El entorno">Surroundings</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-entorn">
+              <li><a href="../fruits-de-la-tardor.html" data-ca="Fruits de la tardor" data-es="Frutos del otoño">Autumn fruits</a></li>
+              <li><a href="../raco-dherbes.html" data-ca="Racó d’herbes" data-es="Rincón de hierbas">Herb corner</a></li>
+            </ul>
+          </li>
+          <li><a href="../museu.html" data-ca="Museu" data-es="Museo">Museum</a></li>
+          <li class="has-sub is-active">
+            <button type="button" class="sub-toggle sub-label" aria-expanded="false" aria-controls="sub-arxiu"><span data-ca="Arxiu" data-es="Archivo">Archive</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-arxiu">
+              <li><a href="../bibliografia.html" aria-current="page" data-ca="Bibliografia" data-es="Bibliografía">Bibliography</a></li>
+              <li><a href="../el-xop-dahir.html" data-ca="El Xop d'ahir" data-es="El Xop de ayer">El Xop in the past</a></li>
+            </ul>
+          </li>
+          <li><a href="#contacte" class="nav-contact" data-ca="Contacte" data-es="Contacto">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="lang">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-menu" aria-label="Language" data-ca-aria="Idioma" data-es-aria="Idioma">
+          <span class="lang-current" aria-hidden="true"><span class="flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></span>
+          <svg class="lang-chevron" aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu">
+          <li><button type="button" data-lang-set="ca" data-code="CA" aria-pressed="false" lang="ca"><svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18"><rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/></svg><span>Català</span></button></li>
+          <li><button type="button" data-lang-set="en" data-code="EN" aria-pressed="true" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button></li>
+          <li><button type="button" data-lang-set="es" data-code="ES" aria-pressed="false" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span><span>Español</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="book-hero wrap">
+    <p class="kicker" data-ca="El laberint de set cercles" data-es="El laberinto de siete círculos">The seven-circuit labyrinth</p>
+    <h1 data-ca="La Mare Terra" data-es="La Madre Tierra">Mother Earth</h1>
+    <p class="lead" data-ca="Què és un laberint, com se'n dibuixa un de set cercles, per a què servien i on n'hi ha arreu del món: de Galícia a Nazca, de Creta a Arizona." data-es="Qué es un laberinto, cómo se dibuja uno de siete círculos, para qué servían y dónde los hay en todo el mundo: de Galicia a Nazca, de Creta a Arizona.">What a labyrinth is, how to draw a seven-circuit one, what they were for, and where they are found around the world: from Galicia to Nazca, Crete to Arizona.</p>
+    <figure class="book-cover"><img src="../assets/images/library/photos/mare-terra-cover.webp" width="828" height="953" fetchpriority="high" alt="Mother Earth" data-ca-alt="La Mare Terra" data-es-alt="La Madre Tierra"></figure>
+  </section>
+
+  <div class="book wrap">
+    <nav class="toc" aria-label="Contents" data-ca-aria="Índex" data-es-aria="Índice">
+      <details open>
+        <summary data-ca="Índex" data-es="Índice">Contents</summary>
+        <ol><li><a href="#mare-terra"><span class="toc-n">01</span><span data-ca="Laberint de set cercles" data-es="Laberinto de siete círculos">A labyrinth of seven circuits</span></a></li><li><a href="#simbol-antic"><span class="toc-n">02</span><span data-ca="Un dels símbols més antics" data-es="Uno de los símbolos más antiguos">One of the oldest symbols</span></a></li><li><a href="#com-fer"><span class="toc-n">03</span><span data-ca="Com fer un laberint de set cercles" data-es="Cómo hacer un laberinto de siete círculos">How to draw a seven-circuit labyrinth</span></a></li><li><a href="#cinc-centims"><span class="toc-n">04</span><span data-ca="Cinc cèntims sobre laberints" data-es="Cuatro cosas sobre laberintos">A few words on labyrinths</span></a></li><li><a href="#finalitat"><span class="toc-n">05</span><span data-ca="Finalitat dels laberints" data-es="Finalidad de los laberintos">What labyrinths were for</span></a></li><li><a href="#zones"><span class="toc-n">06</span><span data-ca="On hi ha laberints" data-es="Dónde hay laberintos">Where labyrinths are found</span></a></li><li><a href="#galicia-nazca"><span class="toc-n">07</span><span data-ca="Uns exemples: Galícia i Nazca" data-es="Unos ejemplos: Galicia y Nazca">Some examples: Galicia and Nazca</span></a></li><li><a href="#calendaris"><span class="toc-n">08</span><span data-ca="Laberints que són calendaris" data-es="Laberintos que son calendarios">Labyrinths that are calendars</span></a></li><li><a href="#arizona-russia"><span class="toc-n">09</span><span data-ca="Arizona i Rússia" data-es="Arizona y Rusia">Arizona and Russia</span></a></li><li><a href="#galeria"><span class="toc-n">10</span><span data-ca="Laberints del món" data-es="Laberintos del mundo">Labyrinths of the world</span></a></li></ol>
+      </details>
+    </nav>
+    <article class="book-text">
+
+      <section class="chapter" id="mare-terra">
+        <p class="chapter-n" aria-hidden="true">01</p>
+        <h2 class="chapter-title" data-ca="Laberint de set cercles" data-es="Laberinto de siete círculos">A labyrinth of seven circuits</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <figure class="fig"><img src="../assets/images/library/photos/mare-terra-cover.webp" width="828" height="953" loading="lazy" decoding="async" alt="The “Mother Earth” labyrinth at El Xop." data-ca-alt="El laberint «Mare Terra» a El Xop." data-es-alt="El laberinto «Madre Tierra» en El Xop."><figcaption data-ca="El laberint «Mare Terra» a El Xop." data-es="El laberinto «Madre Tierra» en El Xop.">The “Mother Earth” labyrinth at El Xop.</figcaption></figure>
+            <blockquote class="quote"><p data-ca="Els laberints ofereixen l'oportunitat de caminar en meditació cap a aquell lloc dins nostre on la raó es fon amb la intuïció i l'esperit torna a néixer." data-es="Los laberintos ofrecen la oportunidad de caminar en meditación hacia ese lugar dentro de nosotros donde la razón se funde con la intuición y el espíritu renace.">Labyrinths offer the opportunity to walk in meditation to that place within us where the rational merges with the intuitive and the spiritual is reborn.</p><cite data-ca="Inscripció en una pedra, reproduïda al llibre" data-es="Inscripción en una piedra, reproducida en el libro">Inscription on a stone, pictured in the book</cite></blockquote>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="0" aria-label="Open the original page 1" data-ca-aria="Obre la pàgina original 1" data-es-aria="Abre la página original 1"><img src="../assets/images/library/pages/img-1124-sm.webp" width="760" height="536" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="simbol-antic">
+        <p class="chapter-n" aria-hidden="true">02</p>
+        <h2 class="chapter-title" data-ca="Un dels símbols més antics" data-es="Uno de los símbolos más antiguos">One of the oldest symbols</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="El laberint és un dels símbols més antics de la humanitat. Els trobem gravats en la pedra, en argila, pintats en ceràmica, en joies, en monedes etrusques, en gerros japonesos, en tombes sicilianes, a totes les parts del món i des de la més remota antiguitat. Els més antics trobats serien de fa 4.000 anys." data-es="El laberinto es uno de los símbolos más antiguos de la humanidad. Los encontramos grabados en piedra, en arcilla, pintados en cerámica, en joyas, en monedas etruscas, en jarrones japoneses, en tumbas sicilianas, en todas partes del mundo y desde la más remota antigüedad. Los más antiguos hallados serían de hace 4.000 años.">The labyrinth is one of humanity's oldest symbols. We find them carved in stone and clay, painted on pottery, on jewellery, Etruscan coins, Japanese vases and Sicilian tombs, all over the world and from the remotest past. The oldest found are thought to be 4,000 years old.</p>
+            <p data-ca="El més antic, el més recurrent i el que trobem a totes les parts del món és el laberint de 7 cercles, que estableix una relació entre la mare terra i la força del nostre interior. Té una geometria perfecta i natural: formes que trobem en el nostre cos (el cervell, els intestins, la coroneta, el tou dels dits, el caragol de l'orella…) i en tota la natura, en les plantes i en tots els seus elements (aigua, aire…)." data-es="El más antiguo, el más recurrente y el que encontramos en todas partes es el laberinto de 7 círculos, que establece una relación entre la madre tierra y la fuerza de nuestro interior. Tiene una geometría perfecta y natural: formas que encontramos en nuestro cuerpo (el cerebro, los intestinos, la coronilla, la yema de los dedos, el caracol del oído…) y en toda la naturaleza, en las plantas y en todos sus elementos (agua, aire…).">The oldest, the most common and the one found everywhere is the seven-circuit labyrinth, which links mother earth with the strength inside us. Its geometry is perfect and natural: shapes we find in our own bodies (the brain, the intestines, the crown of the head, fingertips, the cochlea of the ear…) and throughout nature, in plants and in every element (water, air…).</p>
+            <p data-ca="En aquests laberints trobem l'alternança d'anar cap a un costat i cap a l'altre, com els meandres de la natura, que fan que es moderi la velocitat i s'oxigeni l'aigua." data-es="En estos laberintos encontramos la alternancia de ir hacia un lado y hacia el otro, como los meandros de la naturaleza, que moderan la velocidad y oxigenan el agua.">These labyrinths swing from one side to the other, like the meanders of a river, which slow the water down and fill it with oxygen.</p>
+            <p data-ca="S'ha relacionat aquest laberint de 7 cercles amb els 7 xacres del nostre cos i, curiosament, en entrar-hi es fa una seqüència de voltes que correspon en progressió exacta a l'ordre d'obertura dels xacres en una meditació equilibrada i completa: 3-2-1-4-7-6-5. Aquest és l'ordre en la meditació oriental per arribar a la il·luminació." data-es="Este laberinto de 7 círculos se ha relacionado con los 7 chakras de nuestro cuerpo y, curiosamente, al entrar se hace una secuencia de vueltas que corresponde exactamente al orden de apertura de los chakras en una meditación equilibrada y completa: 3-2-1-4-7-6-5. Es el orden de la meditación oriental para llegar a la iluminación.">The seven-circuit labyrinth has been linked to the body's seven chakras and, curiously, walking in takes you round the circuits in exactly the order the chakras open in a full, balanced meditation: 3-2-1-4-7-6-5. This is the order Eastern meditation follows towards enlightenment.</p>
+            <dl class="terms"><div><dt>1</dt><dd data-ca="Arrel (bàsic)" data-es="Raíz (básico)">Root</dd></div><div><dt>2</dt><dd data-ca="Sacre o umbilical" data-es="Sacro o umbilical">Sacral</dd></div><div><dt>3</dt><dd data-ca="Plexe solar" data-es="Plexo solar">Solar plexus</dd></div><div><dt>4</dt><dd data-ca="Cor (cardíac)" data-es="Corazón (cardíaco)">Heart</dd></div><div><dt>5</dt><dd data-ca="Gola (laringi)" data-es="Garganta (laríngeo)">Throat</dd></div><div><dt>6</dt><dd data-ca="Front (frontal)" data-es="Frente (frontal)">Brow</dd></div><div><dt>7</dt><dd data-ca="Corona (coronari)" data-es="Corona (coronario)">Crown</dd></div></dl>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="1" aria-label="Open the original page 2" data-ca-aria="Obre la pàgina original 2" data-es-aria="Abre la página original 2"><img src="../assets/images/library/pages/img-1125-sm.webp" width="760" height="522" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="com-fer">
+        <p class="chapter-n" aria-hidden="true">03</p>
+        <h2 class="chapter-title" data-ca="Com fer un laberint de set cercles" data-es="Cómo hacer un laberinto de siete círculos">How to draw a seven-circuit labyrinth</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Es parteix d'una creu, quatre angles i quatre punts. D'aquesta manera es combina el quadrat, que simbolitza la terra, amb el cercle, que simbolitza el cel, i així es fonen en un sol signe que simbolitza la totalitat de l'univers." data-es="Se parte de una cruz, cuatro ángulos y cuatro puntos. Así se combina el cuadrado, que simboliza la tierra, con el círculo, que simboliza el cielo, y se funden en un solo signo que simboliza la totalidad del universo.">You start from a cross, four angles and four dots. In this way the square, which stands for the earth, joins the circle, which stands for the sky, and they merge into one sign for the whole universe.</p>
+            <ol class="steps"><li data-ca="Dibuixa una creu i, a cada angle, una escaire petita; afegeix un punt dins de cada escaire." data-es="Dibuja una cruz y, en cada ángulo, una escuadra pequeña; añade un punto dentro de cada escuadra.">Draw a cross, a small right angle in each corner, and a dot inside each angle.</li><li data-ca="Uneix amb un arc la punta superior de la creu amb l'extrem del costat." data-es="Une con un arco la punta superior de la cruz con el extremo del lado.">Join the top of the cross to the next end with an arc.</li><li data-ca="Continua unint cada extrem lliure amb el següent, de dins cap a fora, sempre en el mateix sentit." data-es="Sigue uniendo cada extremo libre con el siguiente, de dentro hacia fuera, siempre en el mismo sentido.">Keep joining each free end to the next, working outwards, always in the same direction.</li><li data-ca="En unir l'últim parell, el laberint de set cercles queda tancat." data-es="Al unir el último par, el laberinto de siete círculos queda cerrado.">When the last pair is joined, the seven-circuit labyrinth is complete.</li></ol>
+            <p class="note" data-ca="Els passos són una descripció del diagrama groc de la pàgina original." data-es="Los pasos describen el diagrama amarillo de la página original.">These steps describe the yellow diagram on the original page.</p>
+            <h3 class="sub" data-ca="Varietats d'un mateix laberint" data-es="Variedades de un mismo laberinto">Variations of one labyrinth</h3>
+            <p data-ca="Després d'entrar en un laberint i encerclar diverses vegades el centre, en surts per la mateixa entrada. Poc després de fer diverses voltes, subjectivament, el temps s'atura. És difícil distreure's: el camí és estret i s'ha de mirar permanentment a terra. La ruta gira en sentit horari i en sentit contrari a les agulles del rellotge." data-es="Después de entrar en un laberinto y rodear varias veces el centro, sales por la misma entrada. Tras unas cuantas vueltas, subjetivamente, el tiempo se detiene. Es difícil distraerse: el camino es estrecho y hay que mirar todo el rato al suelo. La ruta gira en sentido horario y en sentido antihorario.">You enter a labyrinth, circle the centre several times, and leave by the same entrance. After a few turns, time seems to stop. It is hard to be distracted: the path is narrow and you have to keep looking at the ground. The route turns both clockwise and anticlockwise.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="2" aria-label="Open the original page 3" data-ca-aria="Obre la pàgina original 3" data-es-aria="Abre la página original 3"><img src="../assets/images/library/pages/img-1126-sm.webp" width="760" height="485" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="cinc-centims">
+        <p class="chapter-n" aria-hidden="true">04</p>
+        <h2 class="chapter-title" data-ca="Cinc cèntims sobre laberints" data-es="Cuatro cosas sobre laberintos">A few words on labyrinths</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <ul class="list"><li data-ca="Aquest laberint és un camí únic que arriba a un punt central per tornar al punt d'inici. És el que trobem sempre en el disseny dels primers laberints i té com a finalitat resoldre conflictes. Un altre tipus de laberint és el que té camins «falsos» i té com a finalitat confondre." data-es="Este laberinto es un camino único que llega a un punto central para volver al de inicio. Es el que encontramos siempre en el diseño de los primeros laberintos y su finalidad es resolver conflictos. Otro tipo de laberinto es el que tiene caminos «falsos» y su finalidad es confundir.">This kind of labyrinth is a single path that reaches the centre and returns to the start. It is the design of all the earliest labyrinths, and its purpose is to resolve conflict. The other kind, with “false” paths, is a maze, made to confuse.</li><li data-ca="Aquests laberints recorden vagament imatges del cervell humà. És possible que, seguint el model del cervell, es pensés que completar el circuit altera o millora la funció cerebral o porta a la il·luminació." data-es="Estos laberintos recuerdan vagamente imágenes del cerebro humano. Es posible que, siguiendo el modelo del cerebro, se pensara que completar el circuito altera o mejora la función cerebral o lleva a la iluminación.">These labyrinths look a little like the human brain. Perhaps, following that model, people believed that completing the circuit changed or improved the mind, or led to enlightenment.</li><li data-ca="Aquesta forma s'ha perpetuat en moltes cultures humanes, a la majoria de continents." data-es="Esta forma se ha perpetuado en muchas culturas humanas, en la mayoría de continentes.">The shape has lasted in many human cultures on most continents.</li><li data-ca="Estan tallats en pedra, ceràmica, tauletes de fang, mosaics, manuscrits, patrons de pedra, gespa o voreres d'alguna catedral. Els primers dissenys coneguts tenen una antiguitat de 3.000 anys." data-es="Están tallados en piedra, cerámica, tablillas de barro, mosaicos, manuscritos, patrones de piedra, césped o suelos de alguna catedral. Los primeros diseños conocidos tienen 3.000 años de antigüedad.">They are cut into stone, pottery, clay tablets, mosaics, manuscripts, stone patterns, turf, or cathedral floors. The earliest known designs are 3,000 years old.</li></ul>
+            <p data-ca="És possible suposar que tant l'estat psicològic com el físic de les persones antigues era el propòsit principal dels rituals als laberints. Aquestes preparacions rituals eren necessàries per augmentar el nivell d'activitat física i la concentració, qualitats necessàries per a la cacera d'animals marins, la pesca i els viatges de llarg recorregut pel fred i perillós mar Blanc. Cal destacar que l'acompanyament musical, les danses rituals i, sovint, l'acció psicotròpica eren elements obligatoris de molts rituals, i van enfortir repetidament l'efecte aconseguit." data-es="Cabe suponer que tanto el estado psicológico como el físico de los antiguos era el propósito principal de los rituales en los laberintos. Estas preparaciones rituales eran necesarias para aumentar la actividad física y la concentración, cualidades necesarias para cazar animales marinos, pescar y hacer largos viajes por el frío y peligroso mar Blanco. Hay que destacar que la música, las danzas rituales y, a menudo, la acción psicotrópica eran elementos obligatorios de muchos rituales, y reforzaban una y otra vez el efecto conseguido.">We can suppose that the main purpose of labyrinth rituals was the mental and physical state of the people taking part. These rituals built up physical energy and concentration, which were needed for hunting sea animals, fishing and long journeys across the cold, dangerous White Sea. Music, ritual dance and often mind-altering substances were required parts of many rituals, and strengthened the effect each time.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="3" aria-label="Open the original page 4" data-ca-aria="Obre la pàgina original 4" data-es-aria="Abre la página original 4"><img src="../assets/images/library/pages/img-1128-sm.webp" width="760" height="531" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="finalitat">
+        <p class="chapter-n" aria-hidden="true">05</p>
+        <h2 class="chapter-title" data-ca="Finalitat dels laberints" data-es="Finalidad de los laberintos">What labyrinths were for</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <ul class="list"><li data-ca="Els escandinaus els utilitzaven per protegir els pescadors." data-es="Los escandinavos los usaban para proteger a los pescadores.">Scandinavians used them to protect fishermen.</li><li data-ca="Els víkings en feien abans de sortir a la mar, com a protecció." data-es="Los vikingos los hacían antes de salir al mar, como protección.">Vikings made them before putting out to sea, for protection.</li><li data-ca="Per als indis hopi, el laberint representa el matrimoni entre el Pare Sol i la Mare Terra; sobre els quatre costats de la terra hi trobem les òrbites circulars del sol." data-es="Para los indios hopi, el laberinto representa el matrimonio entre el Padre Sol y la Madre Tierra; sobre los cuatro lados de la tierra encontramos las órbitas circulares del sol.">For the Hopi, the labyrinth is the marriage of Father Sun and Mother Earth: the sun's circular paths laid over the four sides of the earth.</li><li data-ca="Hi ha danses laberíntiques, on els joves giraven en espiral cap al centre i després se n'allunyaven. Van ser populars fins al segle XIX i encara es ballen a Europa. Descendeixen d'un antic ball de l'illa grega de Naxos, on Teseu i els seus amics van celebrar la victòria." data-es="Hay danzas laberínticas, en las que los jóvenes giraban en espiral hacia el centro y luego se alejaban. Fueron populares hasta el siglo XIX y aún se bailan en Europa. Descienden de un antiguo baile de la isla griega de Naxos, donde Teseo y sus amigos celebraron la victoria.">There are labyrinth dances, in which young people spiralled in to the centre and back out again. They were popular until the 19th century and are still danced in Europe. They descend from an ancient dance on the Greek island of Naxos, where Theseus and his friends celebrated their victory.</li><li data-ca="Molts laberints dibuixats a terra eren una mena de trampa que atrapava els mals esperits." data-es="Muchos laberintos dibujados en el suelo eran una especie de trampa que atrapaba a los malos espíritus.">Many labyrinths drawn on the ground were traps for evil spirits.</li><li data-ca="En algunes cases, el laberint es dibuixava a la porta d'entrada com a sistema de protecció." data-es="En algunas casas, el laberinto se dibujaba en la puerta de entrada como protección.">In some houses a labyrinth was drawn on the front door for protection.</li></ul>
+            <p class="note" data-ca="Al llibre: laberint pintat al temple de Kurukshetra, on els Pandava van resar abans de la batalla." data-es="En el libro: laberinto pintado en el templo de Kurukshetra, donde los Pandava rezaron antes de la batalla.">Pictured in the book: a labyrinth painted in the temple at Kurukshetra, where the Pandavas prayed before battle.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="4" aria-label="Open the original page 5" data-ca-aria="Obre la pàgina original 5" data-es-aria="Abre la página original 5"><img src="../assets/images/library/pages/img-1129-sm.webp" width="760" height="500" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="zones">
+        <p class="chapter-n" aria-hidden="true">06</p>
+        <h2 class="chapter-title" data-ca="On hi ha laberints" data-es="Dónde hay laberintos">Where labyrinths are found</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="El mapa del llibre marca laberints a Europa, a la Mediterrània, a l'Orient Mitjà, a l'Índia, a la Xina i al sud-est asiàtic, i a Amèrica, al sud-oest dels Estats Units i als Andes." data-es="El mapa del libro marca laberintos en Europa, el Mediterráneo, Oriente Medio, la India, China y el sudeste asiático, y en América, en el sudoeste de Estados Unidos y en los Andes.">The book's map marks labyrinths across Europe, the Mediterranean, the Middle East, India, China and South-East Asia, and in the Americas, in the south-western United States and the Andes.</p>
+            <blockquote class="quote"><p data-ca="Podem constatar que els laberints del continent americà tenen unes dates molt més actuals. Per què?" data-es="Podemos constatar que los laberintos del continente americano tienen fechas mucho más recientes. ¿Por qué?">We can see that the labyrinths of the Americas are much more recent. Why?</p></blockquote>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="5" aria-label="Open the original page 6" data-ca-aria="Obre la pàgina original 6" data-es-aria="Abre la página original 6"><img src="../assets/images/library/pages/img-1130-sm.webp" width="760" height="505" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="galicia-nazca">
+        <p class="chapter-n" aria-hidden="true">07</p>
+        <h2 class="chapter-title" data-ca="Uns exemples: Galícia i Nazca" data-es="Unos ejemplos: Galicia y Nazca">Some examples: Galicia and Nazca</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="A Galícia, en l'actualitat la massa forestal, sobretot d'eucaliptus, cobreix els laberints i impedeix que molts petroglifs es puguin veure. Els últims incendis n'han posat molts al descobert. Tenen les cronologies més antigues, amb una antiguitat de 4.000 anys. En podem destacar alguns per la seva curiositat:" data-es="En Galicia, hoy la masa forestal, sobre todo de eucaliptos, cubre los laberintos e impide ver muchos petroglifos. Los últimos incendios han dejado muchos al descubierto. Tienen las cronologías más antiguas, de unos 4.000 años. Podemos destacar algunos por su curiosidad:">In Galicia, forest, mostly eucalyptus, now covers the labyrinths and hides many of the petroglyphs. Recent fires have uncovered many of them. They are among the oldest anywhere, about 4,000 years old. A few stand out:</p>
+            <dl class="terms"><div><dt data-ca="Laxe Escrita, Carnota" data-es="Laxe Escrita, Carnota">Laxe Escrita, Carnota</dt><dd data-ca="Estació rupestre on, com a curiositat, també hi ha vaixells gravats. Des de Laxe Escrita el sol es pon tot l'any al mar, menys el quart de l'any centrat en el solstici d'estiu." data-es="Estación rupestre donde, como curiosidad, también hay barcos grabados. Desde Laxe Escrita el sol se pone todo el año en el mar, menos el cuarto del año centrado en el solsticio de verano.">A rock-art site which, unusually, also has carved boats. From Laxe Escrita the sun sets into the sea all year except for the quarter of the year around the summer solstice.</dd></div><div><dt data-ca="Laberint de Nazca (Ica, Perú)" data-es="Laberinto de Nazca (Ica, Perú)">Nazca labyrinth (Ica, Peru)</dt><dd data-ca="De fa 1.500 o 2.000 anys. Fa més de 4 quilòmetres i no se sap si es va fer per veure's des de l'aire o per recórrer-lo a peu (es trigaria una hora). Té una forma irregular i se'n desconeix la funció, però es pensa que tindria una finalitat mística o religiosa." data-es="De hace 1.500 o 2.000 años. Mide más de 4 kilómetros y no se sabe si se hizo para verse desde el aire o para recorrerlo a pie (se tardaría una hora). Tiene forma irregular y se desconoce su función, aunque se cree que tendría una finalidad mística o religiosa.">1,500 to 2,000 years old. It is over 4 km long, and nobody knows whether it was meant to be seen from the air or walked (it would take an hour). Its shape is irregular and its purpose unknown, though it is thought to have been mystical or religious.</dd></div></dl>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="6" aria-label="Open the original page 7" data-ca-aria="Obre la pàgina original 7" data-es-aria="Abre la página original 7"><img src="../assets/images/library/pages/img-1132-sm.webp" width="760" height="515" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="calendaris">
+        <p class="chapter-n" aria-hidden="true">08</p>
+        <h2 class="chapter-title" data-ca="Laberints que són calendaris" data-es="Laberintos que son calendarios">Labyrinths that are calendars</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <dl class="terms"><div><dt data-ca="Petroglifs del Monte Tetón (Galícia)" data-es="Petroglifos del Monte Tetón (Galicia)">Monte Tetón petroglyphs (Galicia)</dt><dd data-ca="Combinacions circulars de 18 cercles concèntrics; segons el llibre, el més gran de tota Europa (350 m de diàmetre). Tenia una funció astronòmica de calendari i de càlcul. Uns 4.000 anys." data-es="Combinaciones circulares de 18 círculos concéntricos; según el libro, el mayor de toda Europa (350 m de diámetro). Tenía una función astronómica de calendario y de cálculo. Unos 4.000 años.">Circular designs of 18 concentric rings; according to the book, the largest in Europe (350 m across). It served as an astronomical calendar and for reckoning. About 4,000 years old.</dd></div><div><dt data-ca="La Daga del Sol (Nou Mèxic)" data-es="La Daga del Sol (Nuevo México)">The Sun Dagger (New Mexico)</dt><dd data-ca="Petroglifs de Fajada, al Chaco Canyon (EUA). Un rellotge de sol que marcava les estacions. Cap a l'any 1000 dC." data-es="Petroglifos de Fajada, en el Cañón del Chaco (EE. UU.). Un reloj de sol que marcaba las estaciones. Hacia el año 1000 d. C.">Petroglyphs on Fajada Butte, Chaco Canyon (USA). A sun clock that marked the seasons. Around AD 1000.</dd></div><div><dt data-ca="Laberint de Mogor (Galícia)" data-es="Laberinto de Mogor (Galicia)">Mogor labyrinth (Galicia)</dt><dd data-ca="Cap al 3000 aC, en ple neolític. Té l'entrada tancada i desviada en direcció oest. Es considera un calendari que indica els equinoccis i els solsticis." data-es="Hacia el 3000 a. C., en pleno neolítico. Tiene la entrada cerrada y desviada hacia el oeste. Se considera un calendario que indica los equinoccios y los solsticios.">Around 3000 BC, in the Neolithic. Its entrance is closed and turned towards the west. It is thought to be a calendar marking the equinoxes and solstices.</dd></div></dl>
+            <p data-ca="L'entrada del laberint de Mogor s'orienta a l'oest: a l'equinocci, el sol entra al fons de la imatge. Quatre formes circulars tenen els seus centres en línia recta, i aquesta línia la determina l'ombra que projecta un pal clavat al centre de la que està més a l'oest." data-es="La entrada del laberinto de Mogor mira al oeste: en el equinoccio, el sol entra al fondo de la imagen. Cuatro formas circulares tienen sus centros en línea recta, y esa línea la marca la sombra que proyecta un palo clavado en el centro de la más occidental.">The Mogor labyrinth's entrance faces west: at the equinox the sun enters at the far end of the picture. Four circular carvings have their centres in a straight line, and that line is traced by the shadow of a stick set in the centre of the westernmost one.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgines originals" data-es="Páginas originales">Original pages</h3><ul><li><button type="button" class="scan" data-page="7" aria-label="Open the original page 8" data-ca-aria="Obre la pàgina original 8" data-es-aria="Abre la página original 8"><img src="../assets/images/library/pages/img-1133-sm.webp" width="760" height="503" loading="lazy" decoding="async" alt=""></button></li><li><button type="button" class="scan" data-page="8" aria-label="Open the original page 9" data-ca-aria="Obre la pàgina original 9" data-es-aria="Abre la página original 9"><img src="../assets/images/library/pages/img-1134-sm.webp" width="760" height="537" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="arizona-russia">
+        <p class="chapter-n" aria-hidden="true">09</p>
+        <h2 class="chapter-title" data-ca="Arizona i Rússia" data-es="Arizona y Rusia">Arizona and Russia</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <h3 class="sub" data-ca="L'home en el laberint" data-es="El hombre en el laberinto">The Man in the Maze</h3>
+            <p data-ca="Creat pels indis papago (tohono o'odham) de la vall central d'Arizona. Les decisions encertades porten l'home a l'harmonia amb el cosmos, sense que l'importin les dificultats ni les distàncies del camí recorregut." data-es="Creado por los indios pápago (tohono o'odham) del valle central de Arizona. Las decisiones acertadas llevan al hombre a la armonía con el cosmos, sin importarle las dificultades ni las distancias del camino recorrido.">Made by the Papago (Tohono O'odham) people of central Arizona. Wise choices lead a person into harmony with the cosmos, whatever the hardships or distances on the way.</p>
+            <p data-ca="L'home és a l'entrada del laberint en començar la vida; hi entrarà i el recorrerà, girant, perdent-se, serpentejant pel llarg camí de la vida. Finalment arribarà al centre, a la mort, on el saludarà I'itoi, el creador, el déu Sol, el Germà Gran, i s'hi unirà en harmonia amb l'univers." data-es="El hombre está a la entrada del laberinto al comenzar la vida; entrará y lo recorrerá, girando, perdiéndose, serpenteando por el largo camino de la vida. Finalmente llegará al centro, a la muerte, donde lo saludará I'itoi, el creador, el dios Sol, el Hermano Mayor, y se unirá a él en armonía con el universo.">A person stands at the entrance at the start of life, then walks in, turning, getting lost, winding along life's long path. At last they reach the centre, death, where I'itoi greets them, the creator, the Sun god, the Elder Brother, and they join him in harmony with the universe.</p>
+            <h3 class="sub" data-ca="Babilon de Kandalakxa (Rússia)" data-es="Babilón de Kandalaksha (Rusia)">The “Babylons” of Kandalaksha (Russia)</h3>
+            <p data-ca="De 3.000 a 5.000 anys. «Babilon» era el nom amb què es coneixien antigament els nombrosos laberints del nord de Rússia. Es creu que s'hi celebraven sacrificis i que eren punts d'energia que permetien entrar en una altra dimensió. No se'n sap la funció original, però se sap que a principis d'aquest mil·lenni els lapons hi celebraven rituals xamànics." data-es="De 3.000 a 5.000 años. «Babilón» era el nombre con que se conocían antiguamente los numerosos laberintos del norte de Rusia. Se cree que allí se celebraban sacrificios y que eran puntos de energía que permitían entrar en otra dimensión. Se desconoce su función original, pero se sabe que a principios de este milenio los lapones celebraban en ellos rituales chamánicos.">3,000 to 5,000 years old. “Babylon” was the old name for the many stone labyrinths of northern Russia. Sacrifices are believed to have been held there, and they were thought to be energy points leading to another dimension. Their original purpose is unknown, but the Sámi are known to have held shamanic rituals in them at the start of this millennium.</p>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgina original" data-es="Página original">Original page</h3><ul><li><button type="button" class="scan" data-page="9" aria-label="Open the original page 10" data-ca-aria="Obre la pàgina original 10" data-es-aria="Abre la página original 10"><img src="../assets/images/library/pages/img-1135-sm.webp" width="760" height="515" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <section class="chapter" id="galeria">
+        <p class="chapter-n" aria-hidden="true">10</p>
+        <h2 class="chapter-title" data-ca="Laberints del món" data-es="Laberintos del mundo">Labyrinths of the world</h2>
+        <div class="chapter-body">
+          <div class="prose">
+            <p data-ca="Tres pàgines de fotografies recullen laberints de tot el món:" data-es="Tres páginas de fotografías recogen laberintos de todo el mundo:">Three pages of photographs gather labyrinths from around the world:</p>
+            <ul class="list"><li data-ca="Goa, Índia (2500 aC)" data-es="Goa, India (2500 a. C.)">Goa, India (2500 BC)</li><li data-ca="Pintura mural al temple de Mädavala, Sri Lanka. Mitologia budista." data-es="Pintura mural en el templo de Mädavala, Sri Lanka. Mitología budista.">Wall painting in the Mädavala temple, Sri Lanka. Buddhist mythology.</li><li data-ca="Gerra etrusca de Tragliatella, Itàlia (650 aC)" data-es="Jarra etrusca de Tragliatella, Italia (650 a. C.)">Etruscan jug from Tragliatella, Italy (650 BC)</li><li data-ca="Tauleta d'argila de les runes del palau de Pilos, al Peloponès (3200 aC, segons el llibre)" data-es="Tablilla de arcilla de las ruinas del palacio de Pilos, en el Peloponeso (3200 a. C., según el libro)">Clay tablet from the ruins of the palace at Pylos, Peloponnese (3200 BC, according to the book)</li><li data-ca="Temple egipci de Kom Ombo" data-es="Templo egipcio de Kom Ombo">Egyptian temple of Kom Ombo</li><li data-ca="Gravat a les parets de la «Tomba del Labirinto», Sardenya (entre 3400 i 2500 aC)" data-es="Grabado en las paredes de la «Tomba del Labirinto», Cerdeña (entre 3400 y 2500 a. C.)">Carving on the walls of the “Tomba del Labirinto”, Sardinia (3400–2500 BC)</li><li data-ca="Monedes de Cnossos, Creta (430 a 67 aC)" data-es="Monedas de Cnosos, Creta (430 a 67 a. C.)">Coins of Knossos, Crete (430–67 BC)</li><li data-ca="Gravat en un dolmen, Padugula (Índia)" data-es="Grabado en un dolmen, Padugula (India)">Carving on a dolmen, Padugula (India)</li><li data-ca="Gravat rupestre a Val Camonica (Itàlia)" data-es="Grabado rupestre en Val Camonica (Italia)">Rock carving in Val Camonica (Italy)</li><li data-ca="Miniatura d'una bíblia armènia de 1634, que representa la ciutat de Jericó" data-es="Miniatura de una biblia armenia de 1634, que representa la ciudad de Jericó">Miniature from an Armenian Bible of 1634, showing the city of Jericho</li><li data-ca="Narmada, Índia" data-es="Narmada, India">Narmada, India</li><li data-ca="Inscripció rupestre a Rocky Valley, al nord de Tintagel (Regne Unit)" data-es="Inscripción rupestre en Rocky Valley, al norte de Tintagel (Reino Unido)">Rock carving at Rocky Valley, north of Tintagel (UK)</li><li data-ca="Petroglif hopi prop d'Oraibi, Arizona: símbol de la «Mare Terra» (1200 dC)" data-es="Petroglifo hopi cerca de Oraibi, Arizona: símbolo de la «Madre Tierra» (1200 d. C.)">Hopi petroglyph near Oraibi, Arizona: the “Mother Earth” symbol (AD 1200)</li><li data-ca="Laberint de Makholmen (Suècia)" data-es="Laberinto de Makholmen (Suecia)">Makholmen labyrinth (Sweden)</li><li data-ca="Pintat en un pilar vermell a Pompeia, abans del 79 dC. La inscripció diu: LABYRINTHUS HIC HABITAT MINOTAURUS." data-es="Pintado en un pilar rojo de Pompeya, antes del 79 d. C. La inscripción dice: LABYRINTHUS HIC HABITAT MINOTAURUS.">Painted on a red pillar in Pompeii, before AD 79. It reads: LABYRINTHUS HIC HABITAT MINOTAURUS, “the labyrinth, here lives the Minotaur”.</li><li data-ca="Hern St. Hubert, Bèlgica" data-es="Hern St. Hubert, Bélgica">Hern St. Hubert, Belgium</li><li data-ca="Gravat en pedra amb símbols rúnics a Lye (Suècia)" data-es="Grabado en piedra con símbolos rúnicos en Lye (Suecia)">Stone carving with runes at Lye (Sweden)</li><li data-ca="Laberints de pedres de Zaiatski, Rússia" data-es="Laberintos de piedras de Zayatski, Rusia">Stone labyrinths of Zayatsky Island, Russia</li></ul>
+          </div>
+          <aside class="scans"><h3 class="scans-title" data-ca="Pàgines originals" data-es="Páginas originales">Original pages</h3><ul><li><button type="button" class="scan" data-page="10" aria-label="Open the original page 11" data-ca-aria="Obre la pàgina original 11" data-es-aria="Abre la página original 11"><img src="../assets/images/library/pages/img-1136-sm.webp" width="760" height="546" loading="lazy" decoding="async" alt=""></button></li><li><button type="button" class="scan" data-page="11" aria-label="Open the original page 12" data-ca-aria="Obre la pàgina original 12" data-es-aria="Abre la página original 12"><img src="../assets/images/library/pages/img-1137-sm.webp" width="760" height="545" loading="lazy" decoding="async" alt=""></button></li><li><button type="button" class="scan" data-page="12" aria-label="Open the original page 13" data-ca-aria="Obre la pàgina original 13" data-es-aria="Abre la página original 13"><img src="../assets/images/library/pages/img-1138-sm.webp" width="760" height="515" loading="lazy" decoding="async" alt=""></button></li></ul></aside>
+        </div>
+      </section>
+
+      <footer class="book-end">
+        <p class="note" data-ca="Transcrit del llibre original que es conserva a El Xop (13 pàgines). El text original és en català; les versions en castellà i anglès són traduccions." data-es="Transcrito del libro original que se conserva en El Xop (13 páginas). El texto original está en catalán; las versiones en castellano e inglés son traducciones.">Transcribed from the original printed book kept at El Xop (13 pages). The original text is in Catalan; the Spanish and English versions are translations.</p>
+        <a class="next-book" href="el-cami-de-sant-jaume.html">
+          <span class="next-label" data-ca="Llibre següent" data-es="Libro siguiente">Next book</span>
+          <span class="next-title" data-ca="El Camí de Sant Jaume" data-es="El Camino de Santiago">The Way of St James</span>
+        </a>
+      </footer>
+    </article>
+  </div>
+</main>
+
+<dialog class="viewer" aria-label="Original page" data-ca-aria="Pàgina original" data-es-aria="Página original">
+  <div class="viewer-bar">
+    <span class="viewer-count" aria-live="polite"></span>
+    <button type="button" class="viewer-prev" aria-label="Previous" data-ca-aria="Anterior" data-es-aria="Anterior">←</button>
+    <button type="button" class="viewer-next" aria-label="Next" data-ca-aria="Següent" data-es-aria="Siguiente">→</button>
+    <button type="button" class="viewer-close" aria-label="Close" data-ca-aria="Tanca" data-es-aria="Cerrar">✕</button>
+  </div>
+  <img class="viewer-img" alt="">
+</dialog>
+
+<footer class="site-footer" id="contacte">
+  <div class="wrap footer-grid">
+    <div class="footer-contact">
+      <h2 class="footer-title" data-ca="Contacte" data-es="Contacto">Contacts</h2>
+      <ul class="contact-list">
+        <li><strong>El Xop · Les Vaqueres</strong></li>
+        <li><a class="ci" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Horta de Lleida, El Xop</span></a></li>
+        <li><a class="ci" href="tel:+34695551385"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/></svg><span>+34 695 551 385</span></a></li>
+        <li><a class="ci" href="mailto:elxop@yahoo.es"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>elxop@yahoo.es</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-ig"><a class="ig-device" href="https://www.instagram.com/elxop.lesvaqueres/" target="_blank" rel="noopener" aria-label="El Xop on Instagram" data-ca-aria="El Xop a Instagram" data-es-aria="El Xop en Instagram">
+        <span class="ig-screen">
+          <span class="ig-bar"><span>elxop.lesvaqueres</span><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></span>
+          <span class="ig-profile">
+            <img class="ig-avatar" src="../assets/images/instagram/avatar.jpg" width="150" height="150" alt="" loading="lazy" decoding="async">
+            <span class="ig-names"><span class="ig-name">El Xop · Les Vaqueres</span><span class="ig-user">@elxop.lesvaqueres</span></span>
+          </span>
+          <span class="ig-follow" data-ca="Segueix-nos" data-es="Síguenos">Follow</span>
+          <span class="ig-grid"><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-1.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-1.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-2.avif 467w" sizes="120px"><img width="467" height="467" src="../assets/images/instagram/post-2.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-3.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-3.jpg" alt="" loading="lazy" decoding="async"></picture></span></span>
+          <span class="ig-more" data-ca="Veure més a Instagram →" data-es="Ver más en Instagram →">See more on Instagram →</span>
+        </span>
+      </a></div>
+    <div class="map footer-map">
+        <iframe src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing where El Xop is" data-ca-aria="Mapa de situació de El Xop" data-es-aria="Mapa de situación de El Xop" title="Map showing where El Xop is"></iframe>
+        <a class="map-link" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener" data-ca="Obre a Google Maps" data-es="Abrir en Google Maps">Open in Google Maps</a>
+      </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 El Xop · Les Vaqueres. <span data-ca="Tots els drets reservats." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+    <a href="#top" data-ca="Torna a dalt" data-es="Volver arriba">Back to top</a>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to top" data-ca-aria="Torna a dalt" data-es-aria="Volver arriba"><svg aria-hidden="true" viewBox="0 0 16 16" width="18" height="18"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script>window.BOOK_PAGES = ["img-1124","img-1125","img-1126","img-1128","img-1129","img-1130","img-1132","img-1133","img-1134","img-1135","img-1136","img-1137","img-1138"];</script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/reader.js"></script>
+</body>
+</html>
