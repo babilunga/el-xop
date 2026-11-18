@@ -235,6 +235,30 @@
    ]
   ]
  },
+ "assets/images/plants/ginkgo-autumn.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/plants/ginkgo-autumn-sm.avif",
+    720
+   ],
+   [
+    "assets/images/plants/ginkgo-autumn.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/plants/ginkgo-autumn-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/plants/ginkgo-autumn.jpg",
+    1200
+   ]
+  ]
+ },
  "assets/images/plants/ginkgo-close.jpg": {
   "w": 600,
   "h": 800,
