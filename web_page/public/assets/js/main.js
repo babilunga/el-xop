@@ -179,6 +179,20 @@
   var saved = store("elxop-lang-choice");
   setLang(saved === "ca" || saved === "es" || saved === "en" ? saved : browserLang());
 
+  // footer map: Google is contacted only after the visitor presses "Show map"
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".map-show");
+    if (!btn) return;
+    var gate = btn.closest(".map-gate");
+    var lang = root.lang === "ca" || root.lang === "es" ? root.lang : "";
+    var frame = document.createElement("iframe");
+    frame.src = gate.dataset.mapSrc;
+    frame.title = (lang && gate.getAttribute("data-" + lang + "-map-title")) || gate.dataset.mapTitle;
+    frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    gate.replaceWith(frame);
+    frame.focus();
+  });
+
   // photos fade in the first time they come into view
   if (fancy && "IntersectionObserver" in window) {
     var reveal = function (img) {

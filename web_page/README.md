@@ -26,6 +26,7 @@ web_page/
 │   │   ├── footer.js       contact footer on every page: details, Instagram card, map
 │   │   ├── i18n.js         t() / tx() translation helpers
 │   │   └── library.js      book reader pages + book cards
+│   │   ├── legal.js        footer-only legal pages (avís legal, privacitat, galetes); owner details live in footer.js OWNER
 │   ├── partials/           hand-written HTML fragments injected into pages
 │   │   ├── fruits-de-la-tardor.html  (+ -nav.html; also museu, raco-dherbes)
 │   └── data/               content as data
@@ -36,6 +37,7 @@ web_page/
     ├── index.html          + one .html per menu item (generated)
     ├── library/            one .html per book (generated)
     └── assets/             static files served directly (edit these in place)
+        ├── fonts/          self-hosted woff2 (Hanken Grotesk, Young Serif); never load fonts from Google
         ├── css/            main.css (site), library.css (books/cards)
         ├── js/             main.js (site behaviour, language), reader.js (book viewer)
         └── images/

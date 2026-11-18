@@ -25,6 +25,7 @@ const UI = {
   menu: t('Menú', 'Menú', 'Menu'),
   close: t('Tanca el menú', 'Cerrar el menú', 'Close menu'),
   main: t('Principal', 'Principal', 'Main'),
+  skip: t('Salta al contingut', 'Saltar al contenido', 'Skip to content'),
 };
 
 function head(title, desc, rel, extraCss = '') {
@@ -35,12 +36,9 @@ function head(title, desc, rel, extraCss = '') {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- fonts load without blocking the first paint; system fonts show until they arrive -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap"></noscript>
+<!-- fonts are served from the site itself (assets/fonts): no request to Google; the two main faces load early -->
+<link rel="preload" href="${rel}assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${rel}assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${rel}assets/css/main.css">
 <link rel="stylesheet" href="${rel}assets/css/library.css">${extraCss}
 </head>`;
@@ -75,7 +73,8 @@ ${children.map((c) => `              <li>${link(c, rel, active)}</li>`).join('\n
 }
 
 function header(rel, active) {
-  return `<header class="site-header">
+  return `${tx('a', UI.skip, ' class="skip-link" href="#top"')}
+<header class="site-header">
   <div class="progress" aria-hidden="true"><span></span></div>
   <div class="wrap header-inner">
     <a class="brand" href="${rel}index.html">
@@ -116,5 +115,5 @@ ${LANGS.map((l) => `          <li><button type="button" data-lang-set="${l.code}
 module.exports = {
   t, esc, tx, aria, PAGES, UI, head, header,
   // contact footer lives in footer.js; re-exported so page builders only need layout.js
-  CONTACT: F.CONTACT, footer: F.footer, contactList: F.contactList, mapFrame: F.mapFrame, instagramCard: F.instagramCard,
+  CONTACT: F.CONTACT, OWNER: F.OWNER, LEGAL: F.LEGAL, footer: F.footer, contactList: F.contactList, mapFrame: F.mapFrame, instagramCard: F.instagramCard,
 };

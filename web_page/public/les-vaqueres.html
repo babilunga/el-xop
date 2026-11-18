@@ -5,17 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Les Vaqueres · El Xop</title>
 <meta name="description" content="Les Vaqueres, El Xop.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- fonts load without blocking the first paint; system fonts show until they arrive -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Young+Serif&amp;display=swap"></noscript>
+<!-- fonts are served from the site itself (assets/fonts): no request to Google; the two main faces load early -->
+<link rel="preload" href="assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/library.css">
 </head>
 <body class="is-empty">
 
+<a class="skip-link" href="#top" data-ca="Salta al contingut" data-es="Saltar al contenido">Skip to content</a>
 <header class="site-header">
   <div class="progress" aria-hidden="true"><span></span></div>
   <div class="wrap header-inner">
@@ -104,12 +102,21 @@
         </span>
       </a></div>
     <div class="map footer-map">
-        <iframe src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing where El Xop is" data-ca-aria="Mapa de situació de El Xop" data-es-aria="Mapa de situación de El Xop" title="Map showing where El Xop is"></iframe>
+        <div class="map-gate" data-map-src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&amp;z=16&amp;output=embed" data-map-title="Map showing where El Xop is" data-ca-map-title="Mapa de situació de El Xop" data-es-map-title="Mapa de situación de El Xop">
+          <p class="map-note" data-ca="El mapa és de Google. En mostrar-lo, Google rep la teva adreça IP i pot desar galetes." data-es="El mapa es de Google. Al mostrarlo, Google recibe tu dirección IP y puede guardar cookies.">The map is provided by Google. Showing it sends your IP address to Google, which may set cookies.</p>
+          <button type="button" class="map-show" data-ca="Mostra el mapa" data-es="Mostrar el mapa">Show map</button>
+          <a class="map-policy" href="politica-cookies.html" data-ca="Política de galetes" data-es="Política de cookies">Cookie policy</a>
+        </div>
         <a class="map-link" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener" data-ca="Obre a Google Maps" data-es="Abrir en Google Maps">Open in Google Maps</a>
       </div>
   </div>
   <div class="wrap footer-base">
     <span>© 2026 El Xop · Les Vaqueres. <span data-ca="Tots els drets reservats." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+    <nav class="footer-legal" aria-label="Legal information" data-ca-aria="Informació legal" data-es-aria="Información legal">
+      <a href="avis-legal.html" data-ca="Avís legal" data-es="Aviso legal">Legal notice</a>
+      <a href="politica-privacitat.html" data-ca="Política de privacitat" data-es="Política de privacidad">Privacy policy</a>
+      <a href="politica-cookies.html" data-ca="Política de galetes" data-es="Política de cookies">Cookie policy</a>
+    </nav>
     <a href="#top" data-ca="Torna a dalt" data-es="Volver arriba">Back to top</a>
   </div>
 </footer>

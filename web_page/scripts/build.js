@@ -309,3 +309,22 @@ page({
   title: "El Xop d'ahir · El Xop", desc: "La memòria de El Xop, Les Vaqueres.",
   body: pageHead('ahir'), bodyClass: 'is-empty',
 });
+
+// ---------- legal pages: linked from the footer only, not from the menu ----------
+const legal = require('../src/templates/legal.js');
+const { LEGAL } = C;
+const legalPages = [
+  ['avis', "Avís legal · El Xop", "Avís legal del lloc web de El Xop · Les Vaqueres."],
+  ['privacitat', "Política de privacitat · El Xop", "Com tracta les dades personals el lloc web de El Xop · Les Vaqueres."],
+  ['cookies', "Política de galetes · El Xop", "El lloc web de El Xop · Les Vaqueres no fa servir galetes pròpies."],
+];
+for (const [key, title, desc] of legalPages) {
+  page({
+    file: LEGAL[key].href, key: null, title, desc,
+    body: `  <section class="page-head wrap">
+    ${tx('h1', LEGAL[key].title)}
+  </section>
+  <article class="legal wrap">${legal[key]('')}
+  </article>`,
+  });
+}
