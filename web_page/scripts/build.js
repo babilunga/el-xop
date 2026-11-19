@@ -20,8 +20,8 @@ try {
   if (m) live = '\n' + m[0];
 } catch (e) {}
 
-function page({ file, key, title, desc, body, bodyClass = '' }) {
-  const html = `${C.head(title, desc, '')}
+function page({ file, key, title, desc, body, bodyClass = '', extraHead = '' }) {
+  const html = `${C.head(title, desc, '', extraHead)}
 <body${bodyClass ? ` class="${bodyClass}"` : ''}>
 
 ${C.header('', key)}
@@ -208,8 +208,13 @@ page({
 
 page({
   file: PAGES.residencia.href, key: 'residencia',
-  title: "Residència d'artistes · El Xop", desc: "Residència d'artistes a El Xop, Les Vaqueres.",
-  body: pageHead('residencia'), bodyClass: 'is-empty',
+  title: "Residència d'artistes · Les Vaqueres · El Xop",
+  desc: "Les Vaqueres, residència d'artistes a l'Horta de Lleida: cinc apartaments, residències individuals i compartides, laboratoris de creació i tallers.",
+  // the hero rebuilds the flyer: its title faces load early so the first screen does not reflow
+  extraHead: `
+<link rel="preload" href="assets/fonts/oswald-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/caveat-500-latin.woff2" as="font" type="font/woff2" crossorigin>`,
+  body: require('../src/templates/residencia.js').body, bodyClass: 'page-residencia',
 });
 
 page({
@@ -340,3 +345,6 @@ for (const [key, title, desc] of legalPages) {
   </article>`,
   });
 }
+
+// ---------- other languages: public/<lang>/ copies of every page, from src/i18n/<lang>.json ----------
+require('./localize.js').build();

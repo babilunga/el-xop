@@ -1703,6 +1703,318 @@
    ]
   ]
  },
+ "assets/images/residencia/apartment-1-bedroom.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-1-bedroom-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-bedroom.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-1-bedroom-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-bedroom.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-1-long-room.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-1-long-room-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-long-room.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-1-long-room-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-long-room.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-1-mosaic-corner.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-1-mosaic-corner-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-mosaic-corner.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-1-mosaic-corner-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-mosaic-corner.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-1-round-table.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-1-round-table-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-round-table.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-1-round-table-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-1-round-table.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-2-bedroom.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-2-bedroom-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-2-bedroom.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-2-bedroom-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-2-bedroom.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-2-living-room.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-2-living-room-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-2-living-room.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-2-living-room-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-2-living-room.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-2-window-table.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-2-window-table-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-2-window-table.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-2-window-table-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-2-window-table.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-3-bathroom.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-3-bathroom-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-3-bathroom.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-3-bathroom-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-3-bathroom.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-3-kitchenette.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-3-kitchenette-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-3-kitchenette.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-3-kitchenette-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-3-kitchenette.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-3-room.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-3-room-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-3-room.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-3-room-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-3-room.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-4-bathroom.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-4-bathroom-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-4-bathroom.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-4-bathroom-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-4-bathroom.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-4-dining-corner.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-4-dining-corner-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-4-dining-corner.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-4-dining-corner-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-4-dining-corner.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/apartment-4-room.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/apartment-4-room-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-4-room.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/apartment-4-room-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/apartment-4-room.jpg",
+    1600
+   ]
+  ]
+ },
  "assets/images/residencia/aula.jpg": {
   "w": 574,
   "h": 430,
@@ -1716,6 +2028,270 @@
    [
     "assets/images/residencia/aula.jpg",
     574
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-aula-inside.jpg": {
+  "w": 609,
+  "h": 457,
+  "avif": [
+   [
+    "assets/images/residencia/casa-aula-inside.avif",
+    609
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-aula-inside.jpg",
+    609
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-aula-murals.jpg": {
+  "w": 487,
+  "h": 342,
+  "avif": [
+   [
+    "assets/images/residencia/casa-aula-murals.avif",
+    487
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-aula-murals.jpg",
+    487
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-aula-pine.jpg": {
+  "w": 376,
+  "h": 501,
+  "avif": [
+   [
+    "assets/images/residencia/casa-aula-pine.avif",
+    376
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-aula-pine.jpg",
+    376
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-butterfly-planter.jpg": {
+  "w": 341,
+  "h": 456,
+  "avif": [
+   [
+    "assets/images/residencia/casa-butterfly-planter.avif",
+    341
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-butterfly-planter.jpg",
+    341
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-herb-corner-gate.jpg": {
+  "w": 423,
+  "h": 564,
+  "avif": [
+   [
+    "assets/images/residencia/casa-herb-corner-gate.avif",
+    423
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-herb-corner-gate.jpg",
+    423
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-mosaic-fountain.jpg": {
+  "w": 695,
+  "h": 931,
+  "avif": [
+   [
+    "assets/images/residencia/casa-mosaic-fountain.avif",
+    695
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-mosaic-fountain.jpg",
+    695
+   ]
+  ]
+ },
+ "assets/images/residencia/casa-porch.jpg": {
+  "w": 642,
+  "h": 479,
+  "avif": [
+   [
+    "assets/images/residencia/casa-porch.avif",
+    642
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/casa-porch.jpg",
+    642
+   ]
+  ]
+ },
+ "assets/images/residencia/common-dining-room.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/common-dining-room-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/common-dining-room.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/common-dining-room-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/common-dining-room.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/common-dining-table-football.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/common-dining-table-football-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/common-dining-table-football.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/common-dining-table-football-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/common-dining-table-football.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/common-hallway.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/common-hallway-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/common-hallway.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/common-hallway-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/common-hallway.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/common-kitchen.jpg": {
+  "w": 1180,
+  "h": 884,
+  "avif": [
+   [
+    "assets/images/residencia/common-kitchen-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/common-kitchen.avif",
+    1180
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/common-kitchen-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/common-kitchen.jpg",
+    1180
+   ]
+  ]
+ },
+ "assets/images/residencia/common-staircase-piano.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/common-staircase-piano-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/common-staircase-piano.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/common-staircase-piano-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/common-staircase-piano.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/darkroom-van-inside.jpg": {
+  "w": 680,
+  "h": 362,
+  "avif": [
+   [
+    "assets/images/residencia/darkroom-van-inside.avif",
+    680
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/darkroom-van-inside.jpg",
+    680
+   ]
+  ]
+ },
+ "assets/images/residencia/darkroom-van.jpg": {
+  "w": 806,
+  "h": 431,
+  "avif": [
+   [
+    "assets/images/residencia/darkroom-van.avif",
+    806
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/darkroom-van.jpg",
+    806
    ]
   ]
  },
@@ -1751,6 +2327,54 @@
    ]
   ]
  },
+ "assets/images/residencia/reflexology-labyrinth.jpg": {
+  "w": 1580,
+  "h": 1172,
+  "avif": [
+   [
+    "assets/images/residencia/reflexology-labyrinth-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/reflexology-labyrinth.avif",
+    1580
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/reflexology-labyrinth-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/reflexology-labyrinth.jpg",
+    1580
+   ]
+  ]
+ },
+ "assets/images/residencia/reflexology-sign.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/reflexology-sign-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/reflexology-sign.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/reflexology-sign-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/reflexology-sign.jpg",
+    1600
+   ]
+  ]
+ },
  "assets/images/residencia/rose-arbor.jpg": {
   "w": 535,
   "h": 401,
@@ -1767,19 +2391,235 @@
    ]
   ]
  },
- "assets/images/residencia/shared-table.jpg": {
-  "w": 553,
-  "h": 413,
+ "assets/images/residencia/scent-point-hut.jpg": {
+  "w": 1580,
+  "h": 1180,
   "avif": [
    [
-    "assets/images/residencia/shared-table.avif",
-    553
+    "assets/images/residencia/scent-point-hut-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/scent-point-hut.avif",
+    1580
    ]
   ],
   "fallback": [
    [
-    "assets/images/residencia/shared-table.jpg",
-    553
+    "assets/images/residencia/scent-point-hut-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/scent-point-hut.jpg",
+    1580
+   ]
+  ]
+ },
+ "assets/images/residencia/senses-garden-arbour-walk.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/senses-garden-arbour-walk-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/senses-garden-arbour-walk.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/senses-garden-arbour-walk-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/senses-garden-arbour-walk.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/senses-garden-beds.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/senses-garden-beds-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/senses-garden-beds.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/senses-garden-beds-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/senses-garden-beds.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/senses-garden-pond.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "avif": [
+   [
+    "assets/images/residencia/senses-garden-pond-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/senses-garden-pond.avif",
+    1600
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/senses-garden-pond-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/senses-garden-pond.jpg",
+    1600
+   ]
+  ]
+ },
+ "assets/images/residencia/sky-viewpoint-mosaic.jpg": {
+  "w": 840,
+  "h": 1120,
+  "avif": [
+   [
+    "assets/images/residencia/sky-viewpoint-mosaic.avif",
+    840
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/sky-viewpoint-mosaic.jpg",
+    840
+   ]
+  ]
+ },
+ "assets/images/residencia/therapeutic-garden-blue-table.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/therapeutic-garden-blue-table-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-blue-table.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/therapeutic-garden-blue-table-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-blue-table.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/therapeutic-garden-green-hut-2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut-2-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut-2.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut-2-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut-2.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/therapeutic-garden-green-hut.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-green-hut.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/therapeutic-garden-hut-inside.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/therapeutic-garden-hut-inside-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-hut-inside.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/therapeutic-garden-hut-inside-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-hut-inside.jpg",
+    1200
+   ]
+  ]
+ },
+ "assets/images/residencia/therapeutic-garden-mirror.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "avif": [
+   [
+    "assets/images/residencia/therapeutic-garden-mirror-sm.avif",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-mirror.avif",
+    1200
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/therapeutic-garden-mirror-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/residencia/therapeutic-garden-mirror.jpg",
+    1200
    ]
   ]
  }

@@ -109,6 +109,15 @@ The two main faces are preloaded.
 - **Welcome title**: home section titles, centred, Young Serif bold; the second line in a calligraphic
   stack ("Lucida Calligraphy", "Apple Chancery", serif), smaller.
 - **Sub-heading**: sub-sections in museum and garden pages.
+- **Residency page faces** (that page only, rebuilt from the association's flyer): Oswald 600 for
+  "LES VAQUERES", Barlow Semi Condensed 400 for "RESIDÈNCIA D'ARTISTES" and big numbers' labels, Caveat 500
+  for the handwritten lines and short quotes. Self-hosted like the others; Oswald and Caveat preloaded there.
+- **Book faces** (flip-book pages in `public/library/` only, matched to the lettering of the original
+  hand-made books and set in `assets/css/flipbook.css`): Kaushan Script for the slanted brush titles (with
+  a soft drop shadow, as printed) and the bold labels; Courgette for the thin script labels and captions;
+  Delius for the El Mirador del Cel cover title (stands in for Tempus Sans); Mali for the rounder titles
+  and labels (stands in for Kristen); Arimo for body text (metric-compatible with the Arial used in the
+  books). Self-hosted like the others. Do not use them anywhere else on the site.
 - **Wordmark**: "El Xop" in the header, with "Les Vaqueres" beneath in light grotesk.
 - **Lead / Body / Small**: Hanken Grotesk; nav labels at 500; small for footer, credits, captions.
 
@@ -125,13 +134,36 @@ The two main faces are preloaded.
   level with the top of the h1 title, each nudged slightly sideways; the group is never sticky and
   scrolls with the page.
 - Museum rooms: sticky room title, text and photo side by side, alternating sides.
+- Artist residency: a hero that rebuilds the association's flyer (paper panel with grain, title block,
+  text, house icon; garden photo on the right fading into the paper; a torn-paper card with four icons
+  overlapping the photo's foot; closing line "Aquest és el teu lloc."). **Rule:** photo and card stay in
+  the right column and never cover the text on the left, at any width (owner's request, 2026-11-19). Phones: title, photo, text, card
+  2×2, closing line. Then full-screen sections (min-height = screen minus header) alternating ground /
+  hero greens, title centred with a sprig ornament, content as cards, chips, numbered steps and big numbers.
+  "La casa i el seu entorn": pill tabs (one per group of spaces; the selected one filled arbor), then a
+  sideways photo strip that snaps photo by photo (swipe; round arrows; thumbnails, the current one framed
+  in arbor). Photos are shown whole (contain) on a sage-grey stage. Without JavaScript every group shows.
+  Groups with sub-places (apartments, the outdoor places) add a row of text buttons ("Apartament N",
+  "Hort dels Sentits"…) (current one underlined in arbor) and a
+  small pill badge on each photo; on phones that row and the thumbnails are single rows that scroll sideways.
+  The stage is tall (up to 64vh / 720px; 4:5 on phones). Clicking a photo opens a full-screen viewer
+  (`<dialog>`, dark green-black, round translucent buttons): arrows, arrow keys or a swipe go through that
+  space's photos, caption = apartment + "n / total", Esc or a click outside closes it and the gallery
+  stays on the photo you closed on.
+  Under the hero a slim sticky page navigation (46px, surface, hairline below) sits under the site header:
+  "En aquesta pàgina:" then short section links; the section being read is underlined in arbor; on phones
+  the links scroll sideways. Anchor jumps land below it (`scroll-padding-top` = header + nav).
+  Each section is at least one screen tall; the page scrolls normally (snapping was tried and removed at
+  the owner's request). "Model econòmic" is deliberately plain: one centred reading column, no cards,
+  icons, chips or photo. Flyer colours live on `.res-page` only (paper #f1ede2,
+  card #f8f5ec, forest #2e4a2b).
 - Book pages: sticky table of contents, chapters, scans column, full-screen viewer.
 - Breakpoints: 960px (burger menu), 860px, 760px, 480px.
 
 ## Components
 
 - **Header**: wordmark; "Benvinguts!" (types itself once on the home page); menu; language dropdown.
-  Dropdowns (Our Projects, Surroundings, Archive) are labels with no page: they open on hover (or
+  Dropdowns (Surroundings, Archive) are labels with no page: they open on hover (or
   keyboard focus); a click does nothing, except a tap on touch screens without hover. On phones the
   burger menu lists every group and its pages.
 - **Language dropdown**: pill button with flag and code; Catalan flag is an inline SVG.
@@ -147,6 +179,15 @@ The two main faces are preloaded.
 - **Back to top**: round arbor button, 72px, arrow 27px, appears after the first screen.
 - **Skip link**: "Skip to content", hidden until focused by keyboard.
 - **Legal pages**: plain article, max 44em, owner details as a definition list.
+- **Flip-book** (`src/templates/flipbook.js`, `assets/css/flipbook.css`, `assets/js/flipbook.js`): a book
+  whose pages have been recreated (`src/data/books/pages/<book>.json`) is shown one A4 page at a time on
+  book paper (`--paper: #f7f4ec`, very slightly warm off-white), with a thin page stack on the right.
+  Every picture and text is placed in % of the page and sized in `cqw`, so the page scales as one
+  piece; text is live and follows the language switch (a long translation shrinks to fit its box).
+  Turn by buttons, arrow keys, swipe, or a tap on either half of the page; the page turns over its left
+  (spiral-binding) edge with a single `rotateY` transform, 0.7s. Only the current page and its
+  neighbours are drawn. A zoom button doubles the page inside a pan frame for small screens. Below:
+  page list, source note, next book. Labels printed over photos get a faint light halo.
 
 ## Images and loading
 
@@ -159,7 +200,8 @@ The two main faces are preloaded.
 
 ## Motion
 
-- Photos fade in the first time they scroll into view.
+- Photos fade in the first time they scroll into view. Not on flip-book pages (it would replay on every page turn).
+- Flip-book page turn: one rotateY over the left edge; reduced motion swaps it for a short fade.
 - "Benvinguts!" typewriter on the home page only.
 - Scroll cue nudge in the hero; gentle hover lifts (Instagram card, zoom close-ups).
 - All of it is off with `prefers-reduced-motion`; fades and header blur are off on low-end devices or

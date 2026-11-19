@@ -38,7 +38,22 @@ wellness brand. The poplar (el Xop), the fig tree and the cypresses are its symb
 
 - Home: hero (logos + illustrated map of the Horta), welcome text beside the illustrated plan, garden
   scene (poplar and fig tree).
-- Our Projects (dropdown, no page): Artist residency, Les Vaqueres. Both pages are still empty.
+- Artist residency (plain menu link; it replaced the "Our Projects" dropdown on 2026-11-19). The empty
+  Les Vaqueres page (`les-vaqueres.html`) is still built but no longer in the menu.
+  - Artist residency: flyer hero, then conditions of stay, during the stay, ways to stay, creation labs,
+    workshops, the house and its surroundings, economic model. Text only from the association's document
+    "Les Vaqueres salut natura" (2026-11-19). "La casa i el seu entorn" uses option A of
+    `temp files work dir/la-casa-layout-brief.html` (tabs by space). Apartments 1–4 and the shared
+    rooms use the owner's phone photos (`temp files work dir/apartaments/`, converted to 1600 px JPEG);
+    the surroundings, outdoor spaces and aula still use the small photos from the document. Apartment 5
+    has no photos yet, and which apartment is the fully accessible one is not stated: do not mark one.
+    Outdoor spaces are grouped by place (Hort dels Sentits, Punt d'aromes, Mirador del cel, Reflexologia,
+    Jardí terapèutic; photos from `temp files work dir/outdoors/`) with a line linking to the Bibliography
+    (new tab). "La cambra fosca" (the darkroom van) has its own tab: the document's two sentences about it, then its
+    2 photos.
+    Note: the Mirador del cel picture is an AI-generated image (Gemini file name), not a photograph.
+    The document says "No lloguem apartaments": never present the spaces as rentals (no prices, booking,
+    ratings).
 - Surroundings (dropdown, no page): Autumn fruits, Herb corner (Racó d'herbes).
 - Museum.
 - Archive (dropdown, no page): Bibliography (book cards → 5 book reader pages), El Xop in the past (empty).

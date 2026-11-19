@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja" data-page-lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文献 · El Xop</title>
+<meta name="description" content="El Xop の手作りの本を全文掲載。">
+<!-- fonts are served from the site itself (assets/fonts): no request to Google; the two main faces load early -->
+<link rel="preload" href="../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/library.css">
+<!-- hreflang -->
+<link rel="alternate" hreflang="x-default" href="../bibliografia.html">
+<link rel="alternate" hreflang="de" href="../de/bibliografia.html">
+<link rel="alternate" hreflang="fr" href="../fr/bibliografia.html">
+<link rel="alternate" hreflang="it" href="../it/bibliografia.html">
+<link rel="alternate" hreflang="pl" href="../pl/bibliografia.html">
+<link rel="alternate" hreflang="cs" href="../cs/bibliografia.html">
+<link rel="alternate" hreflang="uk" href="../uk/bibliografia.html">
+<link rel="alternate" hreflang="ru" href="../ru/bibliografia.html">
+<link rel="alternate" hreflang="ja" href="../ja/bibliografia.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/bibliografia.html">
+<!-- /hreflang -->
+</head>
+<body>
+
+<a class="skip-link" href="#top">本文へ移動</a>
+<header class="site-header">
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-name">El Xop</span>
+      <span class="brand-sub">Les Vaqueres</span>
+    </a>
+
+    <p class="nav-welcome"><span>ようこそ！</span></p>
+
+    <button type="button" class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="メニュー">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-panel" id="site-nav">
+      <nav class="main-nav" aria-label="メイン">
+        <ul>
+          <li><a href="residencia.html">アーティスト・イン・レジデンス</a></li>
+          <li class="has-sub">
+            <button type="button" class="sub-toggle sub-label" aria-haspopup="true" aria-controls="sub-entorn"><span>周辺</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-entorn">
+              <li><a href="fruits-de-la-tardor.html">秋の実り</a></li>
+              <li><a href="raco-dherbes.html">ハーブの庭</a></li>
+            </ul>
+          </li>
+          <li><a href="museu.html">博物館</a></li>
+          <li class="has-sub is-active">
+            <button type="button" class="sub-toggle sub-label" aria-haspopup="true" aria-controls="sub-arxiu"><span>アーカイブ</span><svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <ul class="sub" id="sub-arxiu">
+              <li><a href="bibliografia.html" aria-current="page">文献</a></li>
+              <li><a href="el-xop-dahir.html">昔の El Xop</a></li>
+            </ul>
+          </li>
+          <li><a href="#contacte" class="nav-contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="lang">
+        <button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-menu" aria-label="言語">
+          <span class="lang-current" aria-hidden="true"><span class="flag" aria-hidden="true">🇯🇵</span><span class="lang-code">JA</span></span>
+          <svg class="lang-chevron" aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu">
+          <li><button type="button" data-lang-set="ca" data-code="CA" aria-pressed="false" lang="ca"><svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18"><rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/></svg><span>Català</span></button></li>
+          <li><button type="button" data-lang-set="en" data-code="EN" aria-pressed="false" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button></li>
+          <li><button type="button" data-lang-set="es" data-code="ES" aria-pressed="false" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span><span>Español</span></button></li>
+          <li><button type="button" data-lang-set="de" data-code="DE" aria-pressed="false" lang="de"><span class="flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></button></li>
+          <li><button type="button" data-lang-set="fr" data-code="FR" aria-pressed="false" lang="fr"><span class="flag" aria-hidden="true">🇫🇷</span><span>Français</span></button></li>
+          <li><button type="button" data-lang-set="it" data-code="IT" aria-pressed="false" lang="it"><span class="flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></button></li>
+          <li><button type="button" data-lang-set="pl" data-code="PL" aria-pressed="false" lang="pl"><span class="flag" aria-hidden="true">🇵🇱</span><span>Polski</span></button></li>
+          <li><button type="button" data-lang-set="cs" data-code="CS" aria-pressed="false" lang="cs"><span class="flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></button></li>
+          <li><button type="button" data-lang-set="uk" data-code="UA" aria-pressed="false" lang="uk"><span class="flag" aria-hidden="true">🇺🇦</span><span>Українська</span></button></li>
+          <li><button type="button" data-lang-set="ru" data-code="RU" aria-pressed="false" lang="ru"><span class="flag" aria-hidden="true">🇷🇺</span><span>Русский</span></button></li>
+          <li><button type="button" data-lang-set="ja" data-code="JA" aria-pressed="true" lang="ja"><span class="flag" aria-hidden="true">🇯🇵</span><span>日本語</span></button></li>
+          <li><button type="button" data-lang-set="zh" data-code="ZH" aria-pressed="false" lang="zh-Hans"><span class="flag" aria-hidden="true">🇨🇳</span><span>中文（简体）</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-head wrap">
+    <h1>文献</h1>
+    <p class="lead">El Xop には、その場所の一つひとつを説明する手作りの本があります。展望台から見る空、迷路の象徴、迷路の歴史、そしてサンティアゴ巡礼路。ここで全文を読むことができます。</p>
+  </section>
+  <section class="books wrap">
+    <div class="book-grid">
+      <a class="book-card" href="library/espais-de-el-xop.html" style="--book: var(--olive)">
+        <img src="../assets/images/library/photos/espais-mapa.webp" width="1692" height="855" loading="lazy" decoding="async" alt="">
+        <span class="kicker">フォトアルバム</span>
+        <span class="book-card-title">El Xop の空間</span>
+        <span class="book-card-text">敷地全体の手描きの地図と、その名の由来となった大きなクロポプラまで、各所をめぐる写真の散歩。</span>
+        <span class="book-card-meta">全9章</span>
+      </a>
+      <a class="book-card" href="library/el-mirador-del-cel.html" style="--book: var(--sky)">
+        <img src="../assets/images/library/photos/mirador-cover.webp" width="1512" height="1684" loading="lazy" decoding="async" alt="">
+        <span class="kicker">足もとの天文学</span>
+        <span class="book-card-title">空の展望台</span>
+        <span class="book-card-text">空を読むためのモザイクの床：星座、夏至・冬至の日の出、虹、天の川、風、月の満ち欠け。</span>
+        <span class="book-card-meta">Digital book · 10 pages</span>
+      </a>
+      <a class="book-card" href="library/el-passeig-dels-plataners.html" style="--book: var(--arbor)">
+        <img src="../assets/images/library/photos/passeig-plano.webp" width="1728" height="1211" loading="lazy" decoding="async" alt="">
+        <span class="kicker">人生の迷路とその象徴</span>
+        <span class="book-card-title">プラタナスの並木道</span>
+        <span class="book-card-text">プラタナスの木陰の散歩道に隠された「人生の迷路」：古代の象徴と、裸足で歩くリフレクソロジーの円がある、分かれ道の小径。</span>
+        <span class="book-card-meta">全8章</span>
+      </a>
+      <a class="book-card" href="library/la-mare-terra.html" style="--book: var(--ochre)">
+        <img src="../assets/images/library/photos/mare-terra-cover.webp" width="828" height="953" loading="lazy" decoding="async" alt="">
+        <span class="kicker">七重の迷路</span>
+        <span class="book-card-title">母なる大地</span>
+        <span class="book-card-text">迷路とは何か、七重の迷路の描き方、その用途、そして世界のどこにあるのか。ガリシアからナスカまで、クレタからアリゾナまで。</span>
+        <span class="book-card-meta">全10章</span>
+      </a>
+      <a class="book-card" href="library/el-cami-de-sant-jaume.html" style="--book: var(--clay)">
+        <img src="../assets/images/library/photos/horta-joc.webp" width="1224" height="1067" loading="lazy" decoding="async" alt="">
+        <span class="kicker">グレニャーナからブツェニットへ、そしてガチョウのゲーム</span>
+        <span class="book-card-title">サンティアゴ巡礼路</span>
+        <span class="book-card-text">El Xop はまさにサンティアゴ巡礼路の上にあります。二つの礼拝堂を結ぶ道、リェイダのランタンの伝説、オルタのボードゲーム、そしてガチョウのゲームの謎。</span>
+        <span class="book-card-meta">全11章</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="contacte">
+  <div class="wrap footer-grid">
+    <div class="footer-contact">
+      <h2 class="footer-title">お問い合わせ</h2>
+      <ul class="contact-list">
+        <li><strong>El Xop · Les Vaqueres</strong></li>
+        <li><a class="ci" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Horta de Lleida, El Xop</span></a></li>
+        <li><a class="ci" href="tel:+34695551385"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/></svg><span>+34 695 551 385</span></a></li>
+        <li><a class="ci" href="mailto:elxop@yahoo.es"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>elxop@yahoo.es</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-ig"><a class="ig-device" href="https://www.instagram.com/elxop.lesvaqueres/" target="_blank" rel="noopener" aria-label="Instagram の El Xop">
+        <span class="ig-screen">
+          <span class="ig-bar"><span>elxop.lesvaqueres</span><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></span>
+          <span class="ig-profile">
+            <img class="ig-avatar" src="../assets/images/instagram/avatar.jpg" width="150" height="150" alt="" loading="lazy" decoding="async">
+            <span class="ig-names"><span class="ig-name">El Xop · Les Vaqueres</span><span class="ig-user">@elxop.lesvaqueres</span></span>
+          </span>
+          <span class="ig-follow">フォロー</span>
+          <span class="ig-grid"><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-1.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-1.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-2.avif 467w" sizes="120px"><img width="467" height="467" src="../assets/images/instagram/post-2.jpg" alt="" loading="lazy" decoding="async"></picture></span><span class="ig-post"><picture><source type="image/avif" srcset="../assets/images/instagram/post-3.avif 640w" sizes="120px"><img width="640" height="640" src="../assets/images/instagram/post-3.jpg" alt="" loading="lazy" decoding="async"></picture></span></span>
+          <span class="ig-more">Instagram でもっと見る →</span>
+        </span>
+      </a></div>
+    <div class="map footer-map">
+        <div class="map-gate" data-map-src="https://maps.google.com/maps?q=El%20Xop%2C%20Lleida%4041.6363231%2C0.658931&amp;z=16&amp;output=embed" data-map-title="El Xop の場所を示す地図">
+          <p class="map-note">地図は Google が提供しています。表示すると、あなたの IP アドレスが Google に送信され、Google がクッキーを設定する場合があります。</p>
+          <button type="button" class="map-show">地図を表示</button>
+          <a class="map-policy" href="politica-cookies.html">クッキーポリシー</a>
+        </div>
+        <a class="map-link" href="https://maps.app.goo.gl/4DhkwMRz6rGsScwV6" target="_blank" rel="noopener">Google マップで開く</a>
+      </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 El Xop · Les Vaqueres. <span>無断転載を禁じます。</span></span>
+    <nav class="footer-legal" aria-label="法的情報">
+      <a href="avis-legal.html">法的情報</a>
+      <a href="politica-privacitat.html">プライバシーポリシー</a>
+      <a href="politica-cookies.html">クッキーポリシー</a>
+    </nav>
+    <a href="#top">ページの先頭へ</a>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="ページの先頭へ"><svg aria-hidden="true" viewBox="0 0 16 16" width="18" height="18"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -53,15 +53,23 @@
   var img = dlg.querySelector(".viewer-img");
   var count = dlg.querySelector(".viewer-count");
   var at = 0, opener = null;
-  var word = { ca: "Pàgina", es: "Página", en: "Page" };
-  var of = { ca: "de", es: "de", en: "of" };
+  // "Page 3 of 9" in each language: [page n, n of total]
+  var PAGE = {
+    ca: ["Pàgina {n}", "Pàgina {n} de {t}"], es: ["Página {n}", "Página {n} de {t}"], en: ["Page {n}", "Page {n} of {t}"],
+    de: ["Seite {n}", "Seite {n} von {t}"], fr: ["Page {n}", "Page {n} sur {t}"], it: ["Pagina {n}", "Pagina {n} di {t}"],
+    pl: ["Strona {n}", "Strona {n} z {t}"], cs: ["Strana {n}", "Strana {n} z {t}"], uk: ["Сторінка {n}", "Сторінка {n} з {t}"],
+    ru: ["Страница {n}", "Страница {n} из {t}"], ja: ["{n}ページ", "{n} / {t}ページ"], "zh-Hans": ["第{n}页", "第{n}页，共{t}页"]
+  };
 
   function show(n) {
     at = (n + pages.length) % pages.length;
-    img.src = "../assets/images/library/pages/" + pages[at] + ".webp";
-    var l = document.documentElement.lang || "en";
-    img.alt = (word[l] || word.en) + " " + (at + 1);
-    count.textContent = (word[l] || word.en) + " " + (at + 1) + " " + (of[l] || of.en) + " " + pages.length;
+    // pages in the language folders (uk/library/…) sit one level deeper
+    var up = document.documentElement.getAttribute("data-page-lang") ? "../../" : "../";
+    img.src = up + "assets/images/library/pages/" + pages[at] + ".webp";
+    var w = PAGE[document.documentElement.lang] || PAGE.en;
+    var fill = function (s) { return s.replace("{n}", at + 1).replace("{t}", pages.length); };
+    img.alt = fill(w[0]);
+    count.textContent = fill(w[1]);
   }
   document.addEventListener("click", function (e) {
     var b = e.target.closest(".scan");

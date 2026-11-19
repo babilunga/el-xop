@@ -25,6 +25,7 @@ const SIZES = [
   [/images\/herbes\//, '(max-width: 760px) 100vw, 680px'],
   [/images\/instagram\//, '120px'],
   [/\bres-hero-photo\b/, '(max-width: 860px) 100vw, 60vw'],
+  [/\bres-casa-photo\b/, '(max-width: 760px) 100vw, 1080px'],
   [/images\/residencia\//, '(max-width: 760px) 100vw, 480px'],
   [/images\/welcome\//, '(max-width: 1099px) 460px, 500px'],
 ];

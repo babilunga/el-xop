@@ -73,9 +73,37 @@
     if (typeof measureTitles === "function") measureTitles();
   }
 
+  // Catalan, Spanish and English switch in place on the main pages; every other language is a
+  // copy of the site in its own folder (public/<code>/, made by scripts/localize.js), so picking
+  // one of those (or leaving one) opens the same page in that folder
+  var INLINE = ["ca", "es", "en"];
+  var FOLDERS = ["de", "fr", "it", "pl", "cs", "uk", "ru", "ja", "zh"];
+  var pageLang = root.getAttribute("data-page-lang"); // set on the folder copies only
+  var me = document.currentScript && document.currentScript.src;
+  var siteRoot = me ? me.replace(/assets\/js\/main\.js(\?.*)?$/, "") : "";
+  function langURL(lang) {
+    var here = location.href.split("#")[0].split("?")[0];
+    if (!siteRoot || here.indexOf(siteRoot) !== 0) return null;
+    var rest = here.slice(siteRoot.length);
+    if (pageLang && rest.indexOf(pageLang + "/") === 0) rest = rest.slice(pageLang.length + 1);
+    if (rest === "" || rest.slice(-1) === "/") rest += "index.html";
+    return siteRoot + (FOLDERS.indexOf(lang) >= 0 ? lang + "/" : "") + rest + location.hash;
+  }
+  function pickLang(lang) {
+    var inPlace = INLINE.indexOf(lang) >= 0 && !pageLang;
+    if (inPlace || lang === pageLang) { if (inPlace) setLang(lang); return true; }
+    var url = langURL(lang);
+    if (url) { location.href = url; return true; }
+    return false;
+  }
+
   document.addEventListener("click", function (e) {
     var b = e.target.closest("[data-lang-set]");
-    if (b) { setLang(b.dataset.langSet); store("elxop-lang-choice", b.dataset.langSet); setLangMenu(false); if (langToggle) langToggle.focus(); }
+    if (!b) return;
+    store("elxop-lang-choice", b.dataset.langSet);
+    setLangMenu(false);
+    pickLang(b.dataset.langSet);
+    if (langToggle) langToggle.focus();
   });
 
   // back-to-top button: shown once the visitor is past the first screen
@@ -172,12 +200,19 @@
     var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
     for (var i = 0; i < list.length; i++) {
       var code = String(list[i]).toLowerCase().slice(0, 2);
-      if (code === "ca" || code === "es" || code === "en") return code;
+      if (INLINE.indexOf(code) >= 0 || FOLDERS.indexOf(code) >= 0) return code;
     }
     return "ca";
   }
-  var saved = store("elxop-lang-choice");
-  setLang(saved === "ca" || saved === "es" || saved === "en" ? saved : browserLang());
+  // a folder copy (e.g. uk/museu.html) always stays in its own language: it was opened on purpose.
+  // A main page shows the visitor's language, opening its folder copy when it has one.
+  if (!pageLang) {
+    var saved = store("elxop-lang-choice");
+    var want = INLINE.indexOf(saved) >= 0 || FOLDERS.indexOf(saved) >= 0 ? saved : browserLang();
+    if (FOLDERS.indexOf(want) >= 0) {
+      if (!pickLang(want)) setLang("en");
+    } else setLang(want);
+  }
 
   // footer map: Google is contacted only after the visitor presses "Show map"
   document.addEventListener("click", function (e) {
@@ -246,5 +281,136 @@
       timer = setTimeout(step, 350);
     };
     type();
+  }
+  // residency page navigation: underline the section you are reading, keep it visible in the bar on phones
+  var rnav = document.querySelector(".res-nav");
+  if (rnav) {
+    var rlinks = Array.prototype.slice.call(rnav.querySelectorAll("a"));
+    var rsecs = rlinks.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+    var rcur = null;
+    var rmark = function () {
+      var line = (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 130) + 40, on = null;
+      rsecs.forEach(function (sec, k) { if (sec && sec.getBoundingClientRect().top <= line) on = rlinks[k]; });
+      if (on === rcur) return;
+      rcur = on;
+      rlinks.forEach(function (a) { if (a === on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+      if (on) { var ul = on.closest("ul"), a1 = on.getBoundingClientRect(), b1 = ul.getBoundingClientRect(); if (a1.left < b1.left || a1.right > b1.right) ul.scrollTo({ left: ul.scrollLeft + a1.left - b1.left - 12 }); }
+    };
+    var rt = 0;
+    window.addEventListener("scroll", function () { clearTimeout(rt); rt = setTimeout(rmark, 50); }, { passive: true });
+    window.addEventListener("hashchange", function () { setTimeout(rmark, 60); });
+    rnav.addEventListener("click", function () { setTimeout(rmark, 450); }); // after a jump, even if no scroll event comes
+    rmark();
+  }
+
+  // residency page, "La casa i el seu entorn": tabs by space, each a sideways photo strip
+  // (swipe on phones; thumbnails and arrows move it). Without this script every group shows in turn.
+  var casa = document.querySelector(".res-casa");
+  if (casa) {
+    casa.classList.add("is-ready");
+    var tabs = Array.prototype.slice.call(casa.querySelectorAll('[role="tab"]'));
+    var select = function (tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (on) panel.removeAttribute("data-hidden"); else panel.setAttribute("data-hidden", "");
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab); });
+      tab.addEventListener("keydown", function (e) {
+        var k = { ArrowRight: 1, ArrowLeft: -1, Home: "first", End: "last" }[e.key];
+        if (k == null) return;
+        e.preventDefault();
+        var j = k === "first" ? 0 : k === "last" ? tabs.length - 1 : (i + k + tabs.length) % tabs.length;
+        select(tabs[j], true);
+      });
+    });
+    Array.prototype.forEach.call(casa.querySelectorAll(".res-casa-panel"), function (panel) {
+      var strip = panel.querySelector(".res-casa-strip");
+      var slides = strip.children;
+      var thumbs = Array.prototype.slice.call(panel.querySelectorAll(".res-casa-thumbs button"));
+      var prev = panel.querySelector(".res-casa-prev"), next = panel.querySelector(".res-casa-next");
+      var current = function () { return Math.round(strip.scrollLeft / (strip.clientWidth || 1)); };
+      var go = function (i) {
+        i = Math.max(0, Math.min(slides.length - 1, i));
+        var left = slides[i].offsetLeft;
+        strip.scrollTo({ left: left, behavior: reduceMotion ? "auto" : "smooth" });
+        // photos that load just after a tab opens can cancel the glide: finish it if so
+        clearTimeout(strip.goTimer);
+        strip.goTimer = setTimeout(function () { if (Math.abs(strip.scrollLeft - left) > 2) strip.scrollTo({ left: left }); mark(); }, 700);
+      };
+      var mark = function () {
+        var i = current();
+        thumbs.forEach(function (b, k) { if (k === i) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
+        var on = null;
+        subs.forEach(function (b) { if (+b.dataset.go <= i) on = b; });
+        subs.forEach(function (b) { if (b === on) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
+        var keep = function (el) { if (!el) return; var row = el.closest(".res-casa-thumbs, .res-casa-sub"); if (row.scrollWidth <= row.clientWidth) return; var a = el.getBoundingClientRect(), b = row.getBoundingClientRect(); row.scrollTo({ left: row.scrollLeft + a.left - b.left - (b.width - a.width) / 2 }); };
+        keep(thumbs[i]); keep(on);
+        prev.disabled = i <= 0;
+        next.disabled = i >= slides.length - 1;
+      };
+      thumbs.forEach(function (b, k) { b.addEventListener("click", function () { go(k); }); });
+      // apartments: "Apartament N" buttons jump to that apartment's first photo
+      var subs = Array.prototype.slice.call(panel.querySelectorAll(".res-casa-sub button"));
+      subs.forEach(function (b) { b.addEventListener("click", function () { go(+b.dataset.go); }); });
+      prev.addEventListener("click", function () { go(current() - 1); });
+      next.addEventListener("click", function () { go(current() + 1); });
+      var settle = 0;
+      strip.addEventListener("scroll", function () { clearTimeout(settle); settle = setTimeout(mark, 60); }, { passive: true });
+      if (slides.length < 2) { prev.hidden = true; next.hidden = true; }
+      panel.casaGo = function (i) { strip.scrollTo({ left: slides[i].offsetLeft }); mark(); };
+      mark();
+    });
+
+    // full-screen viewer: click a photo to open it; arrows (buttons, keys or a swipe) go through that space's photos
+    var box = casa.querySelector(".res-lightbox");
+    if (box && typeof box.showModal === "function") {
+      var boxImg = box.querySelector(".res-lightbox-img"), boxCap = box.querySelector(".res-lightbox-cap");
+      var bPrev = box.querySelector(".res-lightbox-prev"), bNext = box.querySelector(".res-lightbox-next");
+      var list = [], at = 0, owner = null;
+      var show = function (i) {
+        at = (i + list.length) % list.length;
+        var img = list[at].querySelector("img"), badge = list[at].querySelector(".res-casa-badge");
+        boxImg.src = img.currentSrc || img.src;
+        boxImg.alt = img.alt;
+        boxCap.textContent = (badge ? badge.textContent + " · " : "") + (at + 1) + " / " + list.length;
+        bPrev.hidden = bNext.hidden = list.length < 2;
+      };
+      Array.prototype.forEach.call(casa.querySelectorAll(".res-casa-open"), function (btn) {
+        btn.addEventListener("click", function () {
+          owner = btn.closest(".res-casa-panel");
+          list = Array.prototype.slice.call(owner.querySelectorAll(".res-casa-strip > li"));
+          show(list.indexOf(btn.parentNode));
+          box.showModal();
+          document.documentElement.classList.add("res-lightbox-open");
+        });
+      });
+      bPrev.addEventListener("click", function () { show(at - 1); });
+      bNext.addEventListener("click", function () { show(at + 1); });
+      box.querySelector(".res-lightbox-close").addEventListener("click", function () { box.close(); });
+      box.addEventListener("click", function (e) { if (e.target === box) box.close(); }); // click outside the photo
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") { e.preventDefault(); show(at - 1); }
+        else if (e.key === "ArrowRight") { e.preventDefault(); show(at + 1); }
+      });
+      var x0 = null;
+      box.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      box.addEventListener("touchend", function (e) {
+        if (x0 == null) return;
+        var dx = e.changedTouches[0].clientX - x0; x0 = null;
+        if (Math.abs(dx) > 40) show(at + (dx < 0 ? 1 : -1));
+      });
+      box.addEventListener("close", function () {
+        document.documentElement.classList.remove("res-lightbox-open");
+        if (owner && owner.casaGo) owner.casaGo(at); // the gallery shows the photo you closed on
+        var b = list[at] && list[at].querySelector(".res-casa-open");
+        if (b) b.focus({ preventScroll: true });
+      });
+    }
   }
 })();

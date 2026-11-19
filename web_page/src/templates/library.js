@@ -12,7 +12,7 @@ const dims = require(path.join(DATA, 'image-dimensions.json'));
 const IMG = '../assets/images/library/';
 
 const books = ['espais', 'mirador', 'passeig', 'mare-terra', 'cami']
-  .map((f) => require(path.join(DATA, 'books', f + '.js')))
+  .map((f) => Object.assign({ file: f }, require(path.join(DATA, 'books', f + '.js'))))
   .sort((a, b) => a.order - b.order);
 
 // ---------- helpers ----------
@@ -43,6 +43,7 @@ const UI = {
   allBooks: t('Tots els llibres', 'Todos los libros', 'All books'),
   nextBook: t('Llibre següent', 'Libro siguiente', 'Next book'),
   chapters: (n) => t(`${n} capítols`, `${n} capítulos`, `${n} chapters`),
+  pages: (n) => t(`Llibre digital · ${n} pàgines`, `Libro digital · ${n} páginas`, `Digital book · ${n} pages`),
   read: t('Llegeix', 'Leer', 'Read'),
   sourceNote: (b) => t(
     `Transcrit del llibre original que es conserva a El Xop (${b.source.pages} pàgines). El text original és en català; les versions en castellà i anglès són traduccions.`,
@@ -166,12 +167,15 @@ function cards() {
         ${tx('span', b.kicker, ' class="kicker"')}
         ${tx('span', b.title, ' class="book-card-title"')}
         ${tx('span', b.summary, ' class="book-card-text"')}
-        ${tx('span', UI.chapters(b.sections.length), ' class="book-card-meta"')}
+        ${tx('span', require('./flipbook.js').has(b.file) ? UI.pages(require('./flipbook.js').count(b.file)) : UI.chapters(b.sections.length), ' class="book-card-meta"')}
       </a>`).join('');
 }
 
+const flipbook = require('./flipbook.js');
 books.forEach((b, i) => {
-  fs.writeFileSync(path.join(LIB, b.slug + '.html'), require('./images.js').enhance(page(b, i), '../'));
+  // books whose original pages have been recreated (src/data/books/pages/<file>.json) become flip-books
+  const html = flipbook.has(b.file) ? flipbook.render(b, books[(i + 1) % books.length], b.file) : require('./images.js').enhance(page(b, i), '../');
+  fs.writeFileSync(path.join(LIB, b.slug + '.html'), html);
   console.log('wrote library/' + b.slug + '.html');
 });
 

@@ -26,26 +26,30 @@ web_page/
 │   │   ├── footer.js       contact footer on every page: details, Instagram card, map
 │   │   ├── i18n.js         t() / tx() translation helpers
 │   │   └── library.js      book reader pages + book cards
+│   │   ├── flipbook.js     flip-book reader for books with recreated pages
+│   │   ├── residencia.js   artist residency page (flyer hero + gliding sections)
 │   │   ├── legal.js        footer-only legal pages (avís legal, privacitat, galetes); owner details live in footer.js OWNER
 │   ├── partials/           hand-written HTML fragments injected into pages
 │   │   ├── fruits-de-la-tardor.html  (+ -nav.html; also museu, raco-dherbes)
 │   └── data/               content as data
 │       ├── books/          one file per book (espais.js, mirador.js, …)
+│       │   └── pages/      recreated page layouts: <book>.json (by hand) + <book>.pics.json (generated)
 │       └── image-dimensions.json   width/height for library images
 │
 └── public/                 the deployable site: upload this folder as-is
     ├── index.html          + one .html per menu item (generated)
     ├── library/            one .html per book (generated)
     └── assets/             static files served directly (edit these in place)
-        ├── fonts/          self-hosted woff2 (Hanken Grotesk, Young Serif); never load fonts from Google
-        ├── css/            main.css (site), library.css (books/cards)
-        ├── js/             main.js (site behaviour, language), reader.js (book viewer)
+        ├── fonts/          self-hosted woff2 (Hanken Grotesk, Young Serif; Oswald, Barlow Semi Condensed, Caveat for the residency page); never load fonts from Google
+        ├── css/            main.css (site), library.css (books/cards), flipbook.css (recreated books)
+        ├── js/             main.js (site behaviour, language), reader.js (book viewer), flipbook.js (page turning)
         └── images/
             ├── plants/     garden photos
             ├── instagram/  Instagram feed images
             └── library/
                 ├── photos/ book photos and covers
-                └── pages/  scanned original pages (*-sm.webp = thumbnails)
+                ├── pages/  scanned original pages (*-sm.webp = thumbnails)
+                └── <book-slug>/  pictures cut from a recreated book (<name>.webp + <name>-sm.webp)
 ```
 
 Raw originals (HEIC photos, book scans, video, reference material) stay outside
@@ -73,3 +77,20 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
    - JS identifiers `camelCase`, CSS classes `kebab-case`
 4. **Paths** in generated HTML are relative: `''` from `public/`, `'../'` from `public/library/`
    (the `rel` argument in `layout.js`). Never use absolute `/…` or `file://` paths.
+
+## Recreating a book as a flip-book
+
+Books in `src/data/books/` are text readers until their pages are recreated; then `library.js` builds
+them as flip-books (El Mirador del Cel is the first). The picture work needs Python 3 + OpenCV once:
+`python3 -m venv .venv && .venv/bin/pip install opencv-python-headless numpy` (`.venv` is not deployed).
+
+1. Upright JPEGs from the HEIC photos in `../books/<folder>/`:
+   `swiftc -O scripts/heic-to-jpg.swift -o /tmp/heic-to-jpg`, then `/tmp/heic-to-jpg <photo>.HEIC <id>.jpg 5000`.
+2. Flatten each page to A4 (finds the paper, corrects perspective):
+   `.venv/bin/python scripts/book-rectify.py <id>.jpg flat/<id>.jpg` (add manual corners when a photo
+   reaches the page edge; record them as `"corners"` in the book's page file).
+3. Write `src/data/books/pages/<book>.json`: for each page, its pictures (rough box, shape, labels to
+   paint out) and texts (font, position, size, CA/ES/EN). Positions are % of the page; sizes % of its width.
+4. `.venv/bin/python scripts/book-images.py <book> flat/` cuts, straightens and cleans every picture into
+   `public/assets/images/library/<slug>/` and writes `<book>.pics.json`.
+5. `npm run build`. These images skip `npm run images` (they are already WebP at two sizes).

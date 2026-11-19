@@ -57,6 +57,16 @@ const LANGS = [
   { code: 'ca', name: 'Català', flag: SENYERA },
   { code: 'en', name: 'English', flag: '<span class="flag" aria-hidden="true">🇬🇧</span>' },
   { code: 'es', name: 'Español', flag: '<span class="flag" aria-hidden="true">🇪🇸</span>' },
+  // these live in their own folders (public/<code>/), made by scripts/localize.js from src/i18n/<code>.json
+  { code: 'de', name: 'Deutsch', flag: '<span class="flag" aria-hidden="true">🇩🇪</span>' },
+  { code: 'fr', name: 'Français', flag: '<span class="flag" aria-hidden="true">🇫🇷</span>' },
+  { code: 'it', name: 'Italiano', flag: '<span class="flag" aria-hidden="true">🇮🇹</span>' },
+  { code: 'pl', name: 'Polski', flag: '<span class="flag" aria-hidden="true">🇵🇱</span>' },
+  { code: 'cs', name: 'Čeština', flag: '<span class="flag" aria-hidden="true">🇨🇿</span>' },
+  { code: 'uk', label: 'UA', name: 'Українська', flag: '<span class="flag" aria-hidden="true">🇺🇦</span>' },
+  { code: 'ru', name: 'Русский', flag: '<span class="flag" aria-hidden="true">🇷🇺</span>' },
+  { code: 'ja', name: '日本語', flag: '<span class="flag" aria-hidden="true">🇯🇵</span>' },
+  { code: 'zh', name: '中文（简体）', flag: '<span class="flag" aria-hidden="true">🇨🇳</span>', lang: 'zh-Hans' },
 ];
 
 const CHEVRON = '<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
@@ -91,7 +101,7 @@ function header(rel, active) {
     <div class="nav-panel" id="site-nav">
       <nav class="main-nav"${aria(UI.main)}>
         <ul>
-          ${labelMenu('projectes', ['residencia', 'vaqueres'], rel, active)}
+          <li>${link('residencia', rel, active)}</li>
           ${labelMenu('entorn', ['fruits', 'herbes'], rel, active)}
           <li>${link('museu', rel, active)}</li>
           ${labelMenu('arxiu', ['bibliografia', 'ahir'], rel, active)}
@@ -104,7 +114,7 @@ function header(rel, active) {
           <svg class="lang-chevron" aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
         </button>
         <ul class="lang-menu" id="lang-menu">
-${LANGS.map((l) => `          <li><button type="button" data-lang-set="${l.code}" data-code="${l.code.toUpperCase()}" aria-pressed="${l.code === 'en'}" lang="${l.code}">${l.flag}<span>${l.name}</span></button></li>`).join('\n')}
+${LANGS.map((l) => `          <li><button type="button" data-lang-set="${l.code}" data-code="${l.label || l.code.toUpperCase()}" aria-pressed="${l.code === 'en'}" lang="${l.lang || l.code}">${l.flag}<span>${l.name}</span></button></li>`).join('\n')}
         </ul>
       </div>
     </div>
