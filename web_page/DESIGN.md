@@ -117,7 +117,8 @@ The two main faces are preloaded.
   a soft drop shadow, as printed) and the bold labels; Courgette for the thin script labels and captions;
   Delius for the El Mirador del Cel cover title (stands in for Tempus Sans); Mali for the rounder titles
   and labels (stands in for Kristen); Arimo for body text (metric-compatible with the Arial used in the
-  books). Self-hosted like the others. Do not use them anywhere else on the site.
+  books); Carlito for body text set in Calibri (metric-compatible); Mali bold/italic for the Kristen-style
+  titles; Courgette also for the Espais captions. Self-hosted like the others. Do not use them anywhere else on the site.
 - **Wordmark**: "El Xop" in the header, with "Les Vaqueres" beneath in light grotesk.
 - **Lead / Body / Small**: Hanken Grotesk; nav labels at 500; small for footer, credits, captions.
 

@@ -6,8 +6,8 @@ const B = from('espais');
 const photoPage = (id, name, box, capBox, cap, alt) => ({
   id,
   items: [
-    { type: 'pic', name, box, shape: 'rect', alt },
-    { type: 'vlabel', font: 'courgette', box: capBox, size: 3.4, text: cap },
+    { type: 'pic', name, box, shape: 'rect', refine: false, alt },
+    { type: 'vlabel', font: 'courgette', box: capBox, size: 3.6, text: cap },
   ],
 });
 
@@ -24,31 +24,31 @@ module.exports = {
           alt: t("Plànol dibuixat a mà de tots els espais de El Xop", 'Plano dibujado a mano de todos los espacios de El Xop', 'Hand-drawn plan of all the spaces of El Xop') },
       ],
     },
-    photoPage('IMG_1159', 'sky-viewpoint', [13.5, 4.3, 94.2, 95.6], [3, 8, 12, 92],
+    photoPage('IMG_1159', 'sky-viewpoint', [14.2, 4.9, 93.5, 95.1], [3, 8, 12, 92],
       t('-mirador del cel-', '-mirador del cielo-', '-the sky viewpoint-'),
       t('El mirador del cel, amb el terra de mosaic', 'El mirador del cielo, con el suelo de mosaico', 'The sky viewpoint and its mosaic floor')),
-    photoPage('IMG_1160', 'mother-earth-labyrinth', [18.8, 4.5, 100, 96.3], [8, 8, 17.5, 92],
+    photoPage('IMG_1160', 'mother-earth-labyrinth', [19.4, 5.1, 99.8, 95.8], [8, 8, 17.5, 92],
       t('-laberint “mare terra”-', '-laberinto «madre tierra»-', '-“mother earth” labyrinth-'),
       t('El laberint de set cercles fet amb còdols, sota una estructura de ferro', 'El laberinto de siete círculos hecho con cantos rodados, bajo una estructura de hierro', 'The seven-circuit labyrinth laid in river stones, under an iron frame')),
-    photoPage('IMG_1161', 'water-curtain', [9.3, 8.5, 100, 93.8], [1.5, 6, 9.2, 96],
+    photoPage('IMG_1161', 'water-curtain', [9.7, 9.1, 99.8, 93.3], [1.5, 6, 9.2, 96],
       t("-Cortina d'aigua “arc de Sant Martí”-", '-Cortina de agua «arco iris»-', '-Water curtain “rainbow”-'),
       t("La cortina d'aigua entre els salzes, amb un arc de Sant Martí", 'La cortina de agua entre los sauces, con un arco iris', 'The water curtain among the willows, with a rainbow')),
-    photoPage('IMG_1162', 'tools-museum', [19.9, 8.5, 97.2, 95], [9, 6, 18.5, 94],
+    photoPage('IMG_1162', 'tools-museum', [20.4, 9.1, 96.7, 94.5], [9, 6, 18.5, 94],
       t('-Eines de les vaqueres-', '-Herramientas de Les Vaqueres-', '-Tools of Les Vaqueres-'),
       t("El museu d'eines antigues del camp", 'El museo de herramientas antiguas del campo', 'The museum of old farm tools')),
-    photoPage('IMG_1163', 'herb-garden-gate', [11, 7.5, 97.2, 100], [2, 8, 10.6, 92],
+    photoPage('IMG_1163', 'herb-garden-gate', [11.5, 8.1, 96.7, 99.8], [2, 8, 10.6, 92],
       t("-Racó d'herbes-", '-Rincón de hierbas-', '-Racó d’herbes (herb corner)-'),
       t("La porta de ferro forjat del jardí d'herbes", 'La puerta de hierro forjado del jardín de hierbas', 'The wrought-iron gate into the herb garden')),
-    photoPage('IMG_1164', 'path-of-life-labyrinth', [10.6, 4.8, 97.8, 94.9], [1.5, 6, 10.2, 94],
+    photoPage('IMG_1164', 'path-of-life-labyrinth', [11.1, 5.4, 97.3, 94.4], [1.5, 6, 10.2, 94],
       t('-Laberint “el camí de la vida”-', '-Laberinto «el camino de la vida»-', '-Labyrinth “the path of life”-'),
       t('Els camins de còdols del laberint sota els plataners', 'Los caminos de cantos rodados del laberinto bajo los plátanos', 'The labyrinth’s stone paths beneath the plane trees')),
-    photoPage('IMG_1165', 'scent-point', [17, 7.5, 94.4, 97], [5.5, 8, 16.6, 96],
+    photoPage('IMG_1165', 'scent-point', [17.5, 8.1, 93.9, 96.7], [5.5, 8, 16.6, 96],
       t("-Punt d'aromes-", '-Punto de aromas-', '-Scent point-'),
       t("La caseta del punt d'aromes, amb el seu pou", 'La caseta del punto de aromas, con su pozo', 'The little scent-point building with its well')),
     {
       id: 'IMG_1166',
       items: [
-        { type: 'text', font: 'courgette', box: [5, 10, 44.5, 92], size: 1.98,
+        { type: 'text', font: 'courgette', box: [5, 10, 45, 94], size: 2.32,
           text: html(
             { rawp: t(
               '<b class="fb-big">El xop</b> <i>(populus nigra)</i> és un arbre <b>indicador de l\'existència d\'aigua</b> i la seva altura ens l\'anuncia des de lluny.',

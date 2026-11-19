@@ -217,7 +217,7 @@ for page_spec in spec['pages']:
         sizes = save(img, alpha, it['name'])
         result[it['name']] = {
             'page': pid,
-            'box': [round(100 * x0 / W, 2), round(100 * y0 / H, 2), round(100 * x1 / W, 2), round(100 * y1 / H, 2)],
+            'box': [round(float(100 * x0 / W), 2), round(float(100 * y0 / H), 2), round(float(100 * x1 / W), 2), round(float(100 * y1 / H), 2)],
             'size': sizes['full'], 'sm': sizes['-sm'], 'alpha': alpha is not None,
         }
         if DEBUG:

@@ -65,7 +65,10 @@ function item(it, pics, slug, eager, k = 1.414) {
     return tx('p', it.text, ` class="fb-label fb-${it.font}${it.onPic ? ' on-pic' : ''}" data-fit style="left:${pct(x)};top:${pct(y)};max-width:${pct(max)};--fs:${it.size}${it.color ? `;color:${it.color}` : ''}"`);
   }
   if (it.type === 'vlabel') {  // caption running up the margin, read from bottom to top
-    return tx('p', it.text, ` class="fb-vlabel fb-${it.font}" data-fit style="${box(it.box)};--fs:${it.size}"`);
+    // a normal line of text, turned a quarter to the left around the centre of its box
+    const [x0, y0, x1, y1] = it.box;
+    const w = (y1 - y0) * k, h = (x1 - x0) / k;  // swap sides: page height and width differ by k
+    return tx('p', it.text, ` class="fb-vlabel fb-${it.font}" data-fit style="left:${pct((x0 + x1) / 2)};top:${pct((y0 + y1) / 2)};width:${pct(w)};height:${pct(h)};--fs:${it.size}"`);
   }
   if (it.type === 'text') {
     return tx('div', it.text, ` class="fb-text fb-${it.font}" data-fit-block style="${box(it.box)};--fs:${it.size}"`, raw);
