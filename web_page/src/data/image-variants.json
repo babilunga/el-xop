@@ -1131,6 +1131,54 @@
    ]
   ]
  },
+ "assets/images/museum/framed-family-photo-2.jpg": {
+  "w": 1400,
+  "h": 1052,
+  "avif": [
+   [
+    "assets/images/museum/framed-family-photo-2-sm.avif",
+    720
+   ],
+   [
+    "assets/images/museum/framed-family-photo-2.avif",
+    1400
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/framed-family-photo-2-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/museum/framed-family-photo-2.jpg",
+    1400
+   ]
+  ]
+ },
+ "assets/images/museum/framed-family-photo-3.jpg": {
+  "w": 1400,
+  "h": 899,
+  "avif": [
+   [
+    "assets/images/museum/framed-family-photo-3-sm.avif",
+    720
+   ],
+   [
+    "assets/images/museum/framed-family-photo-3.avif",
+    1380
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/museum/framed-family-photo-3-sm.jpg",
+    720
+   ],
+   [
+    "assets/images/museum/framed-family-photo-3.jpg",
+    1400
+   ]
+  ]
+ },
  "assets/images/museum/framed-family-photo.jpg": {
   "w": 1400,
   "h": 997,

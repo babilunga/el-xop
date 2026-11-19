@@ -279,13 +279,25 @@ page({
     "Tools, photographs and keepsakes from a family of the Horta: life at Les Vaqueres, from self-sufficiency to farming for the market."
   ), {
     after: partial('museu-nav.html'),
-    // the framed photo from the museum, straightened; sits beside the contents list
+    // three framed photos from the museum, straightened, stacked beside the contents list (not sticky)
     variant: 'beside-nav',
-    art: `<img class="head-art" src="assets/images/museum/framed-family-photo.jpg" width="1400" height="997" decoding="async"${altT(t(
-      "Fotografia antiga emmarcada: dos homes amb un cavall davant de la casa",
-      "Fotografía antigua enmarcada: dos hombres con un caballo delante de la casa",
-      "Old framed photograph: two men with a horse in front of the farmhouse"
-    ))}>`,
+    art: `<div class="head-art-stack">
+      <img class="head-stack-img" src="assets/images/museum/framed-family-photo.jpg" width="1400" height="997" decoding="async"${altT(t(
+        "Fotografia antiga emmarcada: dos homes amb un cavall davant de la casa",
+        "Fotografía antigua enmarcada: dos hombres con un caballo delante de la casa",
+        "Old framed photograph: two men with a horse in front of the farmhouse"
+      ))}>
+      <img class="head-stack-img" src="assets/images/museum/framed-family-photo-2.jpg" width="1400" height="1052" loading="lazy" decoding="async"${altT(t(
+        "Fotografia antiga emmarcada: un grup de dones i infants al costat d'uns sacs",
+        "Fotografía antigua enmarcada: un grupo de mujeres y niños junto a unos sacos",
+        "Old framed photograph: a group of women and children beside some sacks"
+      ))}>
+      <img class="head-stack-img" src="assets/images/museum/framed-family-photo-3.jpg" width="1400" height="899" loading="lazy" decoding="async"${altT(t(
+        "Fotografia antiga emmarcada: una dona i un home al costat d'un foc de branques, fora de la casa",
+        "Fotografía antigua enmarcada: una mujer y un hombre junto a un fuego de ramas, fuera de la casa",
+        "Old framed photograph: a woman and a man beside a fire of branches outside the house"
+      ))}>
+    </div>`,
   }) + '\n\n' + partial('museu.html'),
 });
 
