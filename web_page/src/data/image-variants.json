@@ -1165,7 +1165,7 @@
    ],
    [
     "assets/images/museum/framed-family-photo-3.avif",
-    1380
+    1400
    ]
   ],
   "fallback": [
@@ -1700,6 +1700,86 @@
    [
     "assets/images/instagram/post-3.jpg",
     640
+   ]
+  ]
+ },
+ "assets/images/residencia/aula.jpg": {
+  "w": 574,
+  "h": 430,
+  "avif": [
+   [
+    "assets/images/residencia/aula.avif",
+    574
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/aula.jpg",
+    574
+   ]
+  ]
+ },
+ "assets/images/residencia/garden-swan-peacock.jpg": {
+  "w": 560,
+  "h": 462,
+  "avif": [
+   [
+    "assets/images/residencia/garden-swan-peacock.avif",
+    560
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/garden-swan-peacock.jpg",
+    560
+   ]
+  ]
+ },
+ "assets/images/residencia/outdoor-table.jpg": {
+  "w": 451,
+  "h": 297,
+  "avif": [
+   [
+    "assets/images/residencia/outdoor-table.avif",
+    451
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/outdoor-table.jpg",
+    451
+   ]
+  ]
+ },
+ "assets/images/residencia/rose-arbor.jpg": {
+  "w": 535,
+  "h": 401,
+  "avif": [
+   [
+    "assets/images/residencia/rose-arbor.avif",
+    535
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/rose-arbor.jpg",
+    535
+   ]
+  ]
+ },
+ "assets/images/residencia/shared-table.jpg": {
+  "w": 553,
+  "h": 413,
+  "avif": [
+   [
+    "assets/images/residencia/shared-table.avif",
+    553
+   ]
+  ],
+  "fallback": [
+   [
+    "assets/images/residencia/shared-table.jpg",
+    553
    ]
   ]
  }
