@@ -112,7 +112,7 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
    - animations: never ship a GIF. Convert it to video (see `public/assets/video/`): keep every frame at
      full quality (`ffmpeg -crf 16`, no denoise, so small details like falling leaves survive), crop away
      export edge lines, add a poster JPG, then use `<video class="head-video" muted loop playsinline preload="none" poster>`
-     with an AV1 `<source>` first and H.264 second. The local server (`npm run serve`) answers Range requests so Safari can play it.
+     with an AV1 `<source>` first and H.264 second. Follow it with a `<button class="head-video-toggle" hidden>` (see `build.js`, Fruits de la tardor): main.js plays the video only when the device allows motion, and the button lets visitors pause it or start it. The local server (`npm run serve`) answers Range requests so Safari can play it.
    - JS identifiers `camelCase`, CSS classes `kebab-case`
 4. **Paths** in generated HTML are relative: `''` from `public/`, `'../'` from `public/library/`
    (the `rel` argument in `layout.js`). Never use absolute `/…` or `file://` paths.

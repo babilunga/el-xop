@@ -236,7 +236,7 @@ page({
     after: partial('fruits-de-la-tardor-nav.html'),
     // the ginkgo shedding its leaves, as a short muted loop (the user's GIF, re-encoded as video:
     // AV1 for browsers that can, H.264 for the rest). Top level with the title (head-art-top).
-    // main.js starts it; reduced motion / data saving keep the poster still instead.
+    // main.js starts it; reduced motion / data saving keep the poster still, with a play button to start it.
     variant: 'beside-nav',
     art: `<video class="head-art head-art-top head-video" width="238" height="426" muted loop playsinline preload="none"
       poster="assets/video/autumn-leaves-falling-poster.jpg"${ariaT(t(
@@ -246,7 +246,10 @@ page({
     ))}>
       <source src="assets/video/autumn-leaves-falling-av1.mp4" type='video/mp4; codecs="av01.0.00M.08"'>
       <source src="assets/video/autumn-leaves-falling.mp4" type="video/mp4">
-    </video>`,
+    </video>
+    <button type="button" class="head-video-toggle" aria-pressed="false" hidden${ariaT(t(
+      "Atura l'animació", "Detener la animación", "Pause the animation"
+    ))}><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path class="i-pause" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/><path class="i-play" d="M8 5.5v13L18.5 12z"/></svg></button>`,
   }) + '\n\n' + partial('fruits-de-la-tardor.html'),
 });
 

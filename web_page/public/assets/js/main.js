@@ -15,19 +15,32 @@
   var fancy = !lite && !reduceMotion;
 
   // looping page-head videos (.head-video): they ship with preload="none" and only the poster shows.
-  // Load and play them only when motion is welcome and data is not being saved;
-  // pause while scrolled out of view so they cost nothing there.
+  // They play by themselves only when motion is welcome and data is not being saved, and pause while
+  // scrolled out of view so they cost nothing there. The button beside each one (.head-video-toggle)
+  // pauses it, or starts it on devices that asked for less motion (e.g. Windows "Show animations" off).
   var videos = Array.prototype.slice.call(document.querySelectorAll("video.head-video"));
-  if (videos.length && fancy) {
-    var play = function (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
-    videos.forEach(function (v) { v.muted = true; v.preload = "auto"; v.autoplay = true; });
+  videos.forEach(function (v) {
+    var btn = v.nextElementSibling && v.nextElementSibling.classList.contains("head-video-toggle") ? v.nextElementSibling : null;
+    var wanted = fancy; // should it be playing (when in view)?
+    var visible = true;
+    var sync = function () { if (btn) btn.setAttribute("aria-pressed", wanted ? "false" : "true"); };
+    var run = function () {
+      if (wanted && visible) {
+        v.muted = true; v.preload = "auto";
+        var p = v.play(); if (p && p.catch) p.catch(function () { wanted = false; sync(); });
+      } else v.pause();
+    };
+    if (btn) {
+      btn.hidden = false;
+      btn.addEventListener("click", function () { wanted = !wanted; sync(); run(); });
+    }
+    sync();
     if ("IntersectionObserver" in window) {
-      var seen = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
-      });
-      videos.forEach(function (v) { seen.observe(v); });
-    } else videos.forEach(play);
-  }
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { visible = e.isIntersecting; run(); });
+      }).observe(v);
+    } else run();
+  });
 
   function store(key, value) {
     try {
