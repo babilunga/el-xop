@@ -321,11 +321,6 @@ page({
   </section>`,
 });
 
-page({
-  file: PAGES.ahir.href, key: 'ahir',
-  title: "El Xop d'ahir · El Xop", desc: "La memòria de El Xop, Les Vaqueres.",
-  body: pageHead('ahir'), bodyClass: 'is-empty',
-});
 
 // ---------- legal pages: linked from the footer only, not from the menu ----------
 const legal = require('../src/templates/legal.js');

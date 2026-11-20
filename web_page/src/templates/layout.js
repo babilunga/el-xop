@@ -15,7 +15,7 @@ const PAGES = {
   museu:        { href: 'museu.html',           title: t('Museu', 'Museo', 'Museum') },
   arxiu:        { href: null,                 title: t('Arxiu', 'Archivo', 'Archive') }, // dropdown only, no page
   bibliografia: { href: 'bibliografia.html',    title: t('Bibliografia', 'Bibliografía', 'Bibliography') },
-  ahir:         { href: 'el-xop-dahir.html',    title: t("El Xop d'ahir", 'El Xop de ayer', 'El Xop in the past') },
+  ahir:         { href: 'https://elxoplleida.blogspot.com/', external: true, title: t("El Xop d'ahir", 'El Xop de ayer', 'El Xop in the past') },
   contacte:     { href: '#contacte',                  title: F.TITLE }, // the footer of the page you are on
 };
 
@@ -26,7 +26,11 @@ const UI = {
   close: t('Tanca el menú', 'Cerrar el menú', 'Close menu'),
   main: t('Principal', 'Principal', 'Main'),
   skip: t('Salta al contingut', 'Saltar al contenido', 'Skip to content'),
+  newTab: t("(s'obre en una pestanya nova)", '(se abre en una pestaña nueva)', '(opens in a new tab)'),
 };
+
+// small arrow-out-of-box sign after links that leave the site
+const EXTERNAL_ICON = '<svg class="ext-icon" aria-hidden="true" viewBox="0 0 12 12" width="11" height="11"><path d="M7 1.5h3.5V5M10.5 1.5 5.5 6.5M9 7.5v3H1.5V3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 function head(title, desc, rel, extraCss = '') {
   return `<!doctype html>
@@ -46,6 +50,9 @@ function head(title, desc, rel, extraCss = '') {
 
 function link(key, rel, active, cls = '') {
   const p = PAGES[key];
+  if (p.external) {
+    return `<a href="${p.href}" class="ext-link${cls ? ` ${cls}` : ''}" target="_blank" rel="noopener">${tx('span', p.title)}${EXTERNAL_ICON}${tx('span', UI.newTab, ' class="visually-hidden"')}</a>`;
+  }
   const cur = active === key ? ' aria-current="page"' : '';
   return tx('a', p.title, ` href="${rel}${p.href}"${cur}${cls ? ` class="${cls}"` : ''}`);
 }

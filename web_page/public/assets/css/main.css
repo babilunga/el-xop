@@ -77,6 +77,9 @@ a { color: inherit; }
   transition: color 0.2s, border-color 0.2s;
 }
 .main-nav a:hover { color: var(--ink); border-color: currentColor; }
+/* links that leave the site: small arrow sign after the text */
+.main-nav a.ext-link { display: inline-flex; align-items: center; gap: 6px; }
+.ext-icon { flex: none; opacity: 0.75; }
 /* ---------- language dropdown ---------- */
 .lang { position: relative; }
 .lang-toggle, .lang-menu button {
