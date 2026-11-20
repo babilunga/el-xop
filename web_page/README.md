@@ -1,12 +1,31 @@
 # El Xop · Les Vaqueres — website
 
-Static multilingual site (CA / ES / EN). No dependencies: Node only.
+Static multilingual site in 12 languages. No dependencies: Node only.
 
 ```bash
-npm run build   # regenerate every page into public/
-npm run serve   # preview public/ on http://localhost:4322
-npm run images  # after adding/replacing photos: make AVIF + small copies (macOS sips)
+npm run build         # regenerate every page into public/ (and every language folder)
+npm run serve         # preview public/ on http://localhost:4322
+npm run images        # after adding/replacing photos: make AVIF + small copies (macOS sips)
+npm run i18n:missing  # list texts with no translation yet → src/i18n/missing/<lang>.json
+npm run i18n:merge    # after filling those files in: copy them into src/i18n/<lang>.json
 ```
+
+## Languages
+
+- **Catalan, Spanish, English** are written in the sources as `t(ca, es, en)` (or `data-ca` / `data-es`
+  in partials) and switch in place on the main pages (`public/assets/js/main.js`).
+- **German, French, Italian, Polish, Czech, Ukrainian, Russian, Japanese, Chinese** are copies of the
+  site in `public/<code>/` (`de fr it pl cs uk ru ja zh`), made at the end of every build by
+  `scripts/localize.js` from `src/i18n/<code>.json`: a dictionary from the English text to the
+  translation. Never edit `public/<code>/` by hand; it is rewritten on every build.
+- Changing or adding an English sentence leaves that sentence in English in the other nine
+  languages until it is translated: the build prints how many are missing per language.
+  Run `npm run i18n:missing`, translate the empty values, then `npm run i18n:merge` and build.
+- The language menu (`LANGS` in `src/templates/layout.js`) lists all twelve. Picking a folder
+  language opens the same page in `public/<code>/`; the visitor's choice is remembered
+  (localStorage, see the cookie policy). Pages carry `hreflang` links between all versions.
+- Translations are machine-quality (written by Claude, Nov 2026); the legal pages in particular
+  should be checked by a native speaker. Catalan is the original.
 
 ## Folder structure
 
@@ -81,7 +100,7 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
 ## Recreating a book as a flip-book
 
 Books in `src/data/books/` are text readers until their pages are recreated; then `library.js` builds
-them as flip-books (El Mirador del Cel is the first). The picture work needs Python 3 + OpenCV once:
+them as flip-books (all five books are flip-books now). The picture work needs Python 3 + OpenCV once:
 `python3 -m venv .venv && .venv/bin/pip install opencv-python-headless numpy` (`.venv` is not deployed).
 
 1. Upright JPEGs from the HEIC photos in `../books/<folder>/`:
@@ -89,8 +108,15 @@ them as flip-books (El Mirador del Cel is the first). The picture work needs Pyt
 2. Flatten each page to A4 (finds the paper, corrects perspective):
    `.venv/bin/python scripts/book-rectify.py <id>.jpg flat/<id>.jpg` (add manual corners when a photo
    reaches the page edge; record them as `"corners"` in the book's page file).
-3. Write `src/data/books/pages/<book>.json`: for each page, its pictures (rough box, shape, labels to
+3. Write `src/data/books/pages/<book>.json` (or `<book>.js`, which can reuse the book's transcription
+   through `_helpers.js`; Espais, Passeig, Mare Terra and Camí are written this way): for each page, its pictures (rough box, shape, labels to
    paint out) and texts (font, position, size, CA/ES/EN). Positions are % of the page; sizes % of its width.
-4. `.venv/bin/python scripts/book-images.py <book> flat/` cuts, straightens and cleans every picture into
+4. `.venv/bin/python scripts/book-images.py <book> flat/` (add `BOOK_ONLY=IMG_1234,...` to redo only some pages) cuts, straightens and cleans every picture into
    `public/assets/images/library/<slug>/` and writes `<book>.pics.json`.
 5. `npm run build`. These images skip `npm run images` (they are already WebP at two sizes).
+
+Manual page corners used so far (1050 px wide preview, tl tr br bl), for photos where the paper is
+hidden behind artwork: Mirador IMG_1110 `72,6,978,4,972,1302,58,1306`, IMG_1114 `52,8,1004,14,1002,1366,44,1366`;
+Espais IMG_1164 `52,36,1018,42,1028,742,44,736`; Passeig IMG_1100 `38,22,1030,26,1030,742,34,742`;
+Laberint folder IMG_1120 `40,25,1030,35,1040,736,30,730`, IMG_1128 `25,22,1002,22,1018,722,18,730`,
+IMG_1145 `55,35,1030,35,1040,748,50,745`.

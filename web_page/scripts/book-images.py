@@ -210,6 +210,11 @@ for page_spec in spec['pages']:
         else:
             crop = page[y0:y1, x0:x1].copy()
         img = clean(crop)
+        if it.get('degray'):  # fade out a grey watermark behind coloured/black line drawings
+            g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY); sat = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)[..., 1]
+            near_ink = cv2.dilate((g < 80).astype(np.uint8), np.ones((5, 5), np.uint8)) > 0
+            wm = (sat < 40) & (g > 95) & ~near_ink
+            img[wm] = np.maximum(img[wm], 235)
         if it.get('blend') == 'multiply':  # drawings on paper: make the paper pure white so it takes the page colour
             g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             wp = np.percentile(g, 85)

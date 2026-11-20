@@ -101,6 +101,8 @@ a { color: inherit; }
   background: var(--surface);
   border: 1px solid var(--line);
 }
+/* Japanese and Chinese can break between any two characters: keep menu labels in one piece */
+:lang(ja) .main-nav a, :lang(ja) .sub-label, :lang(zh-Hans) .main-nav a, :lang(zh-Hans) .sub-label { word-break: keep-all; }
 /* twelve languages: two columns, so the list stays short enough for any screen */
 .lang.open .lang-menu { display: grid; grid-template-columns: repeat(2, minmax(148px, 1fr)); column-gap: 4px; }
 .lang-menu button { width: 100%; padding: 0 12px; white-space: nowrap; gap: 12px; font-size: 0.9375rem; color: var(--ink); }

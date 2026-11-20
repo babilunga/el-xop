@@ -118,7 +118,8 @@ The two main faces are preloaded.
   Delius for the El Mirador del Cel cover title (stands in for Tempus Sans); Mali for the rounder titles
   and labels (stands in for Kristen); Arimo for body text (metric-compatible with the Arial used in the
   books); Carlito for body text set in Calibri (metric-compatible); Mali bold/italic for the Kristen-style
-  titles; Courgette also for the Espais captions. Self-hosted like the others. Do not use them anywhere else on the site.
+  titles; Courgette also for the Espais captions and the script headings; EB Garamond Italic for the
+  serif titles and captions in El Passeig dels Plataners. Self-hosted like the others. Do not use them anywhere else on the site.
 - **Wordmark**: "El Xop" in the header, with "Les Vaqueres" beneath in light grotesk.
 - **Lead / Body / Small**: Hanken Grotesk; nav labels at 500; small for footer, credits, captions.
 
@@ -189,6 +190,11 @@ The two main faces are preloaded.
   (spiral-binding) edge with a single `rotateY` transform, 0.7s. Only the current page and its
   neighbours are drawn. A zoom button doubles the page inside a pan frame for small screens. Below:
   page list, source note, next book. Labels printed over photos get a faint light halo.
+  All five books are flip-books (2026-11-19). El Mirador del Cel is portrait A4; the other four are
+  landscape sheets (`orient: 'landscape'`, page 1.414:1, up to 980px wide; phone zoom goes to 3×).
+  Captions running up a margin are set as normal text turned a quarter left (`vlabel`). Printed text
+  is set live in the book faces; text that is part of a photograph (signs, plaques, maps, old documents)
+  stays in the photograph, with its meaning given in the alt text.
 
 ## Images and loading
 

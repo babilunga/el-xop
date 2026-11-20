@@ -52,18 +52,20 @@ function item(it, pics, slug, eager, k = 1.414) {
     const p = pics[it.name];
     if (!p) throw new Error('no extracted picture for ' + it.name + ' (run scripts/book-images.py)');
     const src = `../assets/images/library/${slug}/${it.name}`;
-    const cls = ['fb-pic', p.alpha ? 'is-cutout' : '', it.blend === 'multiply' ? 'is-drawing' : ''].filter(Boolean).join(' ');
+    const cls = ['fb-pic', p.alpha ? 'is-cutout' : '', it.blend === 'multiply' ? 'is-drawing' : '', it.faded ? 'is-faded' : ''].filter(Boolean).join(' ');
+    if (it.decorative) it = Object.assign({}, it, { alt: { ca: '', es: '', en: '' } });
     return `<img class="${cls}" style="${box(p.box)}" src="${src}.webp" srcset="${src}-sm.webp ${p.sm[0]}w, ${src}.webp ${p.size[0]}w" sizes="(max-width: 700px) 92vw, 640px" width="${p.size[0]}" height="${p.size[1]}"${eager ? '' : ' loading="lazy"'} decoding="async" alt="${esc(it.alt.en)}" data-ca-alt="${esc(it.alt.ca)}" data-es-alt="${esc(it.alt.es)}">`;
   }
   if (it.type === 'title') {
     const b = it.box;
-    return tx('h2', it.text, ` class="fb-title fb-${it.font}" data-fit style="${box(b)};--fs:${it.size};text-align:${it.align || 'center'}"`);
+    return tx('h2', it.text, ` class="fb-title fb-${it.font}${cls(it)}" data-fit style="${box(b)};--fs:${it.size};text-align:${it.align || 'center'};justify-content:${{ left: 'flex-start', right: 'flex-end' }[it.align] || 'center'}${it.color ? `;color:${it.color}` : ''}"`);
   }
   if (it.type === 'label') {
     const [x, y] = it.at;
     const max = it.max || (100 - x - 1);
-    return tx('p', it.text, ` class="fb-label fb-${it.font}${it.onPic ? ' on-pic' : ''}" data-fit style="left:${pct(x)};top:${pct(y)};max-width:${pct(max)};--fs:${it.size}${it.color ? `;color:${it.color}` : ''}"`);
+    return tx('p', it.text, ` class="fb-label fb-${it.font}${it.onPic ? ' on-pic' : ''}${cls(it)}" data-fit style="left:${pct(x)};top:${pct(y)};max-width:${pct(max)};--fs:${it.size}${it.color ? `;color:${it.color}` : ''}"`);
   }
+  if (it.type === 'paper') return `<div class="fb-paper" style="${box(it.box)}"></div>`;
   if (it.type === 'vlabel') {  // caption running up the margin, read from bottom to top
     // a normal line of text, turned a quarter to the left around the centre of its box
     const [x0, y0, x1, y1] = it.box;
@@ -71,7 +73,7 @@ function item(it, pics, slug, eager, k = 1.414) {
     return tx('p', it.text, ` class="fb-vlabel fb-${it.font}" data-fit style="left:${pct((x0 + x1) / 2)};top:${pct((y0 + y1) / 2)};width:${pct(w)};height:${pct(h)};--fs:${it.size}"`);
   }
   if (it.type === 'text') {
-    return tx('div', it.text, ` class="fb-text fb-${it.font}" data-fit-block style="${box(it.box)};--fs:${it.size}"`, raw);
+    return tx('div', it.text, ` class="fb-text fb-${it.font}${cls(it)}" data-fit-block style="${box(it.box)};--fs:${it.size}"`, raw);
   }
   if (it.type === 'line') {
     const [[ax, ay], [bx, by]] = it.pts;
@@ -81,6 +83,9 @@ function item(it, pics, slug, eager, k = 1.414) {
   }
   throw new Error('unknown item type ' + it.type);
 }
+
+// optional style flags on text items
+const cls = (it) => (it.underline ? ' fb-ul' : '') + (it.bold ? ' fb-bold' : '') + (it.small ? ' fb-small' : '') + (it.center ? ' fb-center' : '') + (it.boxed ? ' fb-boxed' : '');
 
 function arrowHead(ax, ay, bx, by, s) {
   const a = Math.atan2(by - ay, bx - ax);
