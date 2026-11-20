@@ -273,7 +273,10 @@ page({
 
 // the old Jardí terapèutic address now forwards to Fruits de la tardor
 fs.writeFileSync(path.join(ROOT, 'jardi-terapeutic.html'), `<!doctype html>
+<html lang="ca">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Fruits de la tardor · El Xop</title>
 <meta http-equiv="refresh" content="0; url=${PAGES.fruits.href}">
 <link rel="canonical" href="${PAGES.fruits.href}">
@@ -345,6 +348,27 @@ for (const [key, title, desc] of legalPages) {
   <article class="legal wrap">${legal[key]('')}
   </article>`,
   });
+}
+
+// ---------- 404: shown by GitHub Pages for any address that does not exist ----------
+// It can be served from any folder depth, so a <base> points every relative link at the site root.
+page({
+  file: '404.html', key: null,
+  title: 'Pàgina no trobada · El Xop', desc: "Aquesta pàgina no existeix al lloc web de El Xop · Les Vaqueres.",
+  body: `  <section class="page-head wrap">
+    ${tx('h1', t('Pàgina no trobada', 'Página no encontrada', 'Page not found'))}
+    ${tx('p', t(
+      "Aquesta adreça no existeix o ha canviat. Torna a la <a href=\"index.html\">pàgina d'inici</a>.",
+      "Esta dirección no existe o ha cambiado. Vuelve a la <a href=\"index.html\">página de inicio</a>.",
+      "This address doesn't exist or has moved. Go back to the <a href=\"index.html\">home page</a>."
+    ), ' class="lead"')}
+  </section>`,
+});
+{
+  const p404 = path.join(ROOT, '404.html');
+  const base = new URL(C.SITE_URL).pathname;
+  fs.writeFileSync(p404, fs.readFileSync(p404, 'utf8')
+    .replace('<meta charset="utf-8">', `<meta charset="utf-8">\n<base href="${base}">\n<meta name="robots" content="noindex">`));
 }
 
 // ---------- other languages: public/<lang>/ copies of every page, from src/i18n/<lang>.json ----------

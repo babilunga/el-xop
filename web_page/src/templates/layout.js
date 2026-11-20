@@ -32,6 +32,11 @@ const UI = {
 // small arrow-out-of-box sign after links that leave the site
 const EXTERNAL_ICON = '<svg class="ext-icon" aria-hidden="true" viewBox="0 0 12 12" width="11" height="11"><path d="M7 1.5h3.5V5M10.5 1.5 5.5 6.5M9 7.5v3H1.5V3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+// Public address of the published site (GitHub Pages). Used only where a full URL is required:
+// canonical / hreflang links, the sitemap and social-share previews. Change it here if the site moves
+// (for example to a custom domain); every other link stays relative.
+const SITE_URL = 'https://babilunga.github.io/elxop-lesvaqueres/';
+
 function head(title, desc, rel, extraCss = '') {
   return `<!doctype html>
 <html lang="en">
@@ -40,6 +45,19 @@ function head(title, desc, rel, extraCss = '') {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
+<meta name="theme-color" content="#e3e5da">
+<link rel="icon" type="image/png" sizes="32x32" href="${rel}assets/images/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="${rel}assets/images/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="${rel}assets/images/icons/apple-touch-icon.png">
+<!-- link preview when the page is shared (WhatsApp, Facebook, …) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El Xop · Les Vaqueres">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:image" content="${SITE_URL}assets/images/social/el-xop-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <!-- fonts are served from the site itself (assets/fonts): no request to Google; the two main faces load early -->
 <link rel="preload" href="${rel}assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${rel}assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -130,7 +148,7 @@ ${LANGS.map((l) => `          <li><button type="button" data-lang-set="${l.code}
 }
 
 module.exports = {
-  t, esc, tx, aria, PAGES, UI, head, header,
+  t, esc, tx, aria, PAGES, UI, head, header, SITE_URL,
   // contact footer lives in footer.js; re-exported so page builders only need layout.js
   CONTACT: F.CONTACT, OWNER: F.OWNER, LEGAL: F.LEGAL, footer: F.footer, contactList: F.contactList, mapFrame: F.mapFrame, instagramCard: F.instagramCard,
 };

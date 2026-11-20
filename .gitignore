@@ -3,6 +3,7 @@
 /*
 !/.gitignore
 !/web_page/
+!/.github/
 !/.claude/
 /.claude/*
 !/.claude/settings.json

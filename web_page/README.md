@@ -10,6 +10,20 @@ npm run i18n:missing  # list texts with no translation yet → src/i18n/missing/
 npm run i18n:merge    # after filling those files in: copy them into src/i18n/<lang>.json
 ```
 
+## Publishing (GitHub Pages)
+
+Live site: **https://babilunga.github.io/elxop-lesvaqueres/** (repository `babilunga/elxop-lesvaqueres`).
+
+- Every push to `main` that touches `web_page/` runs `.github/workflows/pages.yml` (repo root): it runs
+  `npm run build` on GitHub, removes the local-only design-tool script (`impeccable-live`), and publishes `public/`.
+  Progress and errors: the repository's **Actions** tab. Nothing to upload by hand.
+- The full public address lives in one place, `SITE_URL` in `src/templates/layout.js`. It is used only where a
+  full URL is required: canonical and `hreflang` links, `sitemap.xml`, `robots.txt`, link previews (`og:` tags)
+  and the `<base>` of `404.html`. If the site moves (a custom domain, a renamed repository), change it there and build.
+- Generated with every build: `404.html` (page-not-found, shown by GitHub for any unknown address),
+  `sitemap.xml` and `robots.txt`. Favicons are in `assets/images/icons/`, the link-preview picture in
+  `assets/images/social/el-xop-share.jpg` (1200×630).
+
 ## Languages
 
 - **Catalan, Spanish, English** are written in the sources as `t(ca, es, en)` (or `data-ca` / `data-es`

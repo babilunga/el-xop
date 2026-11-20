@@ -111,6 +111,7 @@ function translatePage(html, lang, dict, missing, depth) {
     let tag = t.text;
     const before = tag;
     if (t.name === 'html') tag = tag.replace(/\slang="[^"]*"/, ` lang="${lang.html}" data-page-lang="${lang.code}"`);
+    if (t.name === 'meta' && /^og:(title|description)$/.test(attr(tag, 'property') || '')) { const v = tr(decode(attr(tag, 'content'))); if (v) tag = setAttr(tag, 'content', v); }
     if (t.name === 'meta' && attr(tag, 'name') === 'description') { const v = tr(decode(attr(tag, 'content'))); if (v) tag = setAttr(tag, 'content', v); }
     if (/\sdata-(?:ca|es)-alt="/.test(tag)) { const v = tr(decode(attr(tag, 'alt') || '')); if (v) tag = setAttr(tag, 'alt', v); }
     if (/\sdata-(?:ca|es)-aria="/.test(tag)) { const v = tr(decode(attr(tag, 'aria-label') || '')); if (v) tag = setAttr(tag, 'aria-label', v); }
@@ -148,16 +149,28 @@ function translatePage(html, lang, dict, missing, depth) {
   return out.replace(/((?:src|href|srcset|poster|content|data-map-src)="|url\(|,\s*|\s)((?:\.\.\/)*)assets\//g, (m, a, up) => `${a}../${up}assets/`);
 }
 
-// <link rel="alternate" hreflang> on every page (main pages and their copies) so search engines pair them
-function alternates(file, depth) {
-  const up = '../'.repeat(depth);
-  const rows = [`<link rel="alternate" hreflang="x-default" href="${up}${file}">`]
-    .concat(EXTRA.map((l) => `<link rel="alternate" hreflang="${l.html}" href="${up}${l.code}/${file}">`));
+// <link rel="alternate" hreflang> on every page (main pages and their copies) so search engines pair them,
+// plus the page's own canonical address. Search engines need full URLs here (SITE_URL in layout.js).
+const { SITE_URL } = require('../src/templates/layout.js');
+const urlOf = (file, code) => SITE_URL + (code ? code + '/' : '') + file.replace(/(^|\/)index\.html$/, '$1');
+function alternates(file, code) {
+  const rows = [`<link rel="canonical" href="${urlOf(file, code)}">`,
+    `<meta property="og:url" content="${urlOf(file, code)}">`,
+    `<link rel="alternate" hreflang="x-default" href="${urlOf(file)}">`]
+    .concat(EXTRA.map((l) => `<link rel="alternate" hreflang="${l.html}" href="${urlOf(file, l.code)}">`));
   return rows.join('\n');
 }
-const withAlternates = (html, file, depth) => html
+const withAlternates = (html, file, code) => html
   .replace(/\n?<!-- hreflang -->[\s\S]*?<!-- \/hreflang -->/, '')
-  .replace('</head>', `<!-- hreflang -->\n${alternates(file, depth)}\n<!-- /hreflang -->\n</head>`);
+  .replace('</head>', `<!-- hreflang -->\n${alternates(file, code)}\n<!-- /hreflang -->\n</head>`);
+
+// sitemap.xml + robots.txt for search engines: every page in every language
+function writeSitemap(files) {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = files.flatMap((f) => [null, ...EXTRA.map((l) => l.code)].map((c) => `  <url><loc>${urlOf(f, c)}</loc><lastmod>${today}</lastmod></url>`));
+  fs.writeFileSync(path.join(PUBLIC, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
+  fs.writeFileSync(path.join(PUBLIC, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}sitemap.xml\n`);
+}
 
 // ---------- files ----------
 function pages() {
@@ -165,7 +178,7 @@ function pages() {
   for (const f of fs.readdirSync(PUBLIC)) if (f.endsWith('.html')) list.push(f);
   const lib = path.join(PUBLIC, 'library');
   if (fs.existsSync(lib)) for (const f of fs.readdirSync(lib)) if (f.endsWith('.html')) list.push('library/' + f);
-  return list.filter((f) => /<html[^>]*lang=/.test(fs.readFileSync(path.join(PUBLIC, f), 'utf8'))); // skips bare redirect pages
+  return list.filter((f) => { if (f === '404.html') return false; const h = fs.readFileSync(path.join(PUBLIC, f), 'utf8'); return /<html[^>]*lang=/.test(h) && !/http-equiv="refresh"/.test(h); }); // skips bare redirect pages
 }
 const readDict = (code) => { try { return JSON.parse(fs.readFileSync(path.join(I18N, code + '.json'), 'utf8')); } catch (e) { return {}; } };
 const sortObj = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
@@ -181,7 +194,7 @@ function build() {
     for (const f of files) {
       const depth = f.split('/').length; // public/<lang>/x.html → 1 folder deeper than public/x.html
       const html = fs.readFileSync(path.join(PUBLIC, f), 'utf8');
-      const out = withAlternates(translatePage(html, lang, dict, missing, depth), f, depth);
+      const out = withAlternates(translatePage(html, lang, dict, missing, depth), f, lang.code);
       fs.mkdirSync(path.dirname(path.join(dir, f)), { recursive: true });
       fs.writeFileSync(path.join(dir, f), out);
     }
@@ -190,8 +203,9 @@ function build() {
   // the main pages get the same hreflang list
   for (const f of files) {
     const p = path.join(PUBLIC, f);
-    fs.writeFileSync(p, withAlternates(fs.readFileSync(p, 'utf8'), f, f.split('/').length - 1));
+    fs.writeFileSync(p, withAlternates(fs.readFileSync(p, 'utf8'), f));
   }
+  writeSitemap(files);
   console.log(`wrote ${EXTRA.length} languages × ${files.length} pages: ${report.join(', ')}` + (report.some((r) => /untranslated/.test(r)) ? '  (npm run i18n:missing lists them)' : ''));
 }
 
