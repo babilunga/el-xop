@@ -397,3 +397,27 @@ page({
 
 // ---------- other languages: public/<lang>/ copies of every page, from src/i18n/<lang>.json ----------
 require('./localize.js').build();
+
+// ---------- cache busting: every page asks for assets/css|js/<file>?v=<content hash> ----------
+// GitHub Pages lets browsers keep CSS/JS for 10 minutes or more; a new hash whenever a file changes
+// makes every visitor load the new version at once (unchanged files stay cached).
+{
+  const crypto = require('crypto');
+  const hashes = {};
+  for (const dir of ['css', 'js']) {
+    for (const f of fs.readdirSync(path.join(ROOT, 'assets', dir))) {
+      if (!/\.(css|js)$/.test(f)) continue;
+      hashes[`${dir}/${f}`] = crypto.createHash('sha1').update(fs.readFileSync(path.join(ROOT, 'assets', dir, f))).digest('hex').slice(0, 8);
+    }
+  }
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? (e.name === 'assets' ? [] : walk(path.join(d, e.name))) : e.name.endsWith('.html') ? [path.join(d, e.name)] : []);
+  let n = 0;
+  for (const file of walk(ROOT)) {
+    const html = fs.readFileSync(file, 'utf8');
+    const out = html.replace(/(assets\/((?:css|js)\/[\w.-]+\.(?:css|js)))(?:\?v=[0-9a-f]+)?(?=")/g,
+      (m, url, key) => (hashes[key] ? `${url}?v=${hashes[key]}` : m));
+    if (out !== html) { fs.writeFileSync(file, out); n++; }
+  }
+  console.log(`versioned CSS/JS links in ${n} pages`);
+}

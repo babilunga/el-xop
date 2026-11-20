@@ -165,7 +165,7 @@
 
 /* "All books": back to the Bibliography page, above the title and at the end of every book */
 .back-to-books {
-  display: inline-flex; align-items: center; gap: 6px; margin: 0 0 18px -4px; padding: 6px 10px 6px 4px;
+  display: inline-flex; align-items: center; gap: 6px; margin: 0 0 clamp(20px, 3vh, 28px) -4px; padding: 6px 10px 6px 4px;
   border-radius: 999px; font: 500 0.9375rem/1.2 var(--sans); color: var(--ink-soft); text-decoration: none;
   transition: color 0.2s, background-color 0.2s;
 }

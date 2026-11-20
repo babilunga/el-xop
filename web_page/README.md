@@ -20,6 +20,8 @@ Live site: **https://babilunga.github.io/elxop-lesvaqueres/** (repository `babil
 - The full public address lives in one place, `SITE_URL` in `src/templates/layout.js`. It is used only where a
   full URL is required: canonical and `hreflang` links, `sitemap.xml`, `robots.txt`, link previews (`og:` tags)
   and the `<base>` of `404.html`. If the site moves (a custom domain, a renamed repository), change it there and build.
+- Every page links CSS/JS as `assets/css/main.css?v=<hash>`: the build adds a short hash of each file's contents
+  (end of `scripts/build.js`), so visitors get a changed file at once instead of an old cached copy.
 - Generated with every build: `404.html` (page-not-found, shown by GitHub for any unknown address),
   `sitemap.xml` and `robots.txt`. Favicons are in `assets/images/icons/`, the link-preview picture in
   `assets/images/social/el-xop-share.jpg` (1200×630).
