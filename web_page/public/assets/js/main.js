@@ -14,6 +14,21 @@
   if (lite) root.classList.add("lite");
   var fancy = !lite && !reduceMotion;
 
+  // looping page-head videos (.head-video): they ship with preload="none" and only the poster shows.
+  // Load and play them only when motion is welcome and data is not being saved;
+  // pause while scrolled out of view so they cost nothing there.
+  var videos = Array.prototype.slice.call(document.querySelectorAll("video.head-video"));
+  if (videos.length && fancy) {
+    var play = function (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    videos.forEach(function (v) { v.muted = true; v.preload = "auto"; v.autoplay = true; });
+    if ("IntersectionObserver" in window) {
+      var seen = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+      });
+      videos.forEach(function (v) { seen.observe(v); });
+    } else videos.forEach(play);
+  }
+
   function store(key, value) {
     try {
       if (value === undefined) return localStorage.getItem(key);

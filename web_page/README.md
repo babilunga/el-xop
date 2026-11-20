@@ -44,8 +44,8 @@ web_page/
 │   │   ├── layout.js       <head>, header, site map (PAGES); re-exports the footer
 │   │   ├── footer.js       contact footer on every page: details, Instagram card, map
 │   │   ├── i18n.js         t() / tx() translation helpers
-│   │   └── library.js      book reader pages + book cards
-│   │   ├── flipbook.js     flip-book reader for books with recreated pages
+│   │   └── library.js      builds every book as a flip-book + the book cards
+│   │   ├── flipbook.js     flip-book pages (one A4 page at a time)
 │   │   ├── residencia.js   artist residency page (flyer hero + gliding sections)
 │   │   ├── legal.js        footer-only legal pages (avís legal, privacitat, galetes); owner details live in footer.js OWNER
 │   ├── partials/           hand-written HTML fragments injected into pages
@@ -61,7 +61,8 @@ web_page/
     └── assets/             static files served directly (edit these in place)
         ├── fonts/          self-hosted woff2 (Hanken Grotesk, Young Serif; Oswald, Barlow Semi Condensed, Caveat for the residency page); never load fonts from Google
         ├── css/            main.css (site), library.css (books/cards), flipbook.css (recreated books)
-        ├── js/             main.js (site behaviour, language), reader.js (book viewer), flipbook.js (page turning)
+        ├── js/             main.js (site behaviour, language), flipbook.js (page turning in the digital books)
+        ├── video/          short muted loops for the page heads: <name>-av1.mp4 + <name>.mp4 (H.264) + <name>-poster.jpg
         └── images/
             ├── plants/     garden photos
             ├── instagram/  Instagram feed images
@@ -82,7 +83,8 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
 2. **Where things go**
    - new page → add it to `PAGES` in `src/templates/layout.js`, then a `page({...})` call in `scripts/build.js`
    - large static HTML for a page → `src/partials/<page-name>.html`
-   - new book → `src/data/books/<slug>.js`, and add it to the list in `src/templates/library.js`
+   - new book → `src/data/books/<slug>.js` (title, cover, colour, summary and the transcribed text in three languages)
+     plus its page layout in `src/data/books/pages/`, and add it to the list in `src/templates/library.js`
    - stylesheet → `public/assets/css/`, script → `public/assets/js/`, image → `public/assets/images/<section>/`
 3. **Naming**
    - all files and folders: lowercase `kebab-case`, no spaces or accents (`fruits-de-la-tardor.html`, `dog-rose-close.jpg`)
@@ -93,14 +95,20 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
      it writes `<name>.avif`, `<name>-sm.avif`, `<name>-sm.jpg` beside it (never edit those by hand) and
      `src/data/image-variants.json`; the build then wraps each `<img>` in `<picture>` with `srcset`/`sizes`
      (rules in `src/templates/images.js`) and fills in missing `width`/`height`
+   - animations: never ship a GIF. Convert it to video (see `public/assets/video/`): keep every frame at
+     full quality (`ffmpeg -crf 16`, no denoise, so small details like falling leaves survive), crop away
+     export edge lines, add a poster JPG, then use `<video class="head-video" muted loop playsinline preload="none" poster>`
+     with an AV1 `<source>` first and H.264 second. The local server (`npm run serve`) answers Range requests so Safari can play it.
    - JS identifiers `camelCase`, CSS classes `kebab-case`
 4. **Paths** in generated HTML are relative: `''` from `public/`, `'../'` from `public/library/`
    (the `rel` argument in `layout.js`). Never use absolute `/…` or `file://` paths.
 
 ## Recreating a book as a flip-book
 
-Books in `src/data/books/` are text readers until their pages are recreated; then `library.js` builds
-them as flip-books (all five books are flip-books now). The picture work needs Python 3 + OpenCV once:
+Every book is a flip-book. `src/data/books/<book>.js` holds its details (title, cover, colour, summary)
+and its transcribed text in three languages, which the page layouts reuse via `from()` in
+`src/data/books/pages/_helpers.js`; the layouts and picture boxes are in `src/data/books/pages/`.
+`library.js` stops the build if a book has no page layout (the old text reader is gone). The picture work needs Python 3 + OpenCV once:
 `python3 -m venv .venv && .venv/bin/pip install opencv-python-headless numpy` (`.venv` is not deployed).
 
 1. Upright JPEGs from the HEIC photos in `../books/<folder>/`:

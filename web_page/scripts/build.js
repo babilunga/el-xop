@@ -43,6 +43,7 @@ ${C.footer('')}
 // a page title block; `empty` pages have nothing else yet
 // title + lead; optional `after` (more HTML under the lead) and `art` (an image beside it all)
 const altT = (v) => ` alt="${v.en}" data-ca-alt="${v.ca}" data-es-alt="${v.es}"`;
+const ariaT = (v) => ` aria-label="${v.en}" data-ca-aria="${v.ca}" data-es-aria="${v.es}"`;
 
 // `variant` adds page-head-<variant> to the section, for pages that place the picture differently
 function pageHead(key, lead, { after = '', art = '', variant = '' } = {}) {
@@ -233,14 +234,19 @@ page({
     "A quiet garden to walk in, sit in and look around. Herbs, fruit trees, water, and corners to stop in for a while."
   ), {
     after: partial('fruits-de-la-tardor-nav.html'),
-    // the ginkgo in autumn, looking up into the sun; sits beside the contents list, like the Museu's photo,
-    // cropped to the list's height (head-art-fit)
+    // the ginkgo shedding its leaves, as a short muted loop (the user's GIF, re-encoded as video:
+    // AV1 for browsers that can, H.264 for the rest). Top level with the title (head-art-top).
+    // main.js starts it; reduced motion / data saving keep the poster still instead.
     variant: 'beside-nav',
-    art: `<img class="head-art head-art-fit" src="assets/images/plants/ginkgo-autumn.jpg" width="1200" height="1600" decoding="async"${altT(t(
-      "Branques d'un ginkgo amb les fulles grogues de la tardor i el sol que passa entre elles",
-      "Ramas de un ginkgo con las hojas amarillas del otoño y el sol que pasa entre ellas",
-      "Ginkgo branches in yellow autumn leaf, with the sun shining through"
-    ))}>`,
+    art: `<video class="head-art head-art-top head-video" width="238" height="426" muted loop playsinline preload="none"
+      poster="assets/video/autumn-leaves-falling-poster.jpg"${ariaT(t(
+      "Fulles grogues de ginkgo que cauen d'un arbre contra el cel blau",
+      "Hojas amarillas de ginkgo que caen de un árbol contra el cielo azul",
+      "Yellow ginkgo leaves falling from a tree against a blue sky"
+    ))}>
+      <source src="assets/video/autumn-leaves-falling-av1.mp4" type='video/mp4; codecs="av01.0.00M.08"'>
+      <source src="assets/video/autumn-leaves-falling.mp4" type="video/mp4">
+    </video>`,
   }) + '\n\n' + partial('fruits-de-la-tardor.html'),
 });
 
@@ -254,10 +260,10 @@ page({
     "A walk inwards: four corners, scented archways and many places to stop, breathe and be present."
   ), {
     after: partial('raco-dherbes-nav.html'),
-    // illustrated map of El Xop's grounds; sits beside the contents list, like the Museu's framed photo
+    // illustrated map of El Xop's grounds; beside the contents list, top level with the title (head-art-top)
     // (the garden sign photo is in the first section, "Un passeig cap endins")
     variant: 'beside-nav',
-    art: `<img class="head-art" src="assets/images/herbes/el-xop-garden-map.jpg" width="860" height="1013" decoding="async"${altT(t(
+    art: `<img class="head-art head-art-top" src="assets/images/herbes/el-xop-garden-map.jpg" width="860" height="1013" decoding="async"${altT(t(
       "Plànol il·lustrat de El Xop: el Racó d'herbes, el Passeig dels Plataners, l'Hort dels Sentits, el Passeig de roses i el Camp de pruneres",
       "Plano ilustrado de El Xop: el Racó d'herbes, el Passeig dels Plataners, el Hort dels Sentits, el Passeig de roses y el Camp de pruneres",
       "Illustrated map of El Xop: the Racó d'herbes, the plane-tree walk, the garden of the senses, the rose walk and the plum orchard"

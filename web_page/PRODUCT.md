@@ -56,7 +56,7 @@ wellness brand. The poplar (el Xop), the fig tree and the cypresses are its symb
     ratings).
 - Surroundings (dropdown, no page): Autumn fruits, Herb corner (Racó d'herbes).
 - Museum.
-- Archive (dropdown, no page): Bibliography (book cards → 5 book reader pages), El Xop in the past (external link to the old blog, https://elxoplleida.blogspot.com/, opens in a new tab with an external-link sign).
+- Archive (dropdown, no page): Bibliography (book cards → 5 flip-books), El Xop in the past (external link to the old blog, https://elxoplleida.blogspot.com/, opens in a new tab with an external-link sign).
 - Contacts: the footer of the current page.
 - Footer only: Legal notice, Privacy policy, Cookie policy.
 
@@ -72,8 +72,9 @@ wellness brand. The poplar (el Xop), the fig tree and the cypresses are its symb
 - No forms, accounts, analytics, ads or tracking. Keep it that way unless the user asks.
 - Contact details on site (footer): phone +34 695 551 385, elxop@yahoo.es, Instagram @elxop.lesvaqueres,
   location "Horta de Lleida, El Xop". Do not invent others (opening hours, prices, etc.).
-- Association legal details (legal name, NIF, registered address, registry number) are not given yet:
-  the legal pages show highlighted "[to fill]" gaps (`OWNER` in `src/templates/footer.js`).
+- The legal notice and privacy policy show no owner block (legal name, NIF, address, registry number,
+  data controller): removed at the user's request (2026-11-20). `OWNER` in `src/templates/footer.js`
+  and `ownerList()` in `src/templates/legal.js` remain if it is ever added back.
 - The privacy policy states emailed messages are kept "at most one year": not yet confirmed by the user.
 - Media: only web-ready copies inside `web_page/`; originals stay outside and are never linked.
   Third-party images carry author + licence credits next to them.

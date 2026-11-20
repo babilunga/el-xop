@@ -763,6 +763,20 @@ main { overflow-x: clip; } /* no sideways scroll from full-width pieces */
    (height 0 keeps it out of the row sizing; min-height then fills the row, less the shared top margin) */
 .page-head-beside-nav > picture:has(.head-art-fit) { align-self: stretch; height: 0; min-height: calc(100% - clamp(24px, 4vh, 40px)); }
 .page-head-beside-nav .head-art-fit { height: 100%; object-fit: cover; object-position: 50% 68%; } /* keeps the sun in view */
+/* head-art-top: the picture starts level with the top of the title and runs down beside lead and list
+   (Fruits de la tardor, Racó d'herbes). A 4th, flexible row takes any height the picture adds,
+   so the title, lead and list keep their usual spacing. Sticky rule above still applies. */
+.page-head-beside-nav:has(> .head-art-top, > picture > .head-art-top) { grid-template-rows: auto auto auto 1fr; }
+.page-head-beside-nav > .head-art-top,
+.page-head-beside-nav > picture:has(> .head-art-top) { grid-row: 1 / span 4; margin-top: 0; }
+.head-video { object-fit: cover; background: var(--sage); }
+/* Fruits de la tardor: the falling-leaves video runs exactly from the top of the title to the end of the
+   contents list. Height 0 keeps it out of the row sizing; min-height then fills title + lead + list,
+   and object-fit crops it, keeping the sky where the leaves fall in view. */
+.page-head-beside-nav > .head-art-top.head-video {
+  grid-row: 1 / span 3; align-self: stretch; height: 0; min-height: 100%;
+  object-position: 50% 30%; position: static;
+}
 @media (max-width: 860px) {
   .page-head-art { grid-template-columns: 1fr; }
   .head-art { grid-row: 1; width: min(60%, 260px); margin-bottom: 8px; }
@@ -772,6 +786,10 @@ main { overflow-x: clip; } /* no sideways scroll from full-width pieces */
   .page-head-beside-nav > picture:has(.head-art-fit) { height: auto; min-height: 0; }
   .page-head-beside-nav .head-art-fit { aspect-ratio: 4 / 3; }
   .page-head-beside-nav .page-nav { grid-row: 4; }
+  .page-head-beside-nav:has(> .head-art-top, > picture > .head-art-top) { grid-template-rows: none; }
+  .page-head-beside-nav > .head-art-top,
+  .page-head-beside-nav > picture:has(> .head-art-top) { grid-row: 3; margin-top: clamp(24px, 4vh, 40px); }
+  .page-head-beside-nav > .head-art-top.head-video { grid-row: 3; height: auto; min-height: 0; aspect-ratio: 238 / 426; }
   .page-head-beside-nav > .head-art-stack { grid-column: 1; grid-row: 3; max-width: 520px; margin-top: clamp(24px, 4vh, 40px); }
 }
 

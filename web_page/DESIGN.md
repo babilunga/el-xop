@@ -95,7 +95,7 @@ green (arbor) for icons, small accents and the few filled controls.
 - **arbor** `#4d5e3c`: icons, the header "Benvinguts!", garden accent lines, filled controls
   (back-to-top, Instagram "Follow", "Show map"), text selection.
 - **sage, olive, teal, ochre, earth, clay, sky**: place colours for photo stand-ins only.
-- Temporary: `#fbe7a1` marks the "[to fill]" gaps on the legal pages; remove when they are filled.
+- `#fbe7a1` (`.to-fill`): highlight for missing owner details; unused since the owner block was removed.
 
 All text meets WCAG AA contrast (checked 2026-11-18), including the garden text on its dark fade.
 
@@ -135,6 +135,14 @@ The two main faces are preloaded.
   Exception: the Museum shows three framed family photos in a column (`.head-art-stack`), starting
   level with the top of the h1 title, each nudged slightly sideways; the group is never sticky and
   scrolls with the page.
+  Herb corner (garden map) and Autumn fruits (falling-leaves video) also start the picture level with
+  the top of the h1 (`.head-art-top`, spans title, lead and list; a flexible 4th grid row absorbs
+  extra height so the text keeps its spacing). The sticky rule above still applies.
+  On Autumn fruits the video is cropped (object-fit) to run exactly from the top of the title to the
+  end of the contents list, keeping the sky with the falling leaves in view; not sticky.
+- Moving pictures: a short muted loop (`<video class="head-video">`, AV1 + H.264 MP4, poster JPG,
+  `preload="none"`) instead of a GIF. `main.js` loads and plays it only without reduced motion or
+  data saving, and pauses it out of view; everyone else sees the poster still.
 - Museum rooms: sticky room title, text and photo side by side, alternating sides.
 - Artist residency: a hero that rebuilds the association's flyer (paper panel with grain, title block,
   text, house icon; garden photo on the right fading into the paper; a torn-paper card with four icons
@@ -180,7 +188,7 @@ The two main faces are preloaded.
   Maps loads only after the click.
 - **Back to top**: round arbor button, 72px, arrow 27px, appears after the first screen.
 - **Skip link**: "Skip to content", hidden until focused by keyboard.
-- **Legal pages**: plain article, max 44em, owner details as a definition list.
+- **Legal pages**: plain article, max 44em, date line then sections; no owner block.
 - **Flip-book** (`src/templates/flipbook.js`, `assets/css/flipbook.css`, `assets/js/flipbook.js`): a book
   whose pages have been recreated (`src/data/books/pages/<book>.json`) is shown one A4 page at a time on
   book paper (`--paper: #f7f4ec`, very slightly warm off-white), with a thin page stack on the right.

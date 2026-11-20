@@ -49,11 +49,6 @@ const li = (ca, es, en) => tx('li', t(ca, es, en));
 function avis(rel) {
   return `
     ${tx('p', UPDATED, ' class="legal-date"')}
-    ${p('En compliment de la Llei 34/2002 de serveis de la societat de la informació (LSSI-CE), aquestes són les dades del titular d’aquest lloc web:',
-        'En cumplimiento de la Ley 34/2002 de servicios de la sociedad de la información (LSSI-CE), estos son los datos del titular de este sitio web:',
-        'In accordance with Spanish Law 34/2002 on information society services (LSSI-CE), these are the details of the owner of this website:')}
-    ${ownerList()}
-
     ${h('Finalitat del lloc', 'Finalidad del sitio', 'Purpose of the site')}
     ${p('Aquest lloc web és informatiu: presenta l’associació, la residència d’artistes, el jardí, el museu i l’arxiu de El Xop · Les Vaqueres. No s’hi ven cap producte ni servei i no cal registrar-se per fer-lo servir.',
         'Este sitio web es informativo: presenta la asociación, la residencia de artistas, el jardín, el museo y el archivo de El Xop · Les Vaqueres. No se vende ningún producto ni servicio y no es necesario registrarse para usarlo.',
@@ -100,9 +95,6 @@ function privacitat(rel) {
     ${p('Aquest lloc no té formularis, comptes d’usuari, estadístiques de visites ni publicitat. Gairebé no tractem dades personals; aquí t’expliquem les poques situacions en què passa.',
         'Este sitio no tiene formularios, cuentas de usuario, estadísticas de visitas ni publicidad. Apenas tratamos datos personales; aquí te explicamos las pocas situaciones en que ocurre.',
         'This site has no forms, user accounts, visitor statistics or advertising. We handle almost no personal data; here are the few situations where it happens.')}
-
-    ${h('Responsable del tractament', 'Responsable del tratamiento', 'Data controller')}
-    ${ownerList()}
 
     ${h('Si ens escrius o ens truques', 'Si nos escribes o nos llamas', 'If you email or call us')}
     ${p('Si ens contactes per correu electrònic o per telèfon, fem servir el teu nom, el teu contacte i el que ens expliquis només per respondre’t. La base legal és el teu consentiment i el nostre interès legítim a atendre la consulta. Guardem el missatge el temps necessari per resoldre-la i, com a màxim, un any. No ho cedim a ningú.',
