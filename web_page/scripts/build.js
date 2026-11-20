@@ -20,6 +20,27 @@ try {
   if (m) live = '\n' + m[0];
 } catch (e) {}
 
+// full-size photo viewer (opened by main.js when a photo is clicked) on these pages
+const VIEWER_PAGES = ['fruits', 'herbes', 'museu'];
+const VIEWER_UI = {
+  viewer: t('Visor de fotos', 'Visor de fotos', 'Photo viewer'),
+  prev: t('Foto anterior', 'Foto anterior', 'Previous photo'),
+  next: t('Foto següent', 'Foto siguiente', 'Next photo'),
+  close: t('Tanca', 'Cerrar', 'Close'),
+};
+const VIEWER_ICON = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
+const viewer = () => `
+<dialog class="res-lightbox photo-viewer"${aria(VIEWER_UI.viewer)}>
+  <figure class="res-lightbox-fig">
+    <img class="res-lightbox-img" alt="">
+    <figcaption class="res-lightbox-cap"></figcaption>
+  </figure>
+  <button class="res-lightbox-btn res-lightbox-prev" type="button"${aria(VIEWER_UI.prev)}>${VIEWER_ICON('M15 5l-7 7 7 7')}</button>
+  <button class="res-lightbox-btn res-lightbox-next" type="button"${aria(VIEWER_UI.next)}>${VIEWER_ICON('M9 5l7 7-7 7')}</button>
+  <button class="res-lightbox-btn res-lightbox-close" type="button"${aria(VIEWER_UI.close)}>${VIEWER_ICON('M6 6l12 12M18 6L6 18')}</button>
+</dialog>
+`;
+
 function page({ file, key, title, desc, body, bodyClass = '', extraHead = '' }) {
   const html = `${C.head(title, desc, '', extraHead)}
 <body${bodyClass ? ` class="${bodyClass}"` : ''}>
@@ -29,7 +50,7 @@ ${C.header('', key)}
 <main id="top">
 ${body}
 </main>
-
+${VIEWER_PAGES.includes(key) ? viewer() : ''}
 ${C.footer('')}
 
 <script src="assets/js/main.js"></script>${file === 'index.html' ? live : ''}

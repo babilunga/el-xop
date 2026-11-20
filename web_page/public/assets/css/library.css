@@ -162,3 +162,15 @@
 @media (prefers-reduced-motion: reduce) {
   .book-card-title, .toc a, .next-title { transition: none; }
 }
+
+/* "All books": back to the Bibliography page, above the title and at the end of every book */
+.back-to-books {
+  display: inline-flex; align-items: center; gap: 6px; margin: 0 0 18px -4px; padding: 6px 10px 6px 4px;
+  border-radius: 999px; font: 500 0.9375rem/1.2 var(--sans); color: var(--ink-soft); text-decoration: none;
+  transition: color 0.2s, background-color 0.2s;
+}
+.back-to-books:hover { color: var(--ink); background: rgb(38 44 33 / 0.06); }
+.back-to-books:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.book-end-links { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.book-end-links .back-to-books { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .back-to-books { transition: none; } }

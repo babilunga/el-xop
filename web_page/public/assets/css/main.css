@@ -1367,3 +1367,7 @@ html.res-lightbox-open { overflow: hidden; }
   .res-labs > :last-child, .res-workshops > :last-child { grid-column: auto; }
   .res-section { padding-block: 48px; }
 }
+
+/* photos that open full size in the photo viewer (main.js marks them; the viewer reuses .res-lightbox) */
+img.can-enlarge { cursor: zoom-in; }
+img.can-enlarge:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }

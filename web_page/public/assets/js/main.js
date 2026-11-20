@@ -441,4 +441,82 @@
       });
     }
   }
+
+  // ---------- full-size photo viewer (Surroundings and Museum pages: <dialog class="photo-viewer">) ----------
+  // Every photo in the page's main content opens full size in the middle of the screen; the arrows
+  // (buttons, arrow keys or a swipe) go through all the photos on the page. Close: the × button,
+  // Esc, or a click outside the photo.
+  (function () {
+    var box = document.querySelector("dialog.photo-viewer");
+    if (!box || typeof box.showModal !== "function") return;
+    var main = document.querySelector("main");
+    var photos = Array.prototype.filter.call(main.querySelectorAll("img"), function (img) {
+      return !img.closest("a, button, dialog, .ig-card") && (+img.getAttribute("width") || 0) >= 200;
+    });
+    if (!photos.length) return;
+    var boxImg = box.querySelector(".res-lightbox-img"), boxCap = box.querySelector(".res-lightbox-cap");
+    var bPrev = box.querySelector(".res-lightbox-prev"), bNext = box.querySelector(".res-lightbox-next");
+    var at = 0;
+
+    // the largest file the browser can show: the widest srcset entry of the format it picked
+    var fullSrc = function (img) {
+      var cur = img.currentSrc || img.src, best = img.src, bestW = 0;
+      var avif = /\.avif(\?|$)/.test(cur);
+      var pic = img.parentNode && img.parentNode.tagName === "PICTURE" ? img.parentNode : null;
+      var sets = [img.getAttribute("srcset") || ""];
+      if (pic && avif) Array.prototype.forEach.call(pic.querySelectorAll("source[type='image/avif']"), function (s) { sets.unshift(s.getAttribute("srcset") || ""); });
+      sets.forEach(function (set) {
+        set.split(",").forEach(function (c) {
+          var bits = c.trim().split(/\s+/), w = parseInt(bits[1], 10) || 0;
+          if (bits[0] && w > bestW && (!avif || /\.avif/.test(bits[0]) || bestW === 0)) { best = bits[0]; bestW = w; }
+        });
+      });
+      return bestW ? new URL(best, document.baseURI).href : img.src;
+    };
+
+    var show = function (i) {
+      at = (i + photos.length) % photos.length;
+      var img = photos[at];
+      boxImg.src = fullSrc(img);
+      boxImg.alt = img.alt;
+      boxCap.textContent = (img.alt ? img.alt + " · " : "") + (at + 1) + " / " + photos.length;
+      bPrev.hidden = bNext.hidden = photos.length < 2;
+    };
+    var open = function (img) {
+      show(photos.indexOf(img));
+      box.showModal();
+      document.documentElement.classList.add("res-lightbox-open");
+    };
+
+    photos.forEach(function (img) {
+      img.classList.add("can-enlarge");
+      img.setAttribute("tabindex", "0");
+      img.setAttribute("role", "button");
+      img.setAttribute("aria-haspopup", "dialog");
+      img.addEventListener("click", function () { open(img); });
+      img.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(img); }
+      });
+    });
+    bPrev.addEventListener("click", function () { show(at - 1); });
+    bNext.addEventListener("click", function () { show(at + 1); });
+    box.querySelector(".res-lightbox-close").addEventListener("click", function () { box.close(); });
+    box.addEventListener("click", function (e) { if (e.target === box || e.target.classList.contains("res-lightbox-fig")) box.close(); });
+    box.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(at - 1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); show(at + 1); }
+    });
+    var x0 = null;
+    box.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", function (e) {
+      if (x0 == null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40 && photos.length > 1) show(at + (dx < 0 ? 1 : -1));
+    });
+    box.addEventListener("close", function () {
+      document.documentElement.classList.remove("res-lightbox-open");
+      boxImg.removeAttribute("src");
+      if (photos[at]) photos[at].focus({ preventScroll: true });
+    });
+  })();
 })();

@@ -114,6 +114,10 @@ Raw originals (HEIC photos, book scans, video, reference material) stay outside
      export edge lines, add a poster JPG, then use `<video class="head-video" muted loop playsinline preload="none" poster>`
      with an AV1 `<source>` first and H.264 second. Follow it with a `<button class="head-video-toggle" hidden>` (see `build.js`, Fruits de la tardor): main.js plays the video only when the device allows motion, and the button lets visitors pause it or start it. The local server (`npm run serve`) answers Range requests so Safari can play it.
    - JS identifiers `camelCase`, CSS classes `kebab-case`
+   - full-size photo viewer: every photo (200 px wide or more) in the main content of the pages listed in
+     `VIEWER_PAGES` (`scripts/build.js`: Fruits de la tardor, Racó d'herbes, Museu) opens full screen when clicked,
+     with previous/next and close. To add it to another page, add that page's key to `VIEWER_PAGES`.
+     Every book page has an "All books" link back to the Bibliography (`flipbook.js`).
 4. **Paths** in generated HTML are relative: `''` from `public/`, `'../'` from `public/library/`
    (the `rel` argument in `layout.js`). Never use absolute `/…` or `file://` paths.
 

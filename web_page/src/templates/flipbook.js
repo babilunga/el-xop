@@ -29,6 +29,7 @@ const UI = {
   cover: t('Portada', 'Portada', 'Cover'),
   allBooks: t('Tots els llibres', 'Todos los libros', 'All books'),
   nextBook: t('Llibre següent', 'Libro siguiente', 'Next book'),
+  allBooks: t('Tots els llibres', 'Todos los libros', 'All books'),
   hint: t('Passa les pàgines amb les fletxes, lliscant o tocant la vora de la pàgina.',
     'Pasa las páginas con las flechas, deslizando o tocando el borde de la página.',
     'Turn the pages with the arrows, by swiping, or by tapping the edge of the page.'),
@@ -129,6 +130,7 @@ ${C.header('../', 'bibliografia')}
 
 <main id="top">
   <section class="fb-head wrap">
+    <a class="back-to-books" href="../${C.PAGES.bibliografia.href}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>${tx('span', UI.allBooks)}</a>
     ${tx('p', book.kicker, ' class="kicker"')}
     ${tx('h1', book.title)}
   </section>
@@ -154,10 +156,13 @@ ${C.header('../', 'bibliografia')}
 
     <footer class="book-end">
       ${tx('p', UI.sourceNote, ' class="note"')}
+      <div class="book-end-links">
       <a class="next-book" href="${next.slug}.html">
         ${tx('span', UI.nextBook, ' class="next-label"')}
         ${tx('span', next.title, ' class="next-title"')}
       </a>
+      <a class="back-to-books" href="../${C.PAGES.bibliografia.href}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>${tx('span', UI.allBooks)}</a>
+      </div>
     </footer>
   </section>
 </main>
