@@ -75,23 +75,49 @@ function link(key, rel, active, cls = '') {
   return tx('a', p.title, ` href="${rel}${p.href}"${cur}${cls ? ` class="${cls}"` : ''}`);
 }
 
-// language menu, in this order. Catalonia has no flag emoji that renders reliably,
-// so its senyera is a small inline SVG sized like the emoji flags.
-const SENYERA = '<svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18"><rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/></svg>';
+// language menu, in this order. Every flag is a small inline SVG (27×18), never an emoji:
+// Windows does not draw flag emoji (it shows letters like "DE" instead), and Catalonia has none.
+const flagSvg = (inner) => `<svg class="flag flag-svg" aria-hidden="true" viewBox="0 0 27 18">${inner}</svg>`;
+const bands = (dir, colors) => colors.map((c, i) => dir === 'h'
+  ? `<rect y="${(18 / colors.length) * i}" width="27" height="${18 / colors.length}" fill="${c}"/>`
+  : `<rect x="${(27 / colors.length) * i}" width="${27 / colors.length}" height="18" fill="${c}"/>`).join('');
+// five-pointed star centred on (cx, cy), radius r, rotated `rot` degrees (for the Chinese flag)
+const star = (cx, cy, r, rot = 0) => {
+  const pts = [];
+  for (let i = 0; i < 10; i++) {
+    const a = ((rot - 90 + i * 36) * Math.PI) / 180, rr = i % 2 ? r * 0.382 : r;
+    pts.push(`${(cx + rr * Math.cos(a)).toFixed(2)},${(cy + rr * Math.sin(a)).toFixed(2)}`);
+  }
+  return `<polygon points="${pts.join(' ')}" fill="#ffde00"/>`;
+};
+const FLAGS = {
+  ca: flagSvg('<rect width="27" height="18" fill="#fcdd09"/><path d="M0 3h27M0 7h27M0 11h27M0 15h27" stroke="#da121a" stroke-width="2"/>'),
+  en: flagSvg('<rect width="27" height="18" fill="#012169"/><path d="M0 0l27 18M27 0L0 18" stroke="#fff" stroke-width="3.6"/><path d="M0 0l27 18M27 0L0 18" stroke="#c8102e" stroke-width="1.2"/><path d="M13.5 0v18M0 9h27" stroke="#fff" stroke-width="6"/><path d="M13.5 0v18M0 9h27" stroke="#c8102e" stroke-width="3.6"/>'),
+  es: flagSvg('<rect width="27" height="18" fill="#aa151b"/><rect y="4.5" width="27" height="9" fill="#f1bf00"/>'),
+  de: flagSvg(bands('h', ['#000', '#dd0000', '#ffce00'])),
+  fr: flagSvg(bands('v', ['#002395', '#fff', '#ed2939'])),
+  it: flagSvg(bands('v', ['#009246', '#fff', '#ce2b37'])),
+  pl: flagSvg(bands('h', ['#fff', '#dc143c'])),
+  cs: flagSvg(bands('h', ['#fff', '#d7141a']) + '<path d="M0 0l13.5 9L0 18z" fill="#11457e"/>'),
+  uk: flagSvg(bands('h', ['#0057b7', '#ffd700'])),
+  ru: flagSvg(bands('h', ['#fff', '#0039a6', '#d52b1e'])),
+  ja: flagSvg('<rect width="27" height="18" fill="#fff"/><circle cx="13.5" cy="9" r="5.4" fill="#bc002d"/>'),
+  zh: flagSvg('<rect width="27" height="18" fill="#ee1c25"/>' + star(4.5, 4.5, 2.7) + star(9, 1.8, 0.9, 23) + star(10.8, 3.6, 0.9, 46) + star(10.8, 6.3, 0.9, 70) + star(9, 8.1, 0.9, 21)),
+};
 const LANGS = [
-  { code: 'ca', name: 'Català', flag: SENYERA },
-  { code: 'en', name: 'English', flag: '<span class="flag" aria-hidden="true">🇬🇧</span>' },
-  { code: 'es', name: 'Español', flag: '<span class="flag" aria-hidden="true">🇪🇸</span>' },
+  { code: 'ca', name: 'Català', flag: FLAGS.ca },
+  { code: 'en', name: 'English', flag: FLAGS.en },
+  { code: 'es', name: 'Español', flag: FLAGS.es },
   // these live in their own folders (public/<code>/), made by scripts/localize.js from src/i18n/<code>.json
-  { code: 'de', name: 'Deutsch', flag: '<span class="flag" aria-hidden="true">🇩🇪</span>' },
-  { code: 'fr', name: 'Français', flag: '<span class="flag" aria-hidden="true">🇫🇷</span>' },
-  { code: 'it', name: 'Italiano', flag: '<span class="flag" aria-hidden="true">🇮🇹</span>' },
-  { code: 'pl', name: 'Polski', flag: '<span class="flag" aria-hidden="true">🇵🇱</span>' },
-  { code: 'cs', name: 'Čeština', flag: '<span class="flag" aria-hidden="true">🇨🇿</span>' },
-  { code: 'uk', label: 'UA', name: 'Українська', flag: '<span class="flag" aria-hidden="true">🇺🇦</span>' },
-  { code: 'ru', name: 'Русский', flag: '<span class="flag" aria-hidden="true">🇷🇺</span>' },
-  { code: 'ja', name: '日本語', flag: '<span class="flag" aria-hidden="true">🇯🇵</span>' },
-  { code: 'zh', name: '中文（简体）', flag: '<span class="flag" aria-hidden="true">🇨🇳</span>', lang: 'zh-Hans' },
+  { code: 'de', name: 'Deutsch', flag: FLAGS.de },
+  { code: 'fr', name: 'Français', flag: FLAGS.fr },
+  { code: 'it', name: 'Italiano', flag: FLAGS.it },
+  { code: 'pl', name: 'Polski', flag: FLAGS.pl },
+  { code: 'cs', name: 'Čeština', flag: FLAGS.cs },
+  { code: 'uk', label: 'UA', name: 'Українська', flag: FLAGS.uk },
+  { code: 'ru', name: 'Русский', flag: FLAGS.ru },
+  { code: 'ja', name: '日本語', flag: FLAGS.ja },
+  { code: 'zh', name: '中文（简体）', flag: FLAGS.zh, lang: 'zh-Hans' },
 ];
 
 const CHEVRON = '<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';

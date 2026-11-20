@@ -95,7 +95,7 @@ a { color: inherit; }
 .lang-chevron { transition: transform 0.2s; }
 .lang-toggle[aria-expanded="true"] .lang-chevron { transform: rotate(180deg); }
 .flag { font-size: 1.125rem; line-height: 1; }
-.flag-svg { width: 1.05em; height: 0.72em; border-radius: 2px; flex: none; font-size: 1.125rem; }
+.flag-svg { width: 1.05em; height: 0.72em; border-radius: 2px; flex: none; font-size: 1.125rem; overflow: hidden; box-shadow: 0 0 0 0.5px rgb(0 0 0 / 0.22); }
 .lang-menu {
   display: none;
   position: absolute; top: calc(100% + 6px); right: 0; z-index: 6;
